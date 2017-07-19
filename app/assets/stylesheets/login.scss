@@ -21,7 +21,7 @@
 .submit .btn-default{
   position: absolute;
   top: 270px;
-  left: 15px;
+  left: 12px;
   width: 90%;
   padding: 10px 0 10px 0!important;
 }
@@ -45,5 +45,21 @@ height: 55vh!important;
   left: 300px;
   z-index: 1;
   font-size: 20px;
-
+}
+// .itemx{
+//   height: 55vh!important;
+// }
+@media only screen and (max-width: 1280px){
+ .login{
+ height: 80vh;
+ }
+ .welcome{
+   height: 80vh;
+ }
+ .item{
+   height: 75vh!important;
+ }
+ // .itemx{
+ //   height: 85vh!important;
+ // }
 }
