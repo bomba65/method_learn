@@ -4,12 +4,12 @@
   <div class="row">
     <div class="login col-xs-12 col-sm-6 col-md-8">
         <p class="loginx">ПАНЕЛЬ ДЛЯ ВХОДА</p>
-        
+
         <%= render "users/sessions/new" %>
         <% if(current_user.present?) %>
             <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
         <% end %>
-        
+
     </div>
     <div class="welcome col-xs-6 col-md-4">
       <p class="textrotator text"></p>
@@ -18,15 +18,11 @@
             <div class="carousel-inner" role="listbox">
               <div class="item active">
                 <img src="https://www.usnews.com/cmsmedia/8d/bc/e863c98a45c68edee4c81f7462b8/160711-studentinparis-stock.jpg" alt="...">
-                <div class="carousel-caption">
-                  ...
-                </div>
+                
               </div>
               <div class="item">
                 <img src="http://media3.popsugar-assets.com/files/2015/04/20/787/n/1922398/27946c194339e5a2_shutterstock_170190752Rw4JES.fbshare/i/Oxford-University-Older-Than-Aztecs.jpg" alt="...">
-                <div class="carousel-caption">
-                  ...
-                </div>
+
               </div>
             </div>
           </div>
