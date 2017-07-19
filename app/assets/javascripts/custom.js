@@ -2,6 +2,7 @@ $(document).ready(function(){
   $('.carousel').carousel({
   interval: 1000
 })
+
     $('li a').click(function(){
       $('html, body').animate({
           scrollTop: $( $(this).attr('href') ).offset().top
