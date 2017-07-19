@@ -3,21 +3,27 @@
   text-align: center;
 }
 .block{
-  margin: 0 60px 30px 15px;
+  margin: 0 60px 60px 15px;
   color: white;
+}
+.thumbnail:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:300px;
+    height:auto;
+    display:block;
+    z-index:999;
+}
+.thumbnail{
+ background-color: transparent;
+ border-style: none;
 }
 .block img{
   width: 200px;
   height: 200px;
 }
-.blockx img{
-  width: 200px;
-  height: 200px;
-}
-.blockx{
-  margin: 50px -50px 30px 150px;
-}
 .web{
-  margin-left: 100px;
+  margin-left: 120px;
   margin-top: 80px;
 }

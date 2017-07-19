@@ -6,10 +6,10 @@
   margin-top: -17px;
 }
 .category{
-  width: 380px;
+  width: 350px;
   height: 95vh;
   background-color: white;
-  margin: 20px 30px -40px 30px;
+  margin: 20px 10px -40px 10px;
 }
 hr{
   border: 2px solid #DDDDDD;
@@ -28,9 +28,10 @@ hr{
 }
 .green span{
   position: absolute;
-  padding: 20px 0 0 230px;
+  padding: 20px 15px 0 0;
   font-size: 20px;
-  text-align: right!important;
+  position: absolute;
+  right: 0;
 }
 .green p{
   color: white;
@@ -61,7 +62,7 @@ hr{
 background-color: #DEE546!important;
 }
 .courses{
-  // width: 285px;
+  width: 310px;
   height: 40vh;
   background-color: white;
   border-radius: 5px;
@@ -72,6 +73,8 @@ background-color: #DEE546!important;
   margin-top: 20px;
   overflow-y: scroll!important;
   height: 94.6vh;
+  margin-left: 0px!important;
+  margin-right: 0px!important;
 }
 .green{
   background-color: #2FD3B0;
@@ -157,30 +160,221 @@ background-color: #DEE546!important;
     }
   }
 }
-/* end .squaredFour */
-// @media only screen and (max-width: 1280px){
-//   .courses{
-//     width: 260px;
-//     height: 40vh;
-//     background-color: white;
-//     border-radius: 5px;
-//     margin-right: 10px;
-//     margin-bottom: 17px;
-//   }
-// }
-// @media only screen and (max-width: 980px){
-//   .courses{
-//     width: 250px;
-//     height: 40vh;
-//     background-color: white;
-//     border-radius: 5px;
-//     margin-right: 10px;
-//     margin-bottom: 17px;
-//   }
-//   .category{
-//     width: 320px;
-//     height: 95vh;
-//     background-color: white;
-//     margin: 20px 30px -40px 30px;
-//   }
-// }
+@media only screen and (max-width: 1360px){
+  .courses{
+    width: 300px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1350px){
+  .courses{
+    width: 295px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1340px){
+  .courses{
+    width: 290px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1330px){
+  .courses{
+    width: 288px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1320px){
+  .courses{
+    width: 280px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1300px){
+  .courses{
+    width: 274px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1280px){
+  .courses{
+    width: 290px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1260px){
+  .courses{
+    width: 278px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1250px){
+  .courses{
+    width: 260px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1240px){
+  .courses{
+    width: 270px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1200px){
+  .courses{
+    width: 245px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1200px){
+  .courses{
+    width: 240px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1180px){
+  .courses{
+    width: 230px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1150px){
+  .courses{
+    width: 280px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
+@media only screen and (max-width: 1110px){
+  .courses{
+    width: 250px;
+    height: 30vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+  .scroll{
+    padding-left: 10px;
+  }
+}
+@media only screen and (max-width: 1080px){
+  .courses{
+    width: 480px;
+    height: 30vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+  .scroll{
+    padding-left: 15px;
+  }
+}
+@media only screen and (max-width: 1060px){
+  .courses{
+    width: 550px;
+    height: 30vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+  .scroll{
+    padding-left: 20px;
+  }
+}
+@media only screen and (max-width: 1040px){
+  .courses{
+    width: 500px;
+    height: 30vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+  .scroll{
+    padding-left: 30px;
+  }
+}
+@media only screen and (max-width: 1000px){
+  .courses{
+    width: 520px;
+    height: 30vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+  .scroll{
+    padding-left: 20px;
+  }
+}
+@media only screen and (max-width: 980px){
+  .courses{
+    width: 550px;
+    height: 30vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+  .scroll{
+    padding-left: 20px;
+  }
+}
