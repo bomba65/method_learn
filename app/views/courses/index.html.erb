@@ -1,3 +1,33 @@
-<%@courses.each do |course|%>
-  <h4><%=course.name%> | <%=link_to "Show",course_path(course)%>, <%=link_to "Delete",course_path(course), method: :delete, :confirm => "Are you sure?" %></h4>
-<%end%>
+<div class="container-fluid">
+    <h1 class="course1">Курсы по веб-разработке</h1>
+    <div class="row web">
+        <div class="col-xs-6 col-sm-4 col-md-2 block">
+            <img src="assets/images/android" alt="">
+        </div>
+        
+        <div class="col-xs-6 col-sm-4 col-md-2 block">
+            <img src="assets/images/python" alt="">
+        </div>
+        
+        <div class="col-xs-6 col-sm-4 col-md-2 block">
+            <img src="assets/images/ios" alt="">
+        </div>
+        
+        <div class="col-xs-6 col-sm-4 col-md-2 block">
+            <img src="assets/images/ruby" alt="">
+        </div>
+        
+        <div class="col-xs-6 col-sm-4 col-md-2 blockx">
+            <img src="assets/images/html" alt="">
+        </div>
+        
+        <div class="col-xs-6 col-sm-4 col-md-2 blockx">
+            <img src="assets/images/js" alt="">
+        </div>
+        
+        <div class="col-xs-6 col-sm-4 col-md-2 blockx">
+            <img src="assets/images/css" alt="">
+        </div>
+    </div>
+
+</div>

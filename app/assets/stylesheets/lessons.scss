@@ -1,0 +1,161 @@
+// Place all the styles related to the Lessons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main{
+  margin-top: -17px;
+}
+.category{
+  width: 380px;
+  height: 95vh;
+  background-color: white;
+  margin: 20px 30px -40px 30px;
+}
+hr{
+  border: 2px solid #DDDDDD;
+  width: 25%;
+  margin: 10px 60px 20px 0;
+}
+.courses a{
+  color: black;
+  text-decoration: none;
+}
+.courses a:hover{
+  color:#2FD3B0!important;
+}
+.ok{
+  color: white;
+}
+.green span{
+  position: absolute;
+  padding: 20px 0 0 230px;
+  font-size: 20px;
+  text-align: right!important;
+}
+.green p{
+  color: white;
+  font-size: 15px;
+  margin: 20px auto;
+}
+.ctg{
+  padding: 25px 60px 0 15px;
+  font-size: 20px;
+}
+.bars{
+ margin-top: 30px!important;
+}
+.ranking{
+  padding: 0 60px 0 15px;
+  margin-top: 12px;
+  font-size: 20px;
+}
+.progress{
+  margin: 0 45px 0 15px;
+}
+.bar1{
+ background-color: #B3E546!important;
+ border-radius: 5px!important;
+ height: 20px!important;
+}
+.bar2{
+background-color: #DEE546!important;
+}
+.courses{
+  width: 285px;
+  height: 40vh;
+  background-color: white;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 17px;
+}
+.scroll{
+  margin-top: 20px;
+  overflow-y: scroll!important;
+  height: 94.6vh;
+}
+.green{
+  background-color: #2FD3B0;
+  height: 10vh;
+  width: 100%;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.grey{
+  background-color: #DDDDDD;
+  height: 5vh;
+  width: 15%;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+.continue{
+  background-color: #2FD3B0;
+  height: 5vh;
+  width: 15%;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+.glyphicon-bookmark{
+  font-size: 20px;
+  color: white;
+  margin-left: -3px;
+}
+.grey p{
+  font-size: 30px;
+  color: white;
+  margin-top: -5px;
+}
+.category li{
+  margin: 0 0 5px 0;
+}
+.squaredFour {
+  width: 20px;
+  margin: -22px 0 0 250px;
+  label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fcfff4;
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    &:after {
+      content: '';
+      width: 9px;
+      height: 5px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border: 3px solid #333;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+    &:hover::after {
+      opacity: 0.5;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+}
+/* end .squaredFour */
+
