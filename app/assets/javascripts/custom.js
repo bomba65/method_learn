@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $('.carousel').carousel({
-  interval: 1000
+  interval: 3000
 })
 
     $('li a').click(function(){
@@ -11,9 +11,9 @@ $(document).ready(function(){
   });
   $(document).ready(function(){
 function Rotator(start_from){
-    var phrases = ["Are you searching for a good website?","Do you need a creative design?","Welcome!","Personal page of Nazerke Turtayeva! "];
+    var phrases = ["Добро пожаловать в Метод!","Искренне рады очередной встрече!","Желаем продуктивного дня!"];
     var total = phrases.length;
-    var interval = 1000;
+    var interval = 1500;
     if(void 0 === start_from){
         start_from = 0;
     }
