@@ -151,7 +151,7 @@ background-color: #DEE546!important;
     }
   }
   input[type=checkbox] {
-    visibility: hidden;
+    
     &:checked + label:after {
       opacity: 1;
     }
