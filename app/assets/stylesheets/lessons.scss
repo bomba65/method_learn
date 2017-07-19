@@ -126,9 +126,9 @@ background-color: #DEE546!important;
     width: 20px;
     height: 20px;
     cursor: pointer;
-    position: absolute;
+    position: relative;
     top: 0;
-    left: 0;
+    right: 0;
     background: #fcfff4;
     border-radius: 4px;
     box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
@@ -158,13 +158,29 @@ background-color: #DEE546!important;
   }
 }
 /* end .squaredFour */
-@media only screen and (max-width: 1280px){
-  .courses{
-    width: 257px;
-    height: 40vh;
-    background-color: white;
-    border-radius: 5px;
-    margin-right: 10px;
-    margin-bottom: 17px;
-  }
-}
+// @media only screen and (max-width: 1280px){
+//   .courses{
+//     width: 260px;
+//     height: 40vh;
+//     background-color: white;
+//     border-radius: 5px;
+//     margin-right: 10px;
+//     margin-bottom: 17px;
+//   }
+// }
+// @media only screen and (max-width: 980px){
+//   .courses{
+//     width: 250px;
+//     height: 40vh;
+//     background-color: white;
+//     border-radius: 5px;
+//     margin-right: 10px;
+//     margin-bottom: 17px;
+//   }
+//   .category{
+//     width: 320px;
+//     height: 95vh;
+//     background-color: white;
+//     margin: 20px 30px -40px 30px;
+//   }
+// }
