@@ -151,11 +151,20 @@ background-color: #DEE546!important;
     }
   }
   input[type=checkbox] {
-    
+
     &:checked + label:after {
       opacity: 1;
     }
   }
 }
 /* end .squaredFour */
-
+@media only screen and (max-width: 1280px){
+  .courses{
+    width: 257px;
+    height: 40vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 17px;
+  }
+}
