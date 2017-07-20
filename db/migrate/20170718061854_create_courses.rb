@@ -5,7 +5,7 @@ class CreateCourses < ActiveRecord::Migration
       t.string :title
       t.string :subtitle
       t.string :description
-
+      
       t.timestamps null: false
     end
   end
