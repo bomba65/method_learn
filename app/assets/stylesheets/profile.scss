@@ -1,17 +1,112 @@
-.course0{
-  color: #2FD3B0!important;
+body {
+  background: #F1F1F1 !important;
+  padding: 5px;
+}
+.profilex {
+  text-align: center;
+  padding: 20px 20px 40px 20px;
+  color: #315A63;
+  background: white;
+  font-family: 'Lato', sans-serif;
+  margin: 5px;
+}
+
+.profilex i {
+  font-weight: lighter;
+  font-size: 17px;
+}
+
+.profilex h4 {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+
+.avatarx {
+  width: 80px;
+  height: 80px;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+.courses-title {
+  background: white;
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  color: #315A63;
+  margin: 5px;
+  margin-top: 10px;
+}
+
+.coursesx {
+  margin: 5px;
+  margin-top: 10px;
   text-align: center;
 }
-.coursemain a{
-  padding: 0 20px 0 20px!important;
-  font: 20px!important;
+
+.coursesx .item {
+  display: inline-block;
+  width: 327px !important;
+  height: 212px !important;
+  background: white;
+  border-radius: 4px;
+  margin: 5px;
+  text-align: left;
 }
-.coursemain h4{
+
+.coursesx .item .top a {
+  float: right;
+  background: #2FD3B0;
+  padding: 5px 10px;
+  border-radius: 0px 4px 0px 4px;
   color: white;
+
 }
-.myimg{
-  margin: 30px 0 -30px 0;
+
+.coursesx .item .top a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  background: #26B093;
 }
-.glyphicon-option-horizontal{
- margin-left: 350px;
+
+.coursesx .item .middle h4 {
+  font-weight: normal;
+  margin-left: 15px;
+  margin-top: 20px;
+  color: #19353B
+}
+
+.coursesx .item .border {
+  position: relative;
+  top: -5px;
+  display: inline-block;
+  margin-left: 15px;
+  width: 100px;
+  height: 4px;
+  background: #DDDDDD;
+
+}
+
+.coursesx .item .desc p {
+  color: #19353B;
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-right: 15px;
+
+}
+
+.bottomblue {
+  position: relative;
+  height: 40px;
+  margin-top: 35px;
+  border-radius: 0px 0px 4px 4px;
+  background: #2FD3B0;
+}
+
+.bottomblue .raiting {
+    display: inline-block;
+    float:right;
+    margin-top: 10px;
+    margin-right: 10px;
 }
