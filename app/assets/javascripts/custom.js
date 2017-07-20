@@ -11,7 +11,7 @@ $(document).ready(function(){
   });
   $(document).ready(function(){
 function Rotator(start_from){
-    var phrases = ["Добро пожаловать в Метод!","Рады очередной встрече!","Желаем продуктивного дня!"];
+    var phrases = ["Добро пожаловать в Метод!","Мы рады очередной встрече!","Желаем продуктивного дня!"];
     var total = phrases.length;
     var interval = 1500;
     if(void 0 === start_from){
