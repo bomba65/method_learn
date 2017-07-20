@@ -1,15 +1,20 @@
 .carousel-inner{
   padding: 0;
 }
-
+.image{
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
 #overlay{
-  background-color: rgba(25, 53, 59, 0.5);
+  background-color: rgba(25, 53, 59, 0.4);
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  z-index: -1;
+  top: 0;
+  z-index: 1;
 }
 .login{
   width: 26%;
@@ -63,11 +68,12 @@ width: 100%!important;
 }
 .textrotator{
   position: absolute;
+  color: white;
   font-family: 'PT Serif Caption', serif!important;
-  top: 180px;
-  left: 280px;
+  top: 45%;
+  left: 25%;
   z-index: 2;
-  font-size: 20px;
+  font-size: 30px;
 }
 // .itemx{
 //   height: 55vh!important;
@@ -92,10 +98,9 @@ width: 100%!important;
  }
  .textrotator{
    position: absolute;
-   top: 140px;
-   left: 240px;
    z-index: 1;
-   font-size: 20px;
+   left: 21%;
+   font-size: 30px;
  }
 }
 @media only screen and (max-width: 1080px){
@@ -121,10 +126,9 @@ width: 100%!important;
  }
  .textrotator{
    position: absolute;
-   top: 160px;
-   left: 200px;
    z-index: 1;
-   font-size: 20px;
+   font-size: 30px;
+   left: 15%;
  }
 }
 @media only screen and (max-width: 980px){
@@ -152,10 +156,9 @@ width: 100%!important;
   }
   .textrotator{
     position: absolute;
-    top: 140px;
-    left: 130px;
     z-index: 1;
-    font-size: 20px;
+    left: 18%;
+    font-size: 25px;
   }
 }
 @media only screen and (max-width: 880px){
@@ -183,10 +186,9 @@ width: 100%!important;
   }
   .textrotator{
     position: absolute;
-    top: 140px;
-    left: 130px;
     z-index: 1;
-    font-size: 20px;
+    font-size: 25px;
+    left: 15%;
   }
 }
 @media only screen and (max-width: 800px){
@@ -209,15 +211,14 @@ width: 100%!important;
   .submit .btn-default{
     position: absolute;
     top: 275px;
-    left: 12px;
+    left: 13px;
     width: 90%;
   }
   .textrotator{
     position: absolute;
-    top: 140px;
-    left: 100px;
     z-index: 1;
-    font-size: 20px;
+    left: 10%;
+    font-size: 25px;
   }
 }
 @media only screen and (max-width: 680px){
@@ -256,10 +257,10 @@ width: 100%!important;
 }
 @media only screen and (max-width: 760px){
   .login{
-    width: 60%;
+    width: 50%;
     height: 60vh;
     background-color: white;
-    margin-left: 20%;
+    margin-left: 25%;
     margin-top: 4%;
   }
   .loginx{
