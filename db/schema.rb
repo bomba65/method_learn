@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718125843) do
+ActiveRecord::Schema.define(version: 20170720120338) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -31,17 +31,18 @@ ActiveRecord::Schema.define(version: 20170718125843) do
     t.string   "title"
     t.string   "subtitle"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
-    t.text     "description"
     t.integer  "part_id"
     t.integer  "lesson_order"
-    t.string   "video"
-    t.text     "theory"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -54,9 +55,34 @@ ActiveRecord::Schema.define(version: 20170718125843) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "process_of_lessons", force: :cascade do |t|
+    t.integer  "user_to_course"
+    t.integer  "lesson_id"
+    t.boolean  "done"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.text     "content"
+    t.string   "answer"
+    t.integer  "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "theories", force: :cascade do |t|
+    t.text     "content"
+    t.string   "video"
+    t.integer  "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_to_courses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
+    t.integer  "process"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
