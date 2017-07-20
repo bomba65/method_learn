@@ -1,3 +1,14 @@
+.carousel-inner{
+  padding: 0;
+}
+.bg1{
+  background-image: url("https://www.usnews.com/cmsmedia/8d/bc/e863c98a45c68edee4c81f7462b8/160711-studentinparis-stock.jpg");
+  background-size: cover;
+}
+.bg2{
+  background-image: url("http://media3.popsugar-assets.com/files/2015/04/20/787/n/1922398/27946c194339e5a2_shutterstock_170190752Rw4JES.fbshare/i/Oxford-University-Older-Than-Aztecs.jpg");
+  background-size: cover;
+}
 .login{
   width: 26%;
   height: 60vh;
@@ -39,10 +50,20 @@ margin-top: 1.8%;
 width: 100%!important;
 height: 55vh!important;
 }
+
+.whensm{
+height: 55vh!important;
+width: 100%!important;
+}
+.whensm0{
+  height: 55vh!important;
+  width: 100%!important;
+}
 .textrotator{
   position: absolute;
+  font-family: 'PT Serif Caption', serif!important;
   top: 180px;
-  left: 300px;
+  left: 280px;
   z-index: 1;
   font-size: 20px;
 }
@@ -51,15 +72,217 @@ height: 55vh!important;
 // }
 @media only screen and (max-width: 1280px){
  .login{
- height: 80vh;
+ height: 55vh;
  }
  .welcome{
-   height: 80vh;
+   height: 55vh;
  }
  .item{
-   height: 75vh!important;
+   margin-top:2%;
+   margin-bottom:-0.2%;
+   height: 50.5vh!important;
  }
- // .itemx{
- //   height: 85vh!important;
- // }
+ .submit .btn-default{
+   position: absolute;
+   top: 250px;
+   left: 12px;
+   width: 90%;
+ }
+ .textrotator{
+   position: absolute;
+   top: 140px;
+   left: 240px;
+   z-index: 1;
+   font-size: 20px;
+ }
+}
+@media only screen and (max-width: 1080px){
+ .login{
+ height: 58vh;
+ }
+ .welcome{
+   height: 58vh;
+ }
+ .item{
+   margin-top:2.5%;
+   margin-bottom:-0.8%;
+   height: 54vh!important;
+ }
+ .whensm{
+   height: 56vh!important;
+ }
+ .submit .btn-default{
+   position: absolute;
+   top: 275px;
+   left: 12px;
+   width: 90%;
+ }
+ .textrotator{
+   position: absolute;
+   top: 160px;
+   left: 200px;
+   z-index: 1;
+   font-size: 20px;
+ }
+}
+@media only screen and (max-width: 980px){
+  .login{
+  height: 58vh;
+  }
+  .welcome{
+    height: 58vh;
+  }
+  .item{
+    margin-top:2.5%;
+    margin-bottom:-0.8%;
+  }
+  .whensm{
+    height: 56vh!important;
+  }
+  .whensm0{
+    height: 60vh!important;
+  }
+  .submit .btn-default{
+    position: absolute;
+    top: 275px;
+    left: 12px;
+    width: 90%;
+  }
+  .textrotator{
+    position: absolute;
+    top: 140px;
+    left: 130px;
+    z-index: 1;
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 880px){
+  .login{
+  height: 58vh;
+  }
+  .welcome{
+    height: 58vh;
+  }
+  .item{
+    margin-top:3%;
+    margin-bottom:-0.8%;
+  }
+  .whensm{
+    height: 56vh!important;
+  }
+  .whensm0{
+    height: 60vh!important;
+  }
+  .submit .btn-default{
+    position: absolute;
+    top: 275px;
+    left: 12px;
+    width: 90%;
+  }
+  .textrotator{
+    position: absolute;
+    top: 140px;
+    left: 130px;
+    z-index: 1;
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 800px){
+  .login{
+  height: 58vh;
+  }
+  .item{
+    margin-top:3%!important;
+    margin-bottom:-0.8%;
+  }
+  .welcome{
+    height: 58vh;
+  }
+  .whensm{
+    height: 60.5vh!important;
+  }
+  .whensm0{
+    height: 64.5vh!important;
+  }
+  .submit .btn-default{
+    position: absolute;
+    top: 275px;
+    left: 12px;
+    width: 90%;
+  }
+  .textrotator{
+    position: absolute;
+    top: 140px;
+    left: 100px;
+    z-index: 1;
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 680px){
+  .login{
+    width: 70%;
+    height: 60vh;
+    background-color: white;
+    margin-left: 15%;
+    margin-top: 4%;
+  }
+  .loginx{
+    color: #606060;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 10%;
+  }
+  .welcome{
+    display: none!important;
+  }
+  .submit .btn-default{
+    position: absolute;
+    top: 270px;
+    left: 12px;
+    width: 90%;
+    padding: 10px 0 10px 0!important;
+  }
+  .navbar-right .btn-default{
+    border-radius: 30px!important;
+    margin-right: 15px!important;
+    margin-top: 15px;
+    padding: 7px 50px 7px 50px!important;
+  }
+  form{
+  margin-top: 10%;
+  }
+}
+@media only screen and (max-width: 760px){
+  .login{
+    width: 60%;
+    height: 60vh;
+    background-color: white;
+    margin-left: 20%;
+    margin-top: 4%;
+  }
+  .loginx{
+    color: #606060;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 10%;
+  }
+  .welcome{
+    display: none!important;
+  }
+  .submit .btn-default{
+    position: absolute;
+    top: 270px;
+    left: 12px;
+    width: 90%;
+    padding: 10px 0 10px 0!important;
+  }
+  .navbar-right .btn-default{
+    border-radius: 30px!important;
+    margin-right: 15px!important;
+    margin-top: 15px;
+    padding: 7px 50px 7px 50px!important;
+  }
+  form{
+  margin-top: 10%;
+  }
 }
