@@ -1,13 +1,15 @@
 .carousel-inner{
   padding: 0;
 }
-.bg1{
-  background-image: url("https://www.usnews.com/cmsmedia/8d/bc/e863c98a45c68edee4c81f7462b8/160711-studentinparis-stock.jpg");
-  background-size: cover;
-}
-.bg2{
-  background-image: url("http://media3.popsugar-assets.com/files/2015/04/20/787/n/1922398/27946c194339e5a2_shutterstock_170190752Rw4JES.fbshare/i/Oxford-University-Older-Than-Aztecs.jpg");
-  background-size: cover;
+
+#overlay{
+  background-color: rgba(25, 53, 59, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
 .login{
   width: 26%;
@@ -64,7 +66,7 @@ width: 100%!important;
   font-family: 'PT Serif Caption', serif!important;
   top: 180px;
   left: 280px;
-  z-index: 1;
+  z-index: 2;
   font-size: 20px;
 }
 // .itemx{
@@ -78,7 +80,7 @@ width: 100%!important;
    height: 55vh;
  }
  .item{
-   margin-top:2%;
+   margin-top:1.8%;
    margin-bottom:-0.2%;
    height: 50.5vh!important;
  }
@@ -104,7 +106,7 @@ width: 100%!important;
    height: 58vh;
  }
  .item{
-   margin-top:2.5%;
+   margin-top:2.2%;
    margin-bottom:-0.8%;
    height: 54vh!important;
  }
