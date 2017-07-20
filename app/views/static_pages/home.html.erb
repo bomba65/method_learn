@@ -5,9 +5,7 @@
     <div class="login col-xs-12 col-sm-6 col-md-8">
         <p class="loginx">ПАНЕЛЬ ДЛЯ ВХОДА</p>
 
-        <% if(current_user.present?) %>
-          <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
-        <% else %>
+        <% unless(current_user.present?) %>
           <%= render "users/sessions/new" %>
         <% end %>
 

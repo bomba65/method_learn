@@ -32,7 +32,7 @@
                      <li><a href="#">Мой профиль</a></li>
                      <li><a href="#">Мои курсы</a></li>
                      <li role="separator" class="divider"></li>
-                     <li><a href="index.html">Выйти</a></li>
+                     <li><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>
                    </ul>
                 </div></li>
   
