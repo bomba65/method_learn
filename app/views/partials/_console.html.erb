@@ -1,0 +1,90 @@
+
+<textarea class="my-code-area" rows="10" id="console"style="width: 100%">print("hello world")</textarea>
+<div id="console_output" >
+
+</div>
+<button type="button" class="btn btn-success" name="button" id="python">python</button>
+<button type="button" class="btn btn-success" name="button" id="ruby">ruby</button>
+<button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
+<script type="text/javascript">
+$("#clear").click(function(){
+  document.getElementById("console_output").innerHTML = "";
+});
+
+
+$("#python").click(function(){
+
+  codex = document.getElementById('console').value;
+
+  $.ajax({
+      type: "POST",
+      url: "/pythonsave",
+      data: {code:codex},
+    });
+
+  $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "/python",
+        success: function(data){
+          console.log(data);
+          if(data.status == 1){
+            console.log(data.output);
+            document.getElementById("console_output").innerHTML += "<p> > "+data.output+"</p>";
+          }else {
+            console.log(data.output.pid);
+            console.log(data.output.exitstatus);
+            document.getElementById("console_output").innerHTML += "<p class='error'> > ERORR: exit status: "+data.output.exitstatus+" pid: "+data.output.pid+"</p>";
+          }
+        }
+
+    });
+
+
+});
+
+$("#ruby").click(function(){
+
+  codex = document.getElementById('console').value;
+
+  $.ajax({
+      type: "POST",
+      url: "/rubysave",
+      data: {code:codex},
+    });
+
+  $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "/ruby",
+        success: function(data){
+          console.log(data);
+          if(data.status == 1){
+            console.log(data.output);
+            document.getElementById("console_output").innerHTML += "<p> > "+data.output+"</p>";
+          }else {
+            console.log(data.output.pid);
+            console.log(data.output.exitstatus);
+            document.getElementById("console_output").innerHTML += "<p class='error'> > ERORR: exit status: "+data.output.exitstatus+" pid: "+data.output.pid+"</p>";
+          }
+        }
+
+    });
+
+
+});
+
+
+
+
+
+</script>
+
+
+<script>
+  $('.my-code-area').ace({ theme: 'twilight', lang: 'ruby' })
+</script>
+
+<script type="text/javascript">
+
+</script>

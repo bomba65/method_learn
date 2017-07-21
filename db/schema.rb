@@ -82,10 +82,14 @@ ActiveRecord::Schema.define(version: 20170720120338) do
   create_table "user_to_courses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
-    t.integer  "process"
+    t.integer  "progress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "user_to_courses", ["course_id"], name: "index_user_to_courses_on_course_id"
+  add_index "user_to_courses", ["user_id", "course_id"], name: "index_user_to_courses_on_user_id_and_course_id", unique: true
+  add_index "user_to_courses", ["user_id"], name: "index_user_to_courses_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
