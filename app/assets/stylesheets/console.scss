@@ -1,0 +1,14 @@
+#console_output {
+  width: 99.2%;
+  height: 200px;
+  background: #19353B;
+  color: white;
+}
+
+#console_output p {
+  margin-left: 10px;
+}
+
+#console_output p.error {
+  color: red;
+}
