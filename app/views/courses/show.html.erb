@@ -1,2 +1,9 @@
 <h2><%= @course.name %></h2>
 <h3><%= @course.title %></h3>
+
+<% @parts.each do  |parts|%>
+        | <%= link_to parts.name, parts %>
+<% end %>
+
+
+<%= link_to 'Добавить главу', new_part_path(:course_id => @course.id) %>
