@@ -1,1 +1,15 @@
-asd
+<h2><%= @lesson.name %></h2>
+
+<h3>Теорий</h3>
+<% @theories.each do  |theory|%>
+        | <%= link_to theory.id, theory %>
+<% end %>
+
+<%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
+
+<h3>Задания</h3>
+<% @tasks.each do  |task|%>
+        | <%= link_to task.id, task %>
+<% end %>
+
+<%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>

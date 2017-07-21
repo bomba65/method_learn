@@ -1,0 +1,16 @@
+<%= form_for @theory do |s| %>
+<div class="sub_category_creating">
+  <%= s.label :content %>
+  <%= s.text_field :content %>
+</div>
+<div class="sub_category_creating">
+  <%= s.label :video %>
+  <%= s.text_field :video %>
+</div>
+<div class="sub_category_creating">
+  <%= s.hidden_field :lesson_id, :value => params[:lesson_id] %>
+</div>
+<div class="sub_category_creating">
+  <%= s.submit "Create Lesson" %>
+</div>
+<% end %>
