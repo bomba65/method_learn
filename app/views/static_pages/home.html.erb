@@ -2,41 +2,69 @@
 
 <div class="container-fluid">
   <div class="enter">
-    <div class="login col-xs-12 col-sm-6 col-md-8">
-        <p class="loginx">ПАНЕЛЬ ДЛЯ ВХОДА</p>
-
-        <% unless(current_user.present?) %>
+    <% unless(current_user.present?) %>
+        <div class="login col-xs-12 col-sm-6 col-md-8">
+          <p class="loginx">ПАНЕЛЬ ДЛЯ ВХОДА</p>
           <%= render "users/sessions/new" %>
-        <% end %>
 
-     </div>
-     <div class="welcome col-xs-6 col-md-4">
-      <p class="textrotator text"></p>
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
+        </div>
+
+        <div class="welcome col-xs-6 col-md-4">
+        <p class="textrotator text"></p>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div id="overlay" class="overlay">
+
+                    </div>
+                    <div class="image"style="background-image: url('https://www.usnews.com/cmsmedia/8d/bc/e863c98a45c68edee4c81f7462b8/160711-studentinparis-stock.jpg');
+                    background-size: cover;">
+
+                    </div>
+
+                </div>
+                <div class="item itemx">
                   <div id="overlay" class="overlay">
 
                   </div>
-                  <div class="image"style="background-image: url('https://www.usnews.com/cmsmedia/8d/bc/e863c98a45c68edee4c81f7462b8/160711-studentinparis-stock.jpg');
-                  background-size: cover;">
+                  <div class="image" style="background-image: url('http://media3.popsugar-assets.com/files/2015/04/20/787/n/1922398/27946c194339e5a2_shutterstock_170190752Rw4JES.fbshare/i/Oxford-University-Older-Than-Aztecs.jpg'); background-size: cover;">
 
                   </div>
 
-              </div>
-              <div class="item itemx">
-                <div id="overlay" class="overlay">
-
                 </div>
-                <div class="image" style="background-image: url('http://media3.popsugar-assets.com/files/2015/04/20/787/n/1922398/27946c194339e5a2_shutterstock_170190752Rw4JES.fbshare/i/Oxford-University-Older-Than-Aztecs.jpg'); background-size: cover;">
-
-                </div>
-
               </div>
             </div>
+      </div>
+    <% else %>
+    <div class="welcome2 col-xs-6 col-md-4">
+    <p class="textrotator text"></p>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item2 active">
+                <div id="overlay2" class="overlay">
+
+                </div>
+                <div class="image"style="background-image: url('https://www.usnews.com/cmsmedia/8d/bc/e863c98a45c68edee4c81f7462b8/160711-studentinparis-stock.jpg');
+                background-size: cover;">
+
+                </div>
+
+            </div>
+            <!-- <div class="item2 itemx">
+              <div id="overlay" class="overlay">
+
+              </div>
+              <div class="image" style="background-image: url('http://media3.popsugar-assets.com/files/2015/04/20/787/n/1922398/27946c194339e5a2_shutterstock_170190752Rw4JES.fbshare/i/Oxford-University-Older-Than-Aztecs.jpg'); background-size: cover;">
+
+              </div>
+
+            </div> -->
           </div>
-    </div>
+        </div>
+  </div>
+    <% end %>
 
  </div>
 </div>
