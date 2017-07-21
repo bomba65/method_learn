@@ -6,8 +6,14 @@ body{
   background-color: #F1F1F1;
   font-family: 'PT Serif Caption', serif;
 }
+.dropdown-menu{
+  margin-top: 22px;
+}
 a:hover{
   color: white!important;
+}
+.user a{
+  border-radius: 20px;
 }
 a:active{
 color: white!important;

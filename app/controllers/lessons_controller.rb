@@ -5,7 +5,8 @@ class LessonsController < ApplicationController
   end
   
   def show
-    @lesson = Lesson.find(params[:id])
+    @theories = @lesson.theories
+    @tasks = @lesson.tasks
   end
 
   def new

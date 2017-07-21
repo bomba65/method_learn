@@ -24,8 +24,6 @@
       </ul>
       <% if(current_user.present?) %>
         <ul class="nav navbar-nav navbar-right">
-  
-                <li><a class="notifications" href="#" role="button"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a></li>
                 <li><div class="user">
                    <a type="button" class="profile dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://wallpaperscraft.com/image/paris_france_building_sky_street_108895_1920x1080.jpg" alt="..." class="img-circle"></a>
                    <ul class="dropdown-menu">
@@ -35,7 +33,7 @@
                      <li><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>
                    </ul>
                 </div></li>
-  
+
           </ul>
         <% else %>
           <ul class="nav navbar-nav navbar-right">

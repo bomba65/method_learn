@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :courses
   resources :lessons
   resources :parts
+  resources :theories
+  resources :tasks
   
   resources :user_to_courses, only: [:create, :destroy]
 
