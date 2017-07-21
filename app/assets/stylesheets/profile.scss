@@ -16,6 +16,7 @@
 .profilex h4 {
   font-weight: normal;
   font-size: 20px;
+ 
 }
 
 
@@ -71,7 +72,7 @@
   font-weight: normal;
   margin-left: 15px;
   margin-top: 20px;
-  color: #19353B
+  color: #19353B !important;
 }
 
 .coursesx .item .border {
@@ -103,7 +104,13 @@
 
 .bottomblue .raiting {
     display: inline-block;
-    float:right;
+    float: right;
     margin-top: 10px;
     margin-right: 10px;
+}
+
+
+.bottombluex {
+  
+  margin-top:55px;
 }

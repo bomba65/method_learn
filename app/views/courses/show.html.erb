@@ -1,9 +1,22 @@
-<h2><%= @course.name %></h2>
-<h3><%= @course.title %></h3>
+<div class="course-photo-container">
+    
+    <div class="course-photo" style="background:url(http://blog.efpsa.org/wp-content/uploads/2016/07/python-programming-in-psychology-analysis-data-expyriment.jpg);background-size:cover;">
+        <div class="course-info">
+            <h2 class="course-title"><%= @course.name %></h2>
+            <h3 class="course-title-x"><%= @course.title %></h3>
+            <a  class="btn btn-default" href="<%= root_path %>" role="button">Начать курс</a>
+        </div>
+    </div>
+</div>
+<div class="add-part-button"><%= link_to 'Добавить главу', new_part_path(:course_id => @course.id) %></div>
+<div class="course-sylabus-container">
+    
+    <h3 class="course-title">План курса</h3>
+    <% @parts.each do  |parts|%>
+        <%= link_to parts.name, parts, class:"parts-name" %>
+    <% end %>
+    <div class="clear"></div>
+</div>
 
-<% @parts.each do  |parts|%>
-        | <%= link_to parts.name, parts %>
-<% end %>
 
 
-<%= link_to 'Добавить главу', new_part_path(:course_id => @course.id) %>
