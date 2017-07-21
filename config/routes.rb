@@ -14,12 +14,10 @@ Rails.application.routes.draw do
 
   resources :courses
   resources :lessons
-<<<<<<< HEAD
-  
-=======
   resources :parts
+  
   resources :user_to_courses, only: [:create, :destroy]
->>>>>>> baee894058949c47f2bc6cb667e1544e615a78da
+
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   

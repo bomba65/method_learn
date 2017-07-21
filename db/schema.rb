@@ -82,11 +82,7 @@ ActiveRecord::Schema.define(version: 20170720120338) do
   create_table "user_to_courses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
-<<<<<<< HEAD
     t.integer  "progress"
-=======
-    t.integer  "process"
->>>>>>> da69a7b3f2746a8031af37dfd8f951b9a8363549
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
