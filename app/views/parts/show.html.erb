@@ -1,0 +1,8 @@
+<h2><%= @part.name %></h2>
+
+<% @lessons.each do  |lessons|%>
+        | <%= link_to lessons.name, lessons %>
+<% end %>
+
+
+<%= link_to 'Добавить урок', new_lesson_path(:part_id => @part.id) %>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :courses
   resources :lessons
+  resources :parts
+  resources :user_to_courses, only: [:create, :destroy]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
