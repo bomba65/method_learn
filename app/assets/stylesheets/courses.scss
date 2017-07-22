@@ -1,7 +1,7 @@
 .course1{
   color: #2FD3B0!important;
   text-align: center;
-} 
+}
 .block{
   margin: 0 60px 60px 15px;
   color: white;
@@ -31,15 +31,26 @@
 .course-title {
   margin: 10px;
   color: white !important;
-  
 }
-
+.course-sylabus-container h1{
+  color: #213e44!important;
+}
+.coursesx{
+  margin-bottom: 40px!important;
+}
 .course-title-x {
   margin: 10px;
   color: white !important;
-  
 }
-
+.coursesx .item{
+  margin-bottom: 24px!important;
+}
+.middle h4 :hover{
+  color:#2FD3B0!important;
+}
+.middle h4{
+  color:black!important;
+}
 .course-name {
   color: #315A63 !important;
 }
@@ -51,37 +62,60 @@
 .course-photo-container {
   padding:10px;
   text-align:center;
-  margin: 10px;
+  margin: -10px 10px 10px 10px!important;
   background:white;
   font-family: 'Lato', sans-serif;
 }
 
 .course-photo {
   height:400px;
+  margin-top:-10px;
 }
 .btn-default {
   border-radius:20px;
   padding: 5px 40px !important;
 }
-
+.course-photo-container #overlay{
+  height: 400px;
+  position: absolute;
+  top: 86px;
+  left: 20px;
+  z-index: 0;
+  width: 97%!important;
+}
+.course-sylabus-container p{
+  margin-top: 20px!important;
+  margin-left: 40px!important;
+  margin-right: 40px!important;
+  color: black!important;
+  font-size: 17px;
+}
 .course-info {
   position:relative;
-  top:120px;
+  top:160px;
+}
+.course-info a{
+  padding: 15px 110px 15px 110px!important;
+  border-radius: 60px;
+}
+.course-info h2{
+  font-size: 40px;
 }
 
 .course-sylabus-container {
   background:white;
   margin:10px;
-  color: #315A63 !important;
   padding:20px;
   text-align:center;
 }
 
-.course-sylabus-container .course-title {
-  color: #315A63 !important;
-  font-family: 'Lato', sans-serif;
-
+.course-sylabus-container h1{
+  color: #213e44!important;
 }
+.course-sylabus-container p{
+  color: #182e33!important;
+}
+
 
 .parts-name {
   color: #54A0AF !important;
@@ -92,27 +126,44 @@
 .parts-name:hover {
   color: #50A8BB !important;
   font-family: 'Lato', sans-serif;
-  
+
 }
 
 .add-part-button {
-  padding:3px 10px;
+  padding:5px 15px;
   border-radius:40px;
   display:inline-block;
-  float:right;
+  position: static;
+  top: 15px;
+  left: 200px!important;
   background: #50A8BB;
 }
 
 .add-new {
-
-
-  background:white;
+  background:transparent;
   margin:10px;
-  
   color:black !important;
-
   text-align:center;
+  margin-bottom: 150px!important;
+}
+.add-new2 {
+  background:transparent;
+  margin:80px auto!important;
+  color:black !important;
+  text-align:center;
+  margin-bottom: 150px!important;
+}
+.p{
+  color: black!important;
 }
 .sub_category_creating{
-  
+
+}
+.part-name{
+  margin-top: 10px;
+}
+.coursesx .item .desc p{
+  height: 60px;
+ margin-bottom:-20px;
+ overflow: hidden;
 }
