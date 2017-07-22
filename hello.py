@@ -1,2 +1,1 @@
-while(true):
-    print("loh")
+print("hello world")
