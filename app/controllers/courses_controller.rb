@@ -26,28 +26,22 @@ class CoursesController < ApplicationController
   
   def pythonsave
     @code = params[:code]
-    path = "hello.py"
-    content=@code
-    File.open(path, "w+") do |f|
-      f.write(content)
+    @value = `curl -sX POST api.hackerrank.com/checker/submission.json -d 'source=#{@code}&lang=5&testcases=["1"]&api_key=hackerrank|672467-1620|8e88fd60861080d13008936134465f63c03a5e67'`
+  
+   
+    respond_to do |format|
+      format.json { render json: @value }
     end
+    
   end
 
   def python
 
-    @value = `python hello.py`
 
-    if $? == 0
-      @comand = {"status":1, "output":@value};
-    else
-      @comand = {"status":2, "output":$?};
-    end
+    
 
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @comand }
-    end
+    
   end
 
   def rubysave
