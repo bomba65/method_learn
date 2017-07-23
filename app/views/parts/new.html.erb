@@ -1,15 +1,15 @@
-<div class="add-new">
-  
+<div class="add-new2">
+
   <%= form_for @part  do |s| %>
   <div class="sub_category_creating">
-    <%= s.label :name %><br>
+    <%= s.label :Название %><br>
     <%= s.text_field :name %>
   </div>
   <div class="sub_category_creating">
     <%= s.hidden_field :course_id, :value => params[:course_id] %>
   </div>
   <div class="sub_category_creating">
-    <%= s.submit "Create Part", class:"btn btn-default" %>
+    <%= s.submit "Создать главу", class:"btn btn-default" %>
   </div>
   <% end %>
 

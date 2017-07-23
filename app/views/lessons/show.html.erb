@@ -1,58 +1,63 @@
-<div class="lesson-name-block"><h2>Урок: <%= @lesson.name %></h2></div>
-
-
 <div class="lesson">
           <div class="col-md-2 taskpanel">
-            <h4>ТЕОРИЯ</h4>
-            <ul>
-                <% counter = 1%>
-            <% @theories.each do  |theory|%>
-                <li><%=counter%>. <%= theory.content %></li>
-                <% counter+=1%>
-                <% end %>
-                <% @theories.each do  |theory|%>
-                        <li><%=theory.video%></li>
-                        
-                <% end %>
-                
-        </ul>
-            
-            <hr>
-            <h4>ЗАДАЧИ</h4>
-            <ul>
-                <% counter = 1%>
-            <% @tasks.each do  |task|%>
-                <li><%=counter%>. <%= task.content %></li>
-                <% counter+=1%>
-                <% end %>
-                
-                
-        </ul>
-            
+            <div class="lesson-name-block"><h3><%= @lesson.name %></h3></div>
+            <div class="clear"></div>
+
+            <div class="taskpanel2">
+                <div class="part1">
+                  <h4>ТЕОРИЯ</h4>
+                  <ul>
+                      <% counter = 1%>
+                  <% @theories.each do  |theory|%>
+                      <li><%=counter%>. <%= theory.content %></li>
+                      <% counter+=1%>
+                      <% end %>
+                      <% @theories.each do  |theory|%>
+                              <li><%=theory.video%></li>
+
+                      <% end %>
+                </ul>
+                </div>
+                <hr>
+                <div class="part2">
+                  <h4>ЗАДАЧИ</h4>
+                  <ul>
+                      <% counter = 1%>
+                  <% @tasks.each do  |task|%>
+                      <li><%=counter%>. <%= task.content %></li>
+                      <% counter+=1%>
+                      <% end %>
+                   </ul>
+                </div>
+            </div>
 
 
           </div>
           <div class="col-md-8 console" >
-                
+
             <textarea class="my-code-area" rows="10" id="console"style="width: 100%">print("hello world")</textarea>
             <div id="console_output" >
-            
+
             </div>
-            
+
             <button type="button" class="btn btn-success" name="button" id="<%=Course.find(id=Part.find(id=@lesson.part_id).course_id).name.downcase %>"><%=Course.find(id=Part.find(id=@lesson.part_id).course_id).name.downcase %></button>
              <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
             <%= render "partials/console" %>
           </div>
-          
+
       </div>
 
+      <div class="tasks">
+        <h3>Задания</h3>
+        <% @tasks.each do  |task|%>
+                 <%= link_to task.id, task %>
+        <% end %>
+      </div>
 
-<%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
+      <div class="add-theory">
+      <%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
+      </div>
 
-<h3>Задания</h3>
-<% @tasks.each do  |task|%>
-        | <%= link_to task.id, task %>
-<% end %>
-
-
-<%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
+      <div class="add-tasks">
+        <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
+      </div>
