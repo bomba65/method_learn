@@ -10,11 +10,7 @@
             <% @courses.each do |course| %>
               <div class="item end">
                 <div class="top">
-                  <% if current_user.following?(params[:id]) %>
-                    <%= link_to "Unfollow", relationships_path(user_id: params[:id]), method: :delete, class: "btn btn-default" %>
-                  <% else %>
-                    <%= link_to "Follow", relationships_path(user_id: params[:id]), method: :post, class: "btn btn-default" %>
-                  <% end %>
+                  <a href="#">Подписаться</a>
                 </div>
                 <div class="middle">
                   <h4><%= link_to course.name, course, class:"course-name" %></h4>
