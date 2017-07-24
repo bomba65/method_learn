@@ -1,16 +1,19 @@
-<%= form_for @task  do |s| %>
-<div class="sub_category_creating">
-  <%= s.label :content %>
-  <%= s.text_field :content %>
+<div class="add-new">
+  <%= form_for @task  do |s| %>
+  <div class="sub_category_creating">
+    <%= s.label :Задание %><br>
+    <%= s.text_field :content %>
+  </div>
+  <div class="sub_category_creating videomrg">
+    <%= s.label :Ответ %><br>
+    <%= s.text_field :answer %>
+  </div>
+  <div class="sub_category_creating">
+    <%= s.hidden_field :lesson_id, :value => params[:lesson_id] %>
+  </div>
+  <div class="sub_category_creating">
+    <%= s.submit "Create Lesson", class:"btn btn-default btnex" %>
+  </div>
+  <% end %>
+
 </div>
-<div class="sub_category_creating">
-  <%= s.label :answer %>
-  <%= s.text_field :answer %>
-</div>
-<div class="sub_category_creating">
-  <%= s.hidden_field :lesson_id, :value => params[:lesson_id] %>
-</div>
-<div class="sub_category_creating">
-  <%= s.submit "Create Lesson" %>
-</div>
-<% end %>

@@ -14,25 +14,32 @@ $("#python").click(function(){
       type: "POST",
       url: "/pythonsave",
       data: {code:codex},
-    });
-
-  $.ajax({
-        type: "GET",
-        dataType: "json",
-        url: "/python",
-        success: function(data){
-          console.log(data);
-          if(data.status == 1){
-            console.log(data.output);
-            document.getElementById("console_output").innerHTML += "<p> > "+data.output+"</p>";
-          }else {
-            console.log(data.output.pid);
-            console.log(data.output.exitstatus);
-            document.getElementById("console_output").innerHTML += "<p class='error'> > ERORR: exit status: "+data.output.exitstatus+" pid: "+data.output.pid+"</p>";
-          }
+      success:function(data){
+        if(data.result.message == "Success"){
+            console.log(data);
+          document.getElementById("console_output").innerHTML += "<p> > "+data.result.stdout+"</p>";
+        }else {
+           console.log(data);
+            document.getElementById("console_output").innerHTML += "<p class='error'> > "+data.result.stderr+"</p>";
+        
         }
-
+      },
+        error:function(data){
+            console.log(data);
+            document.getElementById("console_output").innerHTML += "<p> > "+data.result.stdout+"</p>";
+        }
     });
+
+  // $.ajax({
+  //       type: "GET",
+  //       dataType: "json",
+  //       url: "/python",
+  //       success: function(data){
+  //         console.log(data);
+         
+  //       }
+
+  //   });
 
 
 });
@@ -47,23 +54,23 @@ $("#ruby").click(function(){
       data: {code:codex},
     });
 
-  $.ajax({
-        type: "GET",
-        dataType: "json",
-        url: "/ruby",
-        success: function(data){
-          console.log(data);
-          if(data.status == 1){
-            console.log(data.output);
-            document.getElementById("console_output").innerHTML += "<p> > "+data.output+"</p>";
-          }else {
-            console.log(data.output.pid);
-            console.log(data.output.exitstatus);
-            document.getElementById("console_output").innerHTML += "<p class='error'> > ERORR: exit status: "+data.output.exitstatus+" pid: "+data.output.pid+"</p>";
-          }
-        }
+  // $.ajax({
+  //       type: "GET",
+  //       dataType: "json",
+  //       url: "/ruby",
+  //       success: function(data){
+  //         console.log(data);
+  //         if(data.status == 1){
+  //           console.log(data.output);
+  //           document.getElementById("console_output").innerHTML += "<p> > "+data.output+"</p>";
+  //         }else {
+  //           console.log(data.output.pid);
+  //           console.log(data.output.exitstatus);
+  //           document.getElementById("console_output").innerHTML += "<p class='error'> > ERORR: exit status: "+data.output.exitstatus+" pid: "+data.output.pid+"</p>";
+  //         }
+  //       }
 
-    });
+  //   });
 
 
 });

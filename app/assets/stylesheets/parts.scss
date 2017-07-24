@@ -1,3 +1,38 @@
 // Place all the styles related to the Parts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//lessons/show.html.erb
+.part1{
+  height: 220px;
+  overflow-y: scroll!important;
+}
+.part2{
+  height: 220px;
+  overflow-y: scroll!important;
+}
+.taskpanel{
+  height: 450px;
+}
+.taskpanel2{
+  overflow-y: scroll!important;
+  height: 420px!important;
+}
+.part1 hr{
+  color: #2FD3B0!important;
+}
+.lesson-name-block {
+  padding:0px;
+  background: white;
+  text-align:center;
+  background: transparent!important;
+  margin-bottom: 10px!important;
+  margin-top: -20px;
+}
+.lesson{
+  margin: -10px 10px;
+}
+.clear{
+  background-color: #F1F1F1;;
+  height: 10px;
+  margin: 0 -10px;
+}
