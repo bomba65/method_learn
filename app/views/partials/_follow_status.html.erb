@@ -1,0 +1,5 @@
+<% if current_user.following?(object.id) %>
+  <%= render "partials/unfollow", object: object %>
+<% else %>
+  <%= render "partials/follow", object: object %>
+<% end %>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post "/pythonsave", to: "courses#pythonsave"
   get "/ruby", to: "courses#ruby"
   post "/rubysave", to: "courses#rubysave"
+  
+  delete "/user_to_courses", to: "user_to_courses#destroy"
 
   
   root 'static_pages#home'
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
   resources :theories
   resources :tasks
   
-  resources :user_to_courses, only: [:create, :destroy]
+  resources :user_to_courses, only: [:create]
 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
