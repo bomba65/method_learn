@@ -1,23 +1,27 @@
-
-<% if !user_signed_in? %>
-  <h2>'ídi nahui'</h2>
-<%end%>
 <% provide :title, "Courses" %>
+
+
+<div class="add-part-button"><%= link_to 'Добавить курс', new_course_path() %></div>
+
 
 <div class="container-fluid main">
       <div class="row">
-        <div class="coursesx lefted">
+        <div class="coursesx lgit efted">
             <% @courses.each do |course| %>
               <div class="item end">
                 <div class="top">
-                  <a href="#">Повторить</a>
+                  <% if !user_signed_in? %>
+                    <a href="#">Подробнее</a>
+                  <% else %>
+                    <a href="#">Начать</a>
+                  <%end%>
                 </div>
                 <div class="middle">
                   <h4><%= link_to course.name, course, class:"course-name" %></h4>
                 </div>
                 <div class="border"></div>
                 <div class="desc">
-                  <p><%=course.subtitle%></p>
+                  <p><%=course.description%></p>
                 </div>
                 <div class="bottomblue bottombluex">
                   <div class="raiting">
@@ -26,7 +30,7 @@
                     <%= image_tag("Star-filled.png")%>
                     <%= image_tag("Star-filled.png")%>
                     <%= image_tag("Star-unfilled.png")%>
-
+                    
                   </div>
                 </div>
 
@@ -36,3 +40,11 @@
       </div>
     </div>
 </div>
+
+
+
+
+
+
+
+

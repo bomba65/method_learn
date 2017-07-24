@@ -26,7 +26,8 @@ class CoursesController < ApplicationController
   
   def pythonsave
     @code = params[:code]
-    @value = `curl -sX POST api.hackerrank.com/checker/submission.json -d 'source=#{@code}&lang=5&testcases=["1"]&api_key=hackerrank|672467-1620|8e88fd60861080d13008936134465f63c03a5e67'`
+    @language = params[:language]
+    @value = `curl -sX POST api.hackerrank.com/checker/submission.json -d 'source=#{@code}&lang=#{@language}&testcases=["1"]&api_key=hackerrank|672467-1620|8e88fd60861080d13008936134465f63c03a5e67'`
   
    
     respond_to do |format|
@@ -35,46 +36,23 @@ class CoursesController < ApplicationController
     
   end
 
-  def python
+ 
 
+  
 
-    
-
-
-    
-  end
-
-  def rubysave
-    @code = params[:code]
-    path = "hello.rb"
-
-
-    content=@code
-    File.open(path, "w+") do |f|
-      f.write(content)
-    end
-  end
-
-  def ruby
-
-    @value = `ruby hello.rb`
-
-    if $? == 0
-      @comand = {"status":1, "output":@value};
-    else
-      @comand = {"status":2, "output":$?};
-    end
-
-
+  
+  def getlanguages
+    @value = `GET http://api.hackerrank.com/checker/languages.json`
+  
+   
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @comand }
+      format.json { render json: @value }
     end
   end
   
   private
   def course_params
-    params.require(:category).permit(:title, :active)
+    params.require(:course).permit(:title, :description ,:subtitle, :name, :language)
   end
   def set_course
     @course = Course.find(params[:id])

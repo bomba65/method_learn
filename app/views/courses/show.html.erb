@@ -11,7 +11,7 @@
               <%= image_tag("Star-unfilled.png")%>
               <%= image_tag("Star-unfilled.png")%>
               <%= image_tag("Star-filled.png")%>
-               <%= image_tag("Star-filled.png")%>
+              <%= image_tag("Star-filled.png")%>
 
             </div>
             <h3 class="course-title-x"><%= @course.title %></h3>
@@ -31,7 +31,7 @@
     <div class="add-part-button"><%= link_to 'Добавить главу', new_part_path(:course_id => @course.id) %></div>
     <div class="part-name">
       <% @parts.each do  |parts|%>
-          <%= link_to parts.name, parts, class:"parts-name" %>
+          <%= link_to parts.name, parts, class:"parts-name" %> <br>
       <% end %>
     </div>
     
