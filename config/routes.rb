@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post "/pythonsave", to: "courses#pythonsave"
   get "/ruby", to: "courses#ruby"
   post "/rubysave", to: "courses#rubysave"
-  
+
   
   root 'static_pages#home'
 
