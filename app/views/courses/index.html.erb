@@ -8,7 +8,6 @@
 <%end%>
 <% provide :title, "Courses" %>
 
-
   <div class="container-fluid main">
         <div class="row">
           <div class="category col-xs-6 col-sm-6 col-md-6">
@@ -17,6 +16,15 @@
               <li>iOS
                 <div class="squaredFour">
                     <input type="checkbox" value="None" id="squaredFour" name="check" checked />
+
+<div class="container-fluid main">
+      <div class="row">
+        <div class="coursesx lefted">
+            <% @courses.each do |course| %>
+              <div class="item end">
+                <div class="top">
+                  <a href="#">Подписаться</a>
+
                 </div>
               </li>
               <li>Python
