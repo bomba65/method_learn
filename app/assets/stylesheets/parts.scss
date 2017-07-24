@@ -3,15 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //lessons/show.html.erb
 .part1{
-  height: 220px;
+  height: 200px;
   overflow-y: scroll!important;
 }
 .part2{
-  height: 220px;
+  height: 250px;
   overflow-y: scroll!important;
 }
+.part2 h4{
+  margin-top: 0px;
+}
+.part1 h4{
+  margin-top: 20px!important;
+}
 .taskpanel{
-  height: 450px;
+  height: 476px;
 }
 .taskpanel2{
   overflow-y: scroll!important;
@@ -30,6 +36,9 @@
 }
 .lesson{
   margin: -10px 10px;
+}
+.console{
+  
 }
 .clear{
   background-color: #F1F1F1;;
