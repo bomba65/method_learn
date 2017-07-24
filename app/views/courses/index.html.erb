@@ -15,7 +15,9 @@
               <% @courses.each do |course| %>
                 <div class="item end">
                   <div class="top">
-                    <a href="#">Повторить</a>
+                    <div class="follow_status">
+                      <%= render "partials/follow_status", object: course %>
+                    </div>
                   </div>
                   <div class="middle">
                     <h4><%= link_to course.name, course, class:"course-name" %></h4>
