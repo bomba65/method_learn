@@ -1,9 +1,9 @@
 
 <% provide :title, "Courses" %>
 
-
-<div class="add-part-button"><%= link_to 'Добавить курс', new_course_path() %></div>
-
+<% if current_user.admin? %>
+  <div class="add-part-button"><%= link_to 'Добавить курс', new_course_path() %></div>
+<% end %>
 
 
 <div class="container-fluid main">

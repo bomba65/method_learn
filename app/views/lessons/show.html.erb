@@ -43,26 +43,31 @@
                 <div class="part1">
                   <h4>ТЕОРИЯ</h4>
                   <ul>
-                      <% counter = 1%>
-                  <% @theories.each do  |theory|%>
+                    <% counter = 1%>
+                    <% @theories.each do  |theory|%>
                       <li><%=counter%>. <%= theory.content %></li>
                       <% counter+=1%>
                       <% end %>
                       <% @theories.each do  |theory|%>
-                              <li><%=theory.video%></li>
-
+                      <li><%=theory.video%></li>
+                      <% if current_user.admin? %>
+                        <%= link_to "Edit", edit_theory_path(theory) %>
                       <% end %>
+                    <% end %>
                 </ul>
                 </div>
                 <hr>
                 <div class="part2">
                   <h4>ЗАДАЧИ</h4>
                   <ul>
-                      <% counter = 1%>
-                  <% @tasks.each do  |task|%>
+                    <% counter = 1%>
+                    <% @tasks.each do  |task|%>
                       <li><%=counter%>. <%= task.content %></li>
-                      <% counter+=1%>
+                      <% if current_user.admin? %>
+                        <%= link_to "Edit", edit_task_path(task) %>
                       <% end %>
+                      <% counter+=1%>
+                    <% end %>
                    </ul>
                 </div>
             </div>
@@ -91,11 +96,13 @@
                  <%= link_to task.id, task %>
         <% end %>
       </div>
-
-      <div class="add-theory">
-      <%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
-      </div>
-
-      <div class="add-tasks">
-        <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
-      </div>
+      
+      <% if current_user.admin? %>
+        <div class="add-theory">
+          <%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
+        </div>
+  
+        <div class="add-tasks">
+          <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
+        </div>  
+      <% end %>

@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_filter :authorize_admin
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   def index
     @tasks = Task.all
@@ -15,9 +16,20 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      redirect_to @task
+      redirect_to Lesson.find(@task.lesson_id)
     else
       render "new"
+    end
+  end
+  
+  def edit
+  end
+
+  def update
+    if @task.update_attributes task_params
+      redirect_to Lesson.find(@task.lesson_id)
+    else
+      render "edit"
     end
   end
   

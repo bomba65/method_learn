@@ -2,13 +2,16 @@
   <div class="add-new3">
     <h3><%= @part.name %></h3>
 
-       <% @lessons.each do  |lessons|%>
-              <p class="orange"><%= link_to lessons.name, lessons, class:"orange" %></p>
+       <% @lessons.each do  |lesson|%>
+          <p class="orange"><%= link_to lesson.name, lesson, class:"orange" %></p>
+          <% if current_user.admin? %>
+            <%= link_to "Edit", edit_lesson_path(lesson) %>
+          <% end %>
        <% end %>
-
-      <div class="sub_category_creating">
+      
+      <% if current_user.admin? %>
         <%= link_to 'Добавить урок', new_lesson_path(:part_id => @part.id), class: "btn btn-default" %>
-      </div>
+      <% end %>
 
 
 
