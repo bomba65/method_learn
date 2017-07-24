@@ -1,3 +1,39 @@
+<script>
+ 
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "/getlanguages",
+        success: function(data){
+            // console.log(data);
+            var lang = []; // create an empty array
+
+            
+            
+             for(var key in data.languages.codes) {
+              
+                lang.push({
+                    key:   data.languages.codes[key],
+                    value: data.languages.names[key]
+                });
+             }
+             
+            for(var i in lang) {
+              var dict = lang[i].key;
+              if($("#button"+lang[i].key).length){
+                  
+                  $("#button"+lang[i].key).html(lang[i].value);
+                  
+              }
+              
+            }
+              
+            
+        }
+    }); 
+    
+</script>
+
 <div class="lesson">
           <div class="col-md-2 taskpanel">
             <div class="lesson-name-block"><h3><%= @lesson.name %></h3></div>
@@ -39,9 +75,11 @@
             <div id="console_output" >
 
             </div>
-
-            <button type="button" class="btn btn-success" name="button" id="<%=Course.find(id=Part.find(id=@lesson.part_id).course_id).name.downcase %>"><%=Course.find(id=Part.find(id=@lesson.part_id).course_id).name.downcase %></button>
-             <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
+       
+              <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=Part.find(id=@lesson.part_id)).language %>">
+                </button>
+            
+              <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
             <%= render "partials/console" %>
           </div>
 

@@ -1,27 +1,37 @@
-
+<input id="whichlang" type="hidden" value="<%= Course.find(id=Part.find(id=@lesson.part_id)).language %>"></input>
 
 <script type="text/javascript">
 $("#clear").click(function(){
   document.getElementById("console_output").innerHTML = "";
 });
+var language_code = $("#whichlang").val();
 
-
-$("#python").click(function(){
-
+$("#button"+ language_code ).click(function(){
+  
   codex = document.getElementById('console').value;
 
   $.ajax({
       type: "POST",
       url: "/pythonsave",
-      data: {code:codex},
+      data: {
+        code:codex,
+        language:language_code
+        
+      },
       success:function(data){
         if(data.result.message == "Success"){
             console.log(data);
-          document.getElementById("console_output").innerHTML += "<p> > "+data.result.stdout+"</p>";
+            document.getElementById("console_output").innerHTML += "<p> > "+data.result.stdout+"</p>";
         }else {
-           console.log(data);
-            document.getElementById("console_output").innerHTML += "<p class='error'> > "+data.result.stderr+"</p>";
+             console.log(data);
+             if(data.result.compilemessage == ""){
+               document.getElementById("console_output").innerHTML += "<p class='error'> > "+data.result.stderr+"</p>";
+      
+             }else {
+               document.getElementById("console_output").innerHTML += "<p class='error'> > "+data.result.compilemessage+"</p>";
         
+             }
+            
         }
       },
         error:function(data){
@@ -29,48 +39,6 @@ $("#python").click(function(){
             document.getElementById("console_output").innerHTML += "<p> > "+data.result.stdout+"</p>";
         }
     });
-
-  // $.ajax({
-  //       type: "GET",
-  //       dataType: "json",
-  //       url: "/python",
-  //       success: function(data){
-  //         console.log(data);
-         
-  //       }
-
-  //   });
-
-
-});
-
-$("#ruby").click(function(){
-
-  codex = document.getElementById('console').value;
-
-  $.ajax({
-      type: "POST",
-      url: "/rubysave",
-      data: {code:codex},
-    });
-
-  // $.ajax({
-  //       type: "GET",
-  //       dataType: "json",
-  //       url: "/ruby",
-  //       success: function(data){
-  //         console.log(data);
-  //         if(data.status == 1){
-  //           console.log(data.output);
-  //           document.getElementById("console_output").innerHTML += "<p> > "+data.output+"</p>";
-  //         }else {
-  //           console.log(data.output.pid);
-  //           console.log(data.output.exitstatus);
-  //           document.getElementById("console_output").innerHTML += "<p class='error'> > ERORR: exit status: "+data.output.exitstatus+" pid: "+data.output.pid+"</p>";
-  //         }
-  //       }
-
-  //   });
 
 
 });

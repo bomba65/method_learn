@@ -1,16 +1,19 @@
-<div class="add-new2">
+<body>
+  <div class="add-new2">
 
-  <%= form_for @part  do |s| %>
-  <div class="sub_category_creating">
-    <%= s.label :Название %><br>
-    <%= s.text_field :name %>
-  </div>
-  <div class="sub_category_creating">
-    <%= s.hidden_field :course_id, :value => params[:course_id] %>
-  </div>
-  <div class="sub_category_creating">
-    <%= s.submit "Создать главу", class:"btn btn-default" %>
-  </div>
-  <% end %>
+    <%= form_for @part  do |s| %>
+    <div class="sub_category_creating">
+      <%= s.label :Название %><br>
+      <%= s.text_field :name %>
+    </div>
+    <div class="sub_category_creating">
+      <%= s.hidden_field :course_id, :value => params[:course_id] %>
+    </div>
+    <div class="sub_category_creating">
+      <%= s.submit "Создать главу", class:"btn btn-default" %>
+    </div>
+    <% end %>
 
-</div>
+  </div>
+  
+</body>

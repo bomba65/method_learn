@@ -1,15 +1,18 @@
-<div class="add-new">
-  <%= form_for @lesson  do |s| %>
-  <div class="sub_category_creating">
-    <%= s.label :Название %><br>
-    <%= s.text_field :name %>
-  </div>
-  <div class="sub_category_creating">
-    <%= s.hidden_field :part_id, :value => params[:part_id] %>
-  </div>
-  <div class="sub_category_creating">
-    <%= s.submit "Создать урок", class:"btn btn-default"  %>
-  </div>
-  <% end %>
+<body>
+  <div class="add-new">
+    <%= form_for @lesson  do |s| %>
+    <div class="sub_category_creating">
+      <%= s.label :Название %><br>
+      <%= s.text_field :name %>
+    </div>
+    <div class="sub_category_creating">
+      <%= s.hidden_field :part_id, :value => params[:part_id] %>
+    </div>
+    <div class="sub_category_creating">
+      <%= s.submit "Создать урок", class:"btn btn-default"  %>
+    </div>
+    <% end %>
 
-</div>
+  </div>
+  
+</body>

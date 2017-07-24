@@ -8,9 +8,13 @@ Rails.application.routes.draw do
   post "/pythonsave", to: "courses#pythonsave"
   get "/ruby", to: "courses#ruby"
   post "/rubysave", to: "courses#rubysave"
+<<<<<<< HEAD
   
   delete "/user_to_courses", to: "user_to_courses#destroy"
 
+=======
+  get "/getlanguages", to: "courses#getlanguages"
+>>>>>>> 0eda28cd9ebb24e4f62d8d39f998165ee907501e
   
   root 'static_pages#home'
 

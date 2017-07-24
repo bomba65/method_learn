@@ -22,6 +22,15 @@ class LessonsController < ApplicationController
     end
   end
   
+  def getlanguages
+    @value = `GET http://api.hackerrank.com/checker/languages.json`
+  
+   
+    respond_to do |format|
+      format.json { render json: @value }
+    end
+  end
+  
   private
   def lesson_params
     params.require(:lesson).permit(:name, :part_id, :lesson_order)

@@ -1,0 +1,55 @@
+
+<% provide :title, "Courses" %>
+
+
+<div class="add-part-button"><%= link_to 'Добавить курс', new_course_path() %></div>
+
+
+
+<div class="container-fluid main">
+  
+      <div class="row">
+      
+          <div class="coursesx lefted">
+            
+              <% @courses.each do |course| %>
+                <div class="item end">
+                  <div class="top">
+                    <a href="#">Повторить</a>
+                  </div>
+                  <div class="middle">
+                    <h4><%= link_to course.name, course, class:"course-name" %></h4>
+                  </div>
+                  <div class="border"></div>
+                  <div class="desc">
+                    <p><%=course.subtitle%></p>
+                  </div>
+                  <div class="bottomblue bottombluex">
+                    <div class="raiting">
+                     <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-unfilled.png")%>
+
+                    </div>
+                  </div>
+
+                </div>
+              <% end %>
+              
+          </div>
+       
+      </div>
+      
+</div>
+
+
+
+
+
+
+
+
+
+

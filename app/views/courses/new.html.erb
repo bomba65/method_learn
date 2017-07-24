@@ -1,0 +1,68 @@
+<script>
+    
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "/getlanguages",
+        success: function(data){
+            console.log(data);
+            
+            html = "";
+            lang = [];
+            
+            for(var key in data.languages.codes) {
+                lang.push({
+                    key:   data.languages.codes[key],
+                    value: data.languages.names[key]
+                });
+            }
+            
+            
+            
+            for(var key in lang) {
+                html += "<option value=" + lang[key].key  + ">" +lang[key].value + "</option>"
+            }
+            
+            document.getElementById("course_language").innerHTML = html;
+            }
+        
+    }); 
+    
+</script>
+
+<div class="add-new">
+  <%= form_for @course  do |s| %>
+  <div class="sub_category_creating">
+    <%= s.label :Название %><br>
+    <%= s.text_field :name %>
+  </div>
+  <div class="sub_category_creating">
+    <%= s.label :Заголовок %><br>
+    <%= s.text_field :title %>
+  </div>
+  <div class="sub_category_creating">
+    <%= s.label :Подзаголовок %><br>
+    <%= s.text_field :subtitle %>
+  </div>
+  <div class="sub_category_creating">
+    <%= s.label :Описание %><br>
+    <%= s.text_field :description %>
+  </div>
+  
+  <div class="sub_category_creating">
+    <%= s.label :Язык %><br>
+    <%= s.select(:language,:id => "course_language") do %>
+     
+    <% end %>
+  </div>
+   
+   
+  <div class="sub_category_creating">
+    <%= s.hidden_field :part_id, :value => params[:part_id] %>
+  </div>
+  <div class="sub_category_creating">
+    <%= s.submit "Создать урок", class:"btn btn-default"  %>
+  </div>
+  <% end %>
+
+</div>
