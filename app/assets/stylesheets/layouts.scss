@@ -8,7 +8,12 @@ footer{
 }
 body{
   background-color: #F1F1F1;
-  font-family: 'PT Serif Caption', serif;
+}
+footer, nav{
+  font-family: 'Lato', sans-serif;
+}
+.dropdown-menu{
+  font-family: 'Lato', sans-serif!important;
 }
 .bottomp{
   color: white!important;
