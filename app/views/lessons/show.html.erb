@@ -90,10 +90,9 @@
 
             </div>
        
-              <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=Part.find(id=@lesson.part_id)).language %>">
-                </button>
+            <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=Part.find(id=@lesson.part_id).course_id).language %>"></button>
             
-              <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
+            <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
             <%= render "partials/console" %>
           </div>
 

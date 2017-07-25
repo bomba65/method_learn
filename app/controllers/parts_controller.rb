@@ -33,6 +33,12 @@ class PartsController < ApplicationController
     end
   end
   
+  def destroy
+    @part.destroy
+    flash[:success] = "Part deleted!"
+    redirect_to Course.find(@part.course_id)
+  end
+  
   private
   def part_params
     params.require(:part).permit(:name, :course_id, :part_order)

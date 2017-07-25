@@ -39,6 +39,8 @@
                       <%= image_tag("Star-unfilled.png")%>
 
                     </div>
+                    <%= link_to "Edit", edit_course_path(course) %>
+                    <%= link_to "Delete", course, method: :delete, data:	{confirm: "You sure?"} %>
                   </div>
 
                 </div>

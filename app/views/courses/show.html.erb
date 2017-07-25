@@ -37,6 +37,7 @@
             <%= link_to part.name, part, class:"parts-name" %> 
             <% if current_user.admin? %>
               <%= link_to "Edit", edit_part_path(part), class:"parts-name-edit" %>
+              <%= link_to "Delete", part, method: :delete, data:	{confirm: "You sure?"} %>
             <% end %>
             </li> 
           </ul>

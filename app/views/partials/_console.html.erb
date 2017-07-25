@@ -1,4 +1,4 @@
-<input id="whichlang" type="hidden" value="<%= Course.find(id=Part.find(id=@lesson.part_id)).language %>"></input>
+<input id="whichlang" type="hidden" value="<%= Course.find(id=Part.find(id=@lesson.part_id).course_id).language %>"></input>
 <input class="answersx" type="hidden" value="<%=Task.where(lesson_id = @lesson.id ).pluck(:answer).each.to_json%>"></input>
 
 
