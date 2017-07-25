@@ -27,13 +27,13 @@ label .checkbox{
   margin-top: 5px!important;
   margin-left: 1%;
 }
-.glyphicon-envelope, .glyphicon-lock{
-  font-size: 18px;
-}
-
 .div{
   margin-top: 20px;
   color: #606060;
+}
+.div label{
+  margin-left: 5px;
+  margin-top: 5px;
 }
 .input-group{
   margin-top: 30px!important;
@@ -47,9 +47,31 @@ label .checkbox{
   background-color: #E7E7E7;
   border-style: none;
 }
+.lock{
+  padding: 3px 3px!important;
+}
+.email{
+  padding: 3px auto!important;
+}
+.form-group{
+  padding-left:5px!important;
+  padding-right:5px!important;
+}
+// .form-group :hover{
+//   background: #eb8b47;
+// }
+.checkbox{
+  padding-left: 5px!important;
+}
 .form-control{
-  background-color: #D8D8D8;
+  background-color: #d8d8d8;
   border-style: none;
+  font-size: 15px;
+  padding-top:10px;
+  padding-bottom: 10px;
+}
+.checkbox label{
+  border-radius: 0px!important;
 }
 #overlay{
   background-color: rgba(25, 53, 59, 0.6);
@@ -89,10 +111,12 @@ label .checkbox{
   margin-left: 1%;
 }
 .submit .btn-default{
+  font-family: 'Lato', sans-serif!important;
+  border-radius: 6px!important;
   position: absolute;
   top: 270px;
-  left: 12px;
-  width: 90%;
+  left: 16px;
+  width: 88%;
   padding: 10px 0 10px 0!important;
 }
 .navbar-right .btn-default{
@@ -131,9 +155,65 @@ width: 100%!important;
   z-index: 2;
   font-size: 30px;
 }
-// .itemx{
-//   height: 55vh!important;
-// }
+//checkbox only
+.styled-checkbox {
+  position: absolute; // take it out of document flow
+  opacity: 0; // hide it
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // Box.
+  & + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 15px;
+    height: 15px;
+    background: #d8d8d8;
+  }
+
+  // Box hover
+  &:hover + label:before {
+    background: #eb8b47;
+  }
+
+  // Box focus
+  &:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+  }
+
+  // Box checked
+  &:checked + label:before {
+    background: #eb8b47;
+  }
+// Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 9px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow:
+      2px 0 0 white,
+      4px 0 0 white,
+      4px -2px 0 white,
+      4px -4px 0 white,
+      4px -6px 0 white,
+      4px -8px 0 white;
+    transform: rotate(45deg);
+  }
+}
+.mapping{
+  margin-top: 16px!important;
+}
+//checkbox only
 @media only screen and (max-width: 1280px){
  .login{
  height: 55vh;

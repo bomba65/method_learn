@@ -3,7 +3,7 @@
   <div class="div">
     <div class="form-group">
       <div class="input-group">
-          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+          <span class="input-group-addon" id="basic-addon1"><span class="email"><%= image_tag("email.svg", :alt => "Method Coding School", :height => 17) %></span></span>
           <%= f.email_field :email, autofocus: true, type: "text", class: "form-control",id: "exampleInputEmail1", placeholder: "Почтовый адрес"%>
 
        <!-- <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1"> -->
@@ -13,24 +13,23 @@
 
     <div class="form-group">
       <div class="input-group ig">
-          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+          <span class="input-group-addon" id="basic-addon1"><span class="lock"><%= image_tag("2.svg", :alt => "Method Coding School", :height => 20) %></span></span>
           <%= f.password_field :password, type: "password",autocomplete: "off", class: "form-control", id: "exampleInputPassword1", placeholder: "Пароль" %>
 
 
      </div>
 
+   </div>
+    <div class="mapping">
+      <% if devise_mapping.rememberable? -%>
+      <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+      <label style="font-family: 'Lato', sans-serif!important; font-size: 14px; font-weight: normal;"for="styled-checkbox-1"> Запомнить пароль</label>
+      <% end -%>
     </div>
 
-    <% if devise_mapping.rememberable? -%>
-      <div class="checkbox">
-        <label>
-          <%= f.check_box :remember_me, class: "checkbox" %> Запомнить пароль
-        </label>
-      </div>
-    <% end -%>
 
     <div class="submit">
-      <%= f.submit "Войти в систему", class: "btn btn-default submitx another" %>
+      <%= f.submit "ВОЙТИ В СИСТЕМУ", class: "btn btn-default submitx another" %>
     </div>
     <% end %>
   </div>
