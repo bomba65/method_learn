@@ -12,6 +12,10 @@ body{
 footer, nav{
   font-family: 'Lato', sans-serif;
 }
+.user a{
+  border-radius: 20px!important;
+  padding-left: -100%!important;
+}
 .dropdown-menu{
   font-family: 'Lato', sans-serif!important;
 }
@@ -116,6 +120,7 @@ margin-left: -36px;
   color: white !important;
   border: none !important;
 }
+
 .btn-default a {
   margin: 0px;
   padding: 0px;
@@ -152,4 +157,23 @@ margin-left: -36px;
     margin-left: -10px;
     margin-top: 50px;
   }
+  .navbar-toggle{
+    text-align: center;
+  }
+  .user a{
+    text-align: center!important;
+    background-color: transparent!important;
+  }
+  .navbar-collapse{
+    ul li{
+      text-align: center!important;
+    }
+  }
+  .user ul li{
+  margin-top: 10px!important;
+  }
+  .nav .text{
+    margin-top:-10px;
+  }
+
 }
