@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_filter :authorize_admin, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_course, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -8,9 +9,11 @@ class CoursesController < ApplicationController
   def show
     @parts = @course.parts
   end
+  
   def new
     @course = Course.new
   end
+  
   def create
     @course = Course.new(course_params)
     if(@course.save)
@@ -19,8 +22,8 @@ class CoursesController < ApplicationController
       render :new
     end
   end
+  
   def console
-    
     @language = "ruby"
   end
   

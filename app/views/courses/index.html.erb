@@ -1,21 +1,23 @@
 
 <% provide :title, "Courses" %>
 
-
-<div class="add-part-button"><%= link_to 'Добавить курс', new_course_path() %></div>
-
+<% if current_user.admin? %>
+  <div class="add-part-button"><%= link_to 'Добавить курс', new_course_path() %></div>
+<% end %>
 
 
 <div class="container-fluid main">
-  
+
       <div class="row">
-      
+
           <div class="coursesx lefted">
-            
+
               <% @courses.each do |course| %>
                 <div class="item end">
                   <div class="top">
-                    <a href="#">Повторить</a>
+                    <div class="follow_status">
+                      <%= render "partials/follow_status", object: course %>
+                    </div>
                   </div>
                   <div class="middle">
                     <h4><%= link_to course.name, course, class:"course-name" %></h4>
@@ -25,6 +27,10 @@
                     <p><%=course.subtitle%></p>
                   </div>
                   <div class="bottomblue bottombluex">
+
+                      
+
+
                     <div class="raiting">
                      <%= image_tag("Star-filled.png")%>
                       <%= image_tag("Star-filled.png")%>
@@ -37,19 +43,9 @@
 
                 </div>
               <% end %>
-              
+
           </div>
-       
+
       </div>
-      
+
 </div>
-
-
-
-
-
-
-
-
-
-

@@ -51,25 +51,32 @@
                   <h4>ТЕОРИЯ</h4>
                   <ul>
                     <% counter = 1%>
-                    <% @theories.each do |theory|%>
-                        <li><%=counter%>. <%= theory.content %></li>
-                        <% counter+=1%>
+                    <% @theories.each do  |theory|%>
+                      <li><%=counter%>. <%= theory.content %></li>
+                      <% counter+=1%>
+                      <% end %>
+                      <% @theories.each do  |theory|%>
+                      <li><%=theory.video%></li>
+                      <% if current_user.admin? %>
+                        <%= link_to "Edit", edit_theory_path(theory) %>
+                        <%= link_to "Delete", theory, method: :delete, data:	{confirm: "You sure?"} %>
+                      <% end %>
                     <% end %>
-                    
-                    <% @theories.each do |theory|%>
-                        <li><%=theory.video.html_safe%></li>
-                    <% end %>
-                  </ul>
+                </ul>
                 </div>
                 <hr>
                 <div class="part2">
                   <h4>ЗАДАЧИ</h4>
                   <ul>
-                      <% counter = 1%>
-                  <% @tasks.each do  |task|%>
+                    <% counter = 1%>
+                    <% @tasks.each do  |task|%>
                       <li><%=counter%>. <%= task.content %></li>
-                      <% counter+=1%>
+                      <% if current_user.admin? %>
+                        <%= link_to "Edit", edit_task_path(task) %>
+                        <%= link_to "Delete", task, method: :delete, data:	{confirm: "You sure?"} %>
                       <% end %>
+                      <% counter+=1%>
+                    <% end %>
                    </ul>
                 </div>
             </div>

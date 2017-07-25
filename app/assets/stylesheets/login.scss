@@ -16,10 +16,40 @@
   top: 0;
   z-index: 1;
 }
-.form-control{
-  input[type=text]:focus {
-   border: 3px solid #555;
+.checkbox{
+  margin-top: 25px;
 }
+label .checkbox{
+  border-radius: 0!important;
+  border-style: none!important;
+}
+.another{
+  margin-top: 5px!important;
+  margin-left: 1%;
+}
+.glyphicon-envelope, .glyphicon-lock{
+  font-size: 18px;
+}
+
+.div{
+  margin-top: 20px;
+  color: #606060;
+}
+.input-group{
+  margin-top: 30px!important;
+  margin-bottom: -5px!important;
+}
+.form-control, .input-group-addon{
+  border-radius: 0px!important;
+  color: #606060!important;
+}
+.input-group-addon{
+  background-color: #E7E7E7;
+  border-style: none;
+}
+.form-control{
+  background-color: #D8D8D8;
+  border-style: none;
 }
 #overlay{
   background-color: rgba(25, 53, 59, 0.6);
@@ -42,7 +72,7 @@
   color: #606060;
   font-size: 22px;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 15%;
 }
 .welcome{
   width: 64%;

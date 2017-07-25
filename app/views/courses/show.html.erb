@@ -1,4 +1,3 @@
-<body>
 <div class="course-photo-container">
     <div id="overlay" class="overlay">
 
@@ -28,12 +27,16 @@
 <div class="course-sylabus-container">
 
     <h1 class="course-title">План курса</h1>
-    <div class="add-part-button"><%= link_to 'Добавить главу', new_part_path(:course_id => @course.id) %></div>
+    <% if current_user.admin? %>
+      <div class="add-part-button"><%= link_to 'Добавить главу', new_part_path(:course_id => @course.id) %></div>
+    <% end %>
     <div class="part-name">
-      <% @parts.each do  |parts|%>
-          <%= link_to parts.name, parts, class:"parts-name" %> <br>
+      <% @parts.each do  |part|%>
+          <%= link_to part.name, part, class:"parts-name" %> <br>
+          <% if current_user.admin? %>
+            <%= link_to "Edit", edit_part_path(part) %>
+          <% end %>
       <% end %>
     </div>
     
 </div>
-</body>

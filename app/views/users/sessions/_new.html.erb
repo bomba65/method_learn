@@ -1,28 +1,41 @@
 <body>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="div">
     <div class="form-group">
-      <!-- <label for="exampleInputEmail1">Электронная почта</label> -->
-      <%= f.email_field :email, autofocus: true, class: "form-control", id: "exampleInputEmail1", placeholder: "Почтовый адрес"%>
+      <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+          <%= f.email_field :email, autofocus: true, type: "text", class: "form-control",id: "exampleInputEmail1", placeholder: "Почтовый адрес"%>
+
+       <!-- <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1"> -->
+     </div>
+
     </div>
 
     <div class="form-group">
-      <!-- <label for="exampleInputPassword1">Пароль</label> -->
-      <%= f.password_field :password, autocomplete: "off", class: "form-control", id: "exampleInputPassword1", placeholder: "Пароль" %>
+      <div class="input-group ig">
+          <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+          <%= f.password_field :password, type: "password",autocomplete: "off", class: "form-control", id: "exampleInputPassword1", placeholder: "Пароль" %>
+
+
+     </div>
+
     </div>
 
     <% if devise_mapping.rememberable? -%>
       <div class="checkbox">
         <label>
-          <%= f.check_box :remember_me %> Запомнить меня
+          <%= f.check_box :remember_me, class: "checkbox" %> Запомнить пароль
         </label>
       </div>
     <% end -%>
 
     <div class="submit">
-      <%= f.submit "Войти в систему", class: "btn btn-default submitx" %>
+      <%= f.submit "Войти в систему", class: "btn btn-default submitx another" %>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 
-  <!--<#%= render "users/shared/links" %>-->
+
+
 
 </body>

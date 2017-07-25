@@ -1,0 +1,13 @@
+<% if @theory.errors.any? %>
+  <ul>
+  <% @theory.errors.full_messages.each do |m| %>
+    <li><%= m %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @theory do |f| %>
+  <%= f.text_field :content %>
+  <%= f.text_field :video %>
+  <%= f.submit "Edit" %>
+<% end %>

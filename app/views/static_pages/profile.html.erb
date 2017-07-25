@@ -1,77 +1,88 @@
-<body>
-  <div class="profilex">
 
-        <img class="avatarx" src="https://pp.userapi.com/c624427/v624427010/37e6d/HfKQNjgSBwo.jpg" width="100px" height="100px"alt="">
-        <h4>Шаяхметов Руслан</h4>
-        <i>Алматы</i>
-      </div>
+<div class="profilex">
 
-      <div class="courses-title">
-        <h4>Курсы которые я прохожу</h4>
-      </div>
+  <img class="avatarx" src="https://pp.userapi.com/c624427/v624427010/37e6d/HfKQNjgSBwo.jpg" width="100px" height="100px"alt="">
+  <h4>Шаяхметов Руслан</h4>
+  <i>Алматы</i>
+</div>
 
-      <div class="coursesx">
+<div class="courses-title">
+  <h4>Курсы которые я прохожу</h4>
+</div>
 
+<div class="coursesx">
+  <div class="container-fluid main">
 
+        <div class="row">
 
-
-        <div class="item">
-          <div class="top">
-            <a href="#">Продолжить</a>
-          </div>
-          <div class="middle">
-            <h4>iOS DEVELOPMENT</h4>
-          </div>
-          <div class="border"></div>
-          <div class="desc">
-            <p>Основы iOS программирования для новичков. Базовые знания языка и UI элементов</p>
-          </div>
-          <div class="bottomblue">
-            <div class="raiting">
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-unfilled.png")%>
-            </div>
-          </div>
-        </div>
+            <div class="coursesx lefted">
 
 
-      </div>
-      <div class="clear">
+                  <div class="item end">
+                    <div class="top">
+                      <div class="follow_status">
+                        <%= render "partials/follow_status", object: course %>
+                      </div>
+                    </div>
+                    <div class="middle">
+                      <h4><%= link_to course.name, course, class:"course-name" %></h4>
+                    </div>
+                    <div class="border"></div>
+                    <div class="desc">
+                      <p><%=course.subtitle%></p>
+                    </div>
+                    <div class="bottomblue bottombluex">
 
-      </div>
+                      <p>20%</p>
 
-      <div class="courses-title">
-        <h4>Курсы которые я прошел</h4>
-      </div>
 
-      <div class="coursesx">
+                      <div class="raiting">
+                       <%= image_tag("Star-filled.png")%>
+                        <%= image_tag("Star-filled.png")%>
+                        <%= image_tag("Star-filled.png")%>
+                        <%= image_tag("Star-filled.png")%>
+                        <%= image_tag("Star-unfilled.png")%>
 
-        <div class="item end">
-          <div class="top">
-            <a href="#">Повторить</a>
-          </div>
-          <div class="middle">
-            <h4>iOS DEVELOPMENT</h4>
-          </div>
-          <div class="border"></div>
-          <div class="desc">
-            <p>Основы iOS программирования для новичков. Базовые знания языка и UI элементов</p>
-          </div>
-          <div class="bottomblue">
-            <div class="raiting">
-             <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-unfilled.png")%>
+                      </div>
+                    </div>
+
+                  </div>
+
 
             </div>
-          </div>
-        </div>
+
+<div class="clear">
+
+</div>
+
+
+<div class="clear"></div>
+
+<div class="courses-title">
+  <h4>Курсы которые я прошел</h4>
+</div>
+
+<div class="coursesx">
+
+  <div class="item end">
+    <div class="top">
+      <a href="#">Повторить</a>
+    </div>
+    <div class="middle">
+      <h4>iOS DEVELOPMENT</h4>
+    </div>
+    <div class="border"></div>
+    <div class="desc">
+      <p>Основы iOS программирования для новичков. Базовые знания языка и UI элементов</p>
+    </div>
+    <div class="bottomblue">
+      <div class="raiting">
+       <%= image_tag("Star-filled.png")%>
+        <%= image_tag("Star-filled.png")%>
+        <%= image_tag("Star-filled.png")%>
+        <%= image_tag("Star-filled.png")%>
+        <%= image_tag("Star-unfilled.png")%>
 
       </div>
-  
-</body>
+    </div>
+  </body>
