@@ -11,4 +11,14 @@ class ApplicationController < ActionController::Base
     stored_location_for(resource) || root_path
   end
   
+  def authorize_admin
+    redirect_to root_path, status: 401 unless current_user.admin
+    #redirects to previous page
+  end
+  
+  def authorize_user
+    redirect_to root_path, status: 401 unless current_user.present?
+    #redirects to previous page
+  end
+  
 end
