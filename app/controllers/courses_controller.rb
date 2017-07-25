@@ -30,8 +30,10 @@ class CoursesController < ApplicationController
   def pythonsave
     @code = params[:code]
     @language = params[:language]
+    @tasks = params[:tasks]
+    
     @value = `curl -sX POST api.hackerrank.com/checker/submission.json -d 'source=#{@code}&lang=#{@language}&testcases=["1"]&api_key=hackerrank|672467-1620|8e88fd60861080d13008936134465f63c03a5e67'`
-  
+    
    
     respond_to do |format|
       format.json { render json: @value }

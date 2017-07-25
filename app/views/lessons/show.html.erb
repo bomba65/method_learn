@@ -33,6 +33,13 @@
     }); 
     
 </script>
+ <div class="add-part-button">
+<%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
+</div>
+
+<div class="add-part-button">
+  <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
+</div>
 
 <div class="lesson">
           <div class="col-md-2 taskpanel">
@@ -92,19 +99,6 @@
 
       </div>
 
-      <div class="tasks">
-        <h3>Задания</h3>
-        <% @tasks.each do  |task|%>
-                 <%= link_to task.id, task %>
-        <% end %>
-      </div>
-      
-      <% if current_user.admin? %>
-        <div class="add-theory">
-          <%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
-        </div>
-  
-        <div class="add-tasks">
-          <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
-        </div>  
-      <% end %>
+     <div class="clear"></div>
+
+     

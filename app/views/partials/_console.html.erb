@@ -1,10 +1,19 @@
 <input id="whichlang" type="hidden" value="<%= Course.find(id=Part.find(id=@lesson.part_id)).language %>"></input>
+<input class="answersx" type="hidden" value="<%=Task.where(lesson_id = @lesson.id ).pluck(:answer).each.to_json%>"></input>
+
+
 
 <script type="text/javascript">
 $("#clear").click(function(){
   document.getElementById("console_output").innerHTML = "";
 });
 var language_code = $("#whichlang").val();
+var answersx =  $(".answersx").val();
+var answers = JSON.parse(answersx);
+
+
+
+
 
 $("#button"+ language_code ).click(function(){
   
@@ -15,13 +24,37 @@ $("#button"+ language_code ).click(function(){
       url: "/pythonsave",
       data: {
         code:codex,
-        language:language_code
-        
+        language:language_code,
+       
       },
       success:function(data){
         if(data.result.message == "Success"){
             console.log(data);
             document.getElementById("console_output").innerHTML += "<p> > "+data.result.stdout+"</p>";
+            for(var i in answers) {
+              answer = answers[i];
+             
+              myanswer = data.result.stdout.toString().toLowerCase().trim();
+               if(myanswer == answer){
+                
+                 alert("Задание  выполнено");
+                
+                 
+                 
+                 
+                // *************************************
+                //           ТУПОЙ БЕКЖАН
+                // Пиши свой код сюда тут он понимает что ответ верный
+                
+                
+                
+                // *************************************
+               }else if(myanswer != answer) {
+                  alert("Выполните все пункты из зазадний")
+               }
+            }
+          
+            
         }else {
              console.log(data);
              if(data.result.compilemessage == ""){

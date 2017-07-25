@@ -32,10 +32,14 @@
     <% end %>
     <div class="part-name">
       <% @parts.each do  |part|%>
-          <%= link_to part.name, part, class:"parts-name" %> <br>
-          <% if current_user.admin? %>
-            <%= link_to "Edit", edit_part_path(part) %>
-          <% end %>
+          <ul>
+            <li>  
+            <%= link_to part.name, part, class:"parts-name" %> 
+            <% if current_user.admin? %>
+              <%= link_to "Edit", edit_part_path(part), class:"parts-name-edit" %>
+            <% end %>
+            </li> 
+          </ul>
       <% end %>
     </div>
 

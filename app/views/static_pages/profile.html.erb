@@ -16,7 +16,8 @@
         <div class="row">
 
             <div class="coursesx lefted">
-
+              <% @courses.each do |course| %>
+                <% if current_user.following?(course.id) %>
 
                   <div class="item end">
                     <div class="top">
@@ -47,8 +48,8 @@
                     </div>
 
                   </div>
-
-
+                <% end %>
+              <% end %>
             </div>
 
 <div class="clear">
