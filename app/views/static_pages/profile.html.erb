@@ -15,30 +15,46 @@
 
 
 
-        <div class="item">
-          <div class="top">
-            <a href="#">Продолжить</a>
-          </div>
-          <div class="middle">
-            <h4>iOS DEVELOPMENT</h4>
-          </div>
-          <div class="border"></div>
-          <div class="desc">
-            <p>Основы iOS программирования для новичков. Базовые знания языка и UI элементов</p>
-          </div>
-          <div class="bottomblue">
-            <div class="raiting">
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-unfilled.png")%>
-            </div>
-          </div>
-        </div>
+        <div class="container-fluid main">
+
+              <div class="row">
+
+                  <div class="coursesx lefted">
 
 
-      </div>
+                        <div class="item end">
+                          <div class="top">
+                            <div class="follow_status">
+                              <%= render "partials/follow_status", object: course %>
+                            </div>
+                          </div>
+                          <div class="middle">
+                            <h4><%= link_to course.name, course, class:"course-name" %></h4>
+                          </div>
+                          <div class="border"></div>
+                          <div class="desc">
+                            <p><%=course.subtitle%></p>
+                          </div>
+                          <div class="bottomblue bottombluex">
+
+                            <p>20%</p>
+
+
+                            <div class="raiting">
+                             <%= image_tag("Star-filled.png")%>
+                              <%= image_tag("Star-filled.png")%>
+                              <%= image_tag("Star-filled.png")%>
+                              <%= image_tag("Star-filled.png")%>
+                              <%= image_tag("Star-unfilled.png")%>
+
+                            </div>
+                          </div>
+
+                        </div>
+
+
+                  </div>
+
       <div class="clear">
 
       </div>
@@ -73,5 +89,6 @@
         </div>
 
       </div>
-  
+  </div>
+
 </body>

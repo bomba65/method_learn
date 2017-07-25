@@ -7,11 +7,11 @@
 
 
 <div class="container-fluid main">
-  
+
       <div class="row">
-      
+
           <div class="coursesx lefted">
-            
+
               <% @courses.each do |course| %>
                 <div class="item end">
                   <div class="top">
@@ -27,6 +27,10 @@
                     <p><%=course.subtitle%></p>
                   </div>
                   <div class="bottomblue bottombluex">
+
+                      
+
+
                     <div class="raiting">
                      <%= image_tag("Star-filled.png")%>
                       <%= image_tag("Star-filled.png")%>
@@ -39,19 +43,9 @@
 
                 </div>
               <% end %>
-              
+
           </div>
-       
+
       </div>
-      
+
 </div>
-
-
-
-
-
-
-
-
-
-

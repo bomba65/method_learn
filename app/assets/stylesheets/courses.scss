@@ -183,6 +183,16 @@ margin-bottom: -5px!important;
  margin-bottom:-20px;
  overflow: hidden;
 }
-@media only screen and (max-width:1380px){
-  
+.follow_status{
+  position: relative;
+  top: -18.9px;
+}
+.bottomblue  p{
+  float: left;
+  clear: both;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: white;
+  font-size: 17px;
 }
