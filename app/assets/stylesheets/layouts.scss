@@ -9,8 +9,14 @@ footer{
 body{
   background-color: #F1F1F1;
 }
+.up{
+  margin-top: -20px!important;
+}
 footer, nav{
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif!important;
+}
+.fa-envelope-o{
+  font-size: 20px!important;
 }
 .user a{
   border-radius: 20px!important;

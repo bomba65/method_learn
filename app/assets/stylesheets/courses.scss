@@ -2,6 +2,9 @@
   color: #2FD3B0!important;
   text-align: center;
 }
+.startx:hover {
+  background:#B96C35 !important;
+}
 .block{
   margin: 0 60px 60px 15px;
   color: white;
@@ -80,8 +83,10 @@
   position: absolute;
   top: 86px;
   left: 20px;
+  right: 20px;
   z-index: 0;
   width: 97%!important;
+
 }
 .course-sylabus-container p{
   margin-top: 20px!important;

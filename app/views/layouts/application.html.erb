@@ -3,21 +3,24 @@
 <head>
   <title><%= full_title(yield :title)%></title>
   <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Marmelad|PT+Serif+Caption" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<script src="https://use.fontawesome.com/51d50622c8.js"></script>
+ 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  
+
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
   <%= render "partials/header" %>
 
   <%= yield %>
-  
+
   <%= render "partials/footer" %>
 
 
