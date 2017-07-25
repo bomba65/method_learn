@@ -33,6 +33,13 @@
     }); 
     
 </script>
+ <div class="add-part-button">
+<%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
+</div>
+
+<div class="add-part-button">
+  <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
+</div>
 
 <div class="lesson">
           <div class="col-md-2 taskpanel">
@@ -43,16 +50,16 @@
                 <div class="part1">
                   <h4>ТЕОРИЯ</h4>
                   <ul>
-                      <% counter = 1%>
-                  <% @theories.each do  |theory|%>
-                      <li><%=counter%>. <%= theory.content %></li>
-                      <% counter+=1%>
-                      <% end %>
-                      <% @theories.each do  |theory|%>
-                              <li><%=theory.video%></li>
-
-                      <% end %>
-                </ul>
+                    <% counter = 1%>
+                    <% @theories.each do |theory|%>
+                        <li><%=counter%>. <%= theory.content %></li>
+                        <% counter+=1%>
+                    <% end %>
+                    
+                    <% @theories.each do |theory|%>
+                        <li><%=theory.video.html_safe%></li>
+                    <% end %>
+                  </ul>
                 </div>
                 <hr>
                 <div class="part2">
@@ -85,17 +92,6 @@
 
       </div>
 
-      <div class="tasks">
-        <h3>Задания</h3>
-        <% @tasks.each do  |task|%>
-                 <%= link_to task.id, task %>
-        <% end %>
-      </div>
+     <div class="clear"></div>
 
-      <div class="add-theory">
-      <%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
-      </div>
-
-      <div class="add-tasks">
-        <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
-      </div>
+     

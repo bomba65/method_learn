@@ -1,2 +1,3 @@
 <h1>Theories#show</h1>
 <p>Find me in app/views/theories/show.html.erb</p>
+<%= link_to 'Назад к уроку', lesson_path(Lesson.find(id=@theory.lesson_id).id) %>
