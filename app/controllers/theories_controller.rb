@@ -33,6 +33,12 @@ class TheoriesController < ApplicationController
     end
   end
   
+  def destroy
+    @delete = Theory.find(params[:id]).destroy
+    flash[:success] = "Theory deleted!"
+    redirect_to Lesson.find(@delete.lesson_id)
+  end
+  
   private
   def theory_params
     params.require(:theory).permit(:content, :video, :lesson_id)

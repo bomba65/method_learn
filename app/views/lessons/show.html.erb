@@ -52,6 +52,7 @@
                       <li><%=theory.video%></li>
                       <% if current_user.admin? %>
                         <%= link_to "Edit", edit_theory_path(theory) %>
+                        <%= link_to "Delete", theory, method: :delete, data:	{confirm: "You sure?"} %>
                       <% end %>
                     <% end %>
                 </ul>
@@ -65,6 +66,7 @@
                       <li><%=counter%>. <%= task.content %></li>
                       <% if current_user.admin? %>
                         <%= link_to "Edit", edit_task_path(task) %>
+                        <%= link_to "Delete", task, method: :delete, data:	{confirm: "You sure?"} %>
                       <% end %>
                       <% counter+=1%>
                     <% end %>

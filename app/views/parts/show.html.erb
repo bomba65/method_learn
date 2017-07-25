@@ -6,6 +6,7 @@
           <p class="orange"><%= link_to lesson.name, lesson, class:"orange" %></p>
           <% if current_user.admin? %>
             <%= link_to "Edit", edit_lesson_path(lesson) %>
+            <%= link_to "Delete", lesson, method: :delete, data:	{confirm: "You sure?"} %>
           <% end %>
        <% end %>
       

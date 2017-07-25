@@ -34,6 +34,14 @@ class LessonsController < ApplicationController
     end
   end
   
+  def destroy
+    @lesson.destroy
+    Task.where(lesson_id: @lesson.id).destroy_all
+    Theory.where(lesson_id: @lesson.id).destroy_all
+    flash[:success] = "Lesson deleted!"
+    redirect_to Part.find(@lesson.part_id)
+  end
+  
   def getlanguages
     @value = `GET http://api.hackerrank.com/checker/languages.json`
   

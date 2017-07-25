@@ -33,6 +33,13 @@ class TasksController < ApplicationController
     end
   end
   
+  def destroy
+    @delete = Task.find(params[:id]).destroy
+    flash[:success] = "Task deleted!"
+    redirect_to Lesson.find(@delete.lesson_id)
+  end
+  
+  
   private
   def task_params
     params.require(:task).permit(:content, :answer, :lesson_id)
