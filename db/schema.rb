@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724092510) do
+ActiveRecord::Schema.define(version: 20170726013322) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20170724092510) do
     t.integer  "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "exist_code"
   end
 
   create_table "theories", force: :cascade do |t|

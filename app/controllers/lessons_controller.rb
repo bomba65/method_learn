@@ -2,7 +2,7 @@ class LessonsController < ApplicationController
   before_filter :authorize_admin, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   def index
-    @lessons = Lesson.all
+    redirect_to "/courses"
   end
   
   def show

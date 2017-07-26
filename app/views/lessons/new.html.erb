@@ -11,6 +11,9 @@
     <div class="sub_category_creating">
       <%= s.submit "Создать урок", class:"btn btn-default"  %>
     </div>
+    <div class="sub_category_creating">
+      <%= s.hidden_field :lesson_order, :value => Lesson.where(:part_id => params[:part_id]).size+1 %>
+    </div>
     <% end %>
 
   </div>
