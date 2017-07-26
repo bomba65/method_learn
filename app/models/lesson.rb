@@ -1,5 +1,5 @@
 class Lesson < ActiveRecord::Base
     belongs_to :part
-    has_many :theories
-    has_many :tasks
+    has_many :theories, :dependent => :destroy
+    has_many :tasks, :dependent => :destroy
 end

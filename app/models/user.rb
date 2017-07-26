@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
-  has_many :user_to_courses
+  has_many :user_to_courses, :dependent => :destroy
   
   def follow(course_id)
     self.user_to_courses.create(course_id: course_id)

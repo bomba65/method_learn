@@ -36,8 +36,6 @@ class LessonsController < ApplicationController
   
   def destroy
     @lesson.destroy
-    Task.where(lesson_id: @lesson.id).destroy_all
-    Theory.where(lesson_id: @lesson.id).destroy_all
     flash[:success] = "Lesson deleted!"
     redirect_to Part.find(@lesson.part_id)
   end

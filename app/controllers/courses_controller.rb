@@ -23,6 +23,23 @@ class CoursesController < ApplicationController
     end
   end
   
+  def edit
+  end
+
+  def update
+    if @course.update_attributes course_params
+      redirect_to courses_path
+    else
+      render "edit"
+    end
+  end
+  
+  def destroy
+    @course.destroy
+    flash[:success] = "Part deleted!"
+    redirect_to courses_path
+  end
+  
   def console
     @language = "ruby"
   end
