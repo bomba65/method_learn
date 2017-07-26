@@ -33,71 +33,70 @@
     }); 
     
 </script>
- <div class="add-part-button">
-<%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
-</div>
 
-<div class="add-part-button">
-  <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
-</div>
+<% if current_user.present? && current_user.admin? %>
+  <div class="add-part-button">
+    <%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
+  </div>
+  
+  <div class="add-part-button">
+    <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
+  </div>
+<% end %>
 
 <div class="lesson">
-          <div class="col-md-2 taskpanel">
-            <div class="lesson-name-block"><h3><%= @lesson.name %></h3></div>
-            <div class="clear"></div>
+  <div class="col-md-2 taskpanel">
+    <div class="lesson-name-block"><h3><%= @lesson.name %></h3></div>
+    <div class="clear"></div>
 
-            <div class="taskpanel2">
-                <div class="part1">
-                  <h4>ТЕОРИЯ</h4>
-                  <ul>
-                    <% counter = 1%>
-                    <% @theories.each do  |theory|%>
-                      <li><%=counter%>. <%= theory.content %></li>
-                      <% counter+=1%>
-                      <% end %>
-                      <% @theories.each do  |theory|%>
-                      <li><%=theory.video%></li>
-                      <% if current_user.admin? %>
-                        <%= link_to "Edit", edit_theory_path(theory) %>
-                        <%= link_to "Delete", theory, method: :delete, data:	{confirm: "You sure?"} %>
-                      <% end %>
-                    <% end %>
-                </ul>
-                </div>
-                <hr>
-                <div class="part2">
-                  <h4>ЗАДАЧИ</h4>
-                  <ul>
-                    <% counter = 1%>
-                    <% @tasks.each do  |task|%>
-                      <li><%=counter%>. <%= task.content %></li>
-                      <% if current_user.admin? %>
-                        <%= link_to "Edit", edit_task_path(task) %>
-                        <%= link_to "Delete", task, method: :delete, data:	{confirm: "You sure?"} %>
-                      <% end %>
-                      <% counter+=1%>
-                    <% end %>
-                   </ul>
-                </div>
-            </div>
-
-
-          </div>
-          <div class="col-md-8 console" >
-
-            <textarea class="my-code-area" rows="10" id="console"style="width: 100%">print("hello world")</textarea>
-            <div id="console_output" >
-
-            </div>
-       
-              <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=Part.find(id=@lesson.part_id)).language %>">
-                </button>
-            
-              <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
-            <%= render "partials/console" %>
-          </div>
-
+    <div class="taskpanel2">
+      <div class="part1">
+        <h4>ТЕОРИЯ</h4>
+        <ul>
+          <% counter = 1%>
+          <% @theories.each do  |theory|%>
+            <li><%=counter%>. <%= theory.content %></li>
+            <% counter+=1%>
+            <% end %>
+            <% @theories.each do  |theory|%>
+            <li><%=theory.video%></li>
+            <% if current_user.present? && current_user.admin? %>
+              <%= link_to "Edit", edit_theory_path(theory) %>
+              <%= link_to "Delete", theory, method: :delete, data:	{confirm: "You sure?"} %>
+            <% end %>
+          <% end %>
+      </ul>
       </div>
+      <hr>
+      <div class="part2">
+        <h4>ЗАДАЧИ</h4>
+        <ul>
+          <% counter = 1%>
+          <% @tasks.each do  |task|%>
+            <li><%=counter%>. <%= task.content %></li>
+            <% if current_user.present? && current_user.admin? %>
+              <%= link_to "Edit", edit_task_path(task) %>
+              <%= link_to "Delete", task, method: :delete, data:	{confirm: "You sure?"} %>
+            <% end %>
+            <% counter+=1%>
+          <% end %>
+         </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-8 console" >
+    <textarea class="my-code-area" rows="10" id="console"style="width: 100%">print("hello world")</textarea>
+    <div id="console_output" >
+    </div>
+
+    <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=Part.find(id=@lesson.part_id).course_id).language %>"></button>
+    
+    <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
+    <%= render "partials/console" %>
+  </div>
+
+</div>
 
      <div class="clear"></div>
 
