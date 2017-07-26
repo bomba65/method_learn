@@ -1,5 +1,7 @@
-<input id="whichlang" type="hidden" value="<%= Course.find(id=Part.find(id=@lesson.part_id).course_id).language %>"></input>
-<input class="answersx" type="hidden" value="<%=Task.where(lesson_id = @lesson.id ).pluck(:answer).each.to_json%>"></input>
+
+<input id="whichlang" type="hidden" value="<%= Course.find(id=Part.find(id=@lesson.part_id)).language %>"></input>
+<input class="answersx" type="hidden" value="<%=@tasks.each.to_json%>"></input>
+
 
 
 
@@ -7,18 +9,28 @@
 $("#clear").click(function(){
   document.getElementById("console_output").innerHTML = "";
 });
+$("#closeSuccess").click(function(){
+      $(".success_panel").fadeOut( 500, function() {});
+});
 var language_code = $("#whichlang").val();
 var answersx =  $(".answersx").val();
 var answers = JSON.parse(answersx);
+var dict = [];
+var progress = 0;
+console.log(dict);
+for(i in answers){
+    dict.push({
+        key:   answers[i],
+        value: false
+    });
+}
 
-
-
-
+console.log(dict);
 
 $("#button"+ language_code ).click(function(){
   
   codex = document.getElementById('console').value;
-
+  $("#button"+ language_code ).prop('disabled', true);
   $.ajax({
       type: "POST",
       url: "/pythonsave",
@@ -28,20 +40,39 @@ $("#button"+ language_code ).click(function(){
        
       },
       success:function(data){
+          $("#button"+ language_code ).prop('disabled', false);
         if(data.result.message == "Success"){
+            
             console.log(data);
             document.getElementById("console_output").innerHTML += "<p> > "+data.result.stdout+"</p>";
+            task_number = answers.length;
+            console.log(task_number);
+            myanswerlist = data.result.stdout.toString().toLowerCase().trim().split("\n");
             for(var i in answers) {
-              answer = answers[i];
-             
-              myanswer = data.result.stdout.toString().toLowerCase().trim();
-               if(myanswer == answer){
+              answer = dict[i].key.answer;
+              myanswer = myanswerlist[i];
+              console.log(myanswer);
+              if(myanswer == answer.toLowerCase().trim()){
                 
-                 alert("Задание  выполнено");
-                
+                 dict[i].value = true;
                  
+                //  alert("Задание  выполнено");
+                  
                  
+                 for(j in dict){
+                     if(dict[j].value == true){
+                         progress += 1;
+                     }else {
+                         progress -= 1;
+                     }
+                 }
                  
+                 if(progress == task_number){
+                    //  alert("Урок завершен");
+                     $(".success_panel").fadeIn( 500, function() {
+                        progress = 0;
+                     });
+                 }
                 // *************************************
                 //           ТУПОЙ БЕКЖАН
                 // Пиши свой код сюда тут он понимает что ответ верный
@@ -50,7 +81,9 @@ $("#button"+ language_code ).click(function(){
                 
                 // *************************************
                }else if(myanswer != answer) {
-                  alert("Выполните все пункты из зазадний")
+                  console.log(dict);
+                  console.log("Выполните все пункты из зазадний");
+                  
                }
             }
           
@@ -62,7 +95,6 @@ $("#button"+ language_code ).click(function(){
       
              }else {
                document.getElementById("console_output").innerHTML += "<p class='error'> > "+data.result.compilemessage+"</p>";
-        
              }
             
         }
