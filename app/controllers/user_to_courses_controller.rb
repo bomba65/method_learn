@@ -13,7 +13,7 @@ class UserToCoursesController < ApplicationController
         current_user.unfollow(params[:course_id])
         @course = Course.find(params[:course_id])
         respond_to do |format|
-            format.html	{redirect_to courses_path}
+            format.html	{ render self}
             format.js {}
         end
     end
