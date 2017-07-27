@@ -2,6 +2,8 @@
 <input id="whichlang" type="hidden" value="<%= Course.find(id=Part.find(id=@lesson.part_id)).language %>"></input>
 <input class="answersx" type="hidden" value="<%=@tasks.each.to_json%>"></input>
 
+<input id="user_to_course_id" type="hidden" value="<%=UserToCourse.find_by(course_id: Course.find(id=Part.find(id=@lesson.part_id).course_id), user_id: current_user.id).id%>"></input>
+<input id="lesson_id" type="hidden" value="<%=@lesson.id%>"></input>
 
 
 
@@ -56,9 +58,24 @@ $("#button"+ language_code ).click(function(){
                 
                  dict[i].value = true;
 
-                 
-                //  alert("Задание  выполнено");
-                  
+                    $.ajax({
+                        url:'/process_of_lesson',
+                        type:'POST',
+                        dataType:'json',
+                        data:{
+                            user_to_course_id: document.getElementById("user_to_course_id").value,
+                            lesson_id: document.getElementById("lesson_id").value
+                        },
+                        success:function(data){
+                            
+                        },
+                        error:function(data){
+                           
+                        }
+                    });
+                            //  alert("Задание  выполнено");
+
+
                  
                  for(j in dict){
                      if(dict[j].value == true){
