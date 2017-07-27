@@ -1,5 +1,5 @@
 <script>
- 
+   
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -34,6 +34,7 @@
     
 </script>
 
+
 <% if current_user.present? && current_user.admin? %>
   <div class="add-part-button">
     <%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
@@ -43,6 +44,7 @@
     <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
   </div>
 <% end %>
+
 
 <div class="lesson">
   <div class="col-md-2 taskpanel">
@@ -90,6 +92,7 @@
     <div id="console_output" >
     </div>
 
+
     <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=Part.find(id=@lesson.part_id).course_id).language %>"></button>
     
     <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
@@ -99,5 +102,49 @@
 </div>
 
      <div class="clear"></div>
+
+          </div>
+          <div class="col-md-8 console" >
+            <%if Task.where(:lesson_id=>@lesson.id).size != 0 %>
+              <%if !Task.find_by_lesson_id(@lesson.id).exist_code %>
+                 <textarea class="my-code-area" rows="10" id="console"style="width: 100%"></textarea>
+              <%else%>
+                <textarea class="my-code-area" rows="10" id="console"style="width: 100%"><%Task.where("lesson_id="+@lesson.id.to_s).each do|theory|%><%= theory.exist_code+"\n" %><%end%>
+                </textarea>
+              <%end%>
+            <%else%>
+              <textarea class="my-code-area" rows="10" id="console"style="width: 100%"></textarea>
+            <%end%>
+            
+            <div id="console_output" ></div>
+           <div class="button-panel">
+             
+              <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=Part.find(id=@lesson.part_id)).language %>">
+              </button>
+              <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
+              <div class="success_panel">
+              
+              <%if Lesson.where(:part_id => @lesson.part_id).size > @lesson.lesson_order %>
+                <a type="button"  name="button" class="btn btn-success" id="nextLesson" href="">Начать следующий урок</a>
+                <%link_to "Далее",lesson_path(Lesson.where("part_id = ? and lesson_order = ?",@lesson.part_id,@lesson.lesson_order+1).id)%>
+              <%else%>
+              
+              <%end%>
+                <span>Урок успешно пройден <a id="closeSuccess">+</a></span>
+                
+              </div>
+           </div>
+              
+            
+              
+              
+             
+            <%= render "partials/console" %>
+          </div>
+
+      </div>
+      
+      <div class="clear"></div>
+
 
      
