@@ -1,16 +1,18 @@
 <body>
   <div class="add-new3">
     <h3><%= @part.name %></h3>
-
+      <p>
        <% @lessons.each do  |lesson|%>
-          <p class="orange"><%= link_to lesson.name, lesson, class:"orange" %></p>
-          <% if current_user.admin? %>
-            <%= link_to "Edit", edit_lesson_path(lesson) %>
-            <%= link_to "Delete", lesson, method: :delete, data:	{confirm: "You sure?"} %>
+          <h5 class="orange"><%= link_to lesson.name, lesson, class:"orange" %></h5>
+          <% if current_user.present? && current_user.admin? %>
+            <%= link_to "Edit", edit_lesson_path(lesson),class:"add-part-button" %>
+            <%= link_to "Delete", lesson, method: :delete, data:	{confirm: "You sure?"},class:"add-part-button" %>
           <% end %>
        <% end %>
+       </p>
       
-      <% if current_user.admin? %>
+      
+      <% if current_user.present? && current_user.admin? %>
         <%= link_to 'Добавить урок', new_lesson_path(:part_id => @part.id), class: "btn btn-default" %>
       <% end %>
 

@@ -1,1 +1,26 @@
-<%= link_to "Follow", user_to_courses_path(course_id: object.id), method: :post, class: "btn btn-default" %>
+   
+
+<input type="hidden" value="<%= object.id %>" id="course_id_jaja"></input>
+<a class="btn btn-default" id="send_follow">Follow</a>
+
+
+<script type="text/javascript">
+
+var object_id = $("#course_id_jaja").val();
+
+$("#send_follow").click(function(){
+    $.ajax({
+        url: "/user_to_courses_follow",
+        type: "POST",
+        data: {
+            course_id: object_id,
+        },
+        success: function(resp){
+        
+            
+        }
+    });  
+});
+
+    
+</script> 

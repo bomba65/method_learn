@@ -1,0 +1,22 @@
+.success_panel {
+    position: relative;
+    margin-top:-45px;
+    margin-left:-10px;
+    width:912.9px;
+    height:50px;
+    background:rgba(11,93,32, 0.8);
+    color:white;
+    padding: 8px;
+    display: none;
+    
+}
+
+.success_panel span {
+    float:right;
+    margin-right:10px;
+    margin-top:7px;
+}
+
+.success_panel span a {
+    cursor:pointer;
+}

@@ -1,1 +1,25 @@
-<%= link_to "Unfollow", user_to_courses_path(course_id: object.id), method: :delete, class: "btn btn-default" %>
+
+<input type="hidden" value="<%= object.id %>" id="course_id_lala"></input>
+<a class="btn btn-default" id="send_unfollow">Unfollow</a>
+
+
+<script type="text/javascript">
+
+var object_id_2 = $("#course_id_lala").val();
+
+$("#send_unfollow").click(function(){
+    $.ajax({
+        url: "/user_to_courses_unfollow",
+        type: "DELETE",
+        data: {
+            course_id: object_id_2,
+        },
+        success: function(resp){
+        
+            
+        }
+    });  
+});
+
+    
+</script> 

@@ -1,8 +1,9 @@
 #console_output {
   width: 99.2%;
-  height: 200px;
+  height: 220px;
   background: #19353B;
   color: white;
+  overflow-y:scroll;
 }
 
 #console_output p {
@@ -12,4 +13,8 @@
 
 #console_output p.error {
   color: red;
+}
+
+.button-panel {
+  padding:10px;
 }

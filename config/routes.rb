@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   get "/ruby", to: "courses#ruby"
   post "/rubysave", to: "courses#rubysave"
   
-  delete "/user_to_courses", to: "user_to_courses#destroy"
-
+  post "/user_to_courses_follow", to: "user_to_courses#create"
+  delete "/user_to_courses_unfollow", to: "user_to_courses#destroy"
+  post "/process_of_lesson", to: "process_of_lessons#create"
 
   get "/getlanguages", to: "courses#getlanguages"
 
