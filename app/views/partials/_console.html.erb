@@ -1,13 +1,28 @@
 
-<input id="whichlang" type="hidden" value="<%= Course.find(id=Part.find(id=@lesson.part_id)).language %>"></input>
+<input id="whichlang" type="hidden" value="<%= Course.find(@lesson.course_id).language %>"></input>
 <input class="answersx" type="hidden" value="<%=@tasks.each.to_json%>"></input>
 
-<input id="user_to_course_id" type="hidden" value="<%=UserToCourse.find_by(course_id: Course.find(id=Part.find(id=@lesson.part_id).course_id), user_id: current_user.id).id%>"></input>
+<input id="user_to_course_id" type="hidden" value="<%= UserToCourse.find_by_course_id_and_user_id(Course.find(id=Part.find(id=@lesson.part_id).course_id), current_user.id).id%>"></input>
 <input id="lesson_id" type="hidden" value="<%=@lesson.id%>"></input>
 
 
 
 <script type="text/javascript">
+$("#endcourse").click(function(){
+    
+    $.ajax({
+        type: "POST",
+        url:"/overcourse",
+        data: {
+            user_to_course_id: $("#user_to_course_id").val(),
+
+        },
+        success: function(data){
+            
+        }
+    }); 
+});
+
 $("#clear").click(function(){
   document.getElementById("console_output").innerHTML = "";
 });

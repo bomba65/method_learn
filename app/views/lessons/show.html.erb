@@ -1,4 +1,5 @@
 <script>
+    
    
     $.ajax({
         type: "GET",
@@ -55,7 +56,7 @@
                   <ul>
                     <% counter = 1%>
                     <% @theories.each do  |theory|%>
-                      <li><%=counter%>. <%= theory.content %></li>
+                      <li> <%= theory.content %></li>
                       <% counter+=1%>
                       <% end %>
                       <% @theories.each do  |theory|%>
@@ -95,25 +96,31 @@
                 </textarea>
               <%end%>
             <%else%>
-            idina hui
               <textarea class="my-code-area" rows="10" id="console"style="width: 100%"></textarea>
             <%end%>
             
             <div id="console_output" ></div>
            <div class="button-panel">
              
-              <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=Part.find(id=@lesson.part_id)).language %>">
+              <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=@lesson.course_id).language %>">
               </button>
               <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
               <div class="success_panel">
               
-              <%if Lesson.where(:part_id => @lesson.part_id).size > @lesson.lesson_order %>
-                <a type="button"  name="button" class="btn btn-success" id="nextLesson" href="">Начать следующий урок</a>
-                <%link_to "Далее",lesson_path(Lesson.where("part_id = ? and lesson_order = ?",@lesson.part_id,@lesson.lesson_order+1).id)%>
-              <%else%>
-              
-              <%end%>
+              <%if Lesson.where(:course_id => @lesson.course_id).size > @lesson.lesson_order%>
+                <%=link_to "Начать следующий урок",lesson_path(Lesson.find_by_lesson_order_and_part_id(@lesson.lesson_order+1,@lesson.part_id)), class:"btn btn-success", id:"nextLesson"%>
                 <span>Урок успешно пройден <a id="closeSuccess">+</a></span>
+              <%else%>
+                <% if ProcessOfLesson.where(:user_to_course_id=> UserToCourse.where(:course_id=>@lesson.course_id,:user_id=>current_user.id)).size >= Lesson.where(:course_id=>@lesson.course_id).size%>
+                  <a class="btn btn-success" id="endcourse"> Закончить курс </a>
+                  <input type="hidden" value="<%= UserToCourse.find_by_user_id_and_course_id(current_user.id ,@lesson.course_id ).id%>" id="endcoursedata" >
+                  <span>Курc успешно завершен<a id="closeSuccess">+</a></span>
+                <%else %>
+                  
+                  <span>Пройди все части курса<a id="closeSuccess">+</a></span>
+                <%end%>
+              <%end%>
+                
                 
               </div>
            </div>

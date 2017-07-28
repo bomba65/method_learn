@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   post "/user_to_courses_follow", to: "user_to_courses#create"
   delete "/user_to_courses_unfollow", to: "user_to_courses#destroy"
   post "/process_of_lesson", to: "process_of_lessons#create"
+  post "/user_to_courses_repeat", to: "user_to_courses#reset"
 
   get "/getlanguages", to: "courses#getlanguages"
+  post "/overcourse", to: "lessons#overcourse"
 
   
   root 'static_pages#home'
