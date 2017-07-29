@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727234435) do
+ActiveRecord::Schema.define(version: 20170727135212) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -31,22 +31,23 @@ ActiveRecord::Schema.define(version: 20170727234435) do
     t.string   "title"
     t.string   "subtitle"
     t.string   "description"
+    t.integer  "language"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "language"
   end
 
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
     t.integer  "part_id"
     t.integer  "lesson_order"
+    t.integer  "course_id"
+    t.text     "exist_code"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "course_id"
   end
 
   create_table "parts", force: :cascade do |t|
@@ -70,7 +71,6 @@ ActiveRecord::Schema.define(version: 20170727234435) do
     t.integer  "lesson_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text     "exist_code"
   end
 
   create_table "theories", force: :cascade do |t|
@@ -84,9 +84,9 @@ ActiveRecord::Schema.define(version: 20170727234435) do
   create_table "user_to_courses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "course_id"
-    t.integer  "progress"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "progress",   default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "user_to_courses", ["course_id"], name: "index_user_to_courses_on_course_id"

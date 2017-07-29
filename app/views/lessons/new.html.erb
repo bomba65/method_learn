@@ -1,22 +1,13 @@
 <body>
   <div class="add-new">
     <%= form_for @lesson  do |s| %>
-    <div class="sub_category_creating">
       <%= s.label :Название %><br>
-      <%= s.text_field :name %>
-    </div>
-    <div class="sub_category_creating">
+      <%= s.text_field :name, placeholder: "Name of lesson"%>
+      <%= s.text_area :exist_code, placeholder: "Exist Code" %>
       <%= s.hidden_field :part_id, :value => params[:part_id] %>
-    </div>
-    <div class="sub_category_creating">
       <%= s.hidden_field :course_id, :value => Course.find(Part.find(params[:part_id]).course_id).id %>
-    </div>
-    <div class="sub_category_creating">
-      <%= s.submit "Создать урок", class:"btn btn-default"  %>
-    </div>
-    <div class="sub_category_creating">
       <%= s.hidden_field :lesson_order, :value => Lesson.where(:part_id => params[:part_id]).size+1 %>
-    </div>
+      <%= s.submit "Создать урок", class:"btn btn-default"  %>
     <% end %>
 
   </div>

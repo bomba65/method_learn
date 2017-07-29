@@ -17,41 +17,39 @@
 
             <div class="coursesx lefted">
             
-              <% @courses.each do |course| %>
-                <% if current_user.following?(course.id) %>
-                  
-                  <div class="item end">
-                    <div class="top">
-                      <% if current_user.present? %>
-                        <div class="follow_status">
-                          <%= render "partials/follow_status", object: course %>
-                        </div>
-                      <% end %>
-                    </div>
-                    <div class="middle">
-                      <h4><%= link_to course.name, course, class:"course-name" %></h4>
-                    </div>
-                    <div class="border"></div>
-                    <div class="desc">
-                      <p><%=course.subtitle%></p>
-                    </div>
-                    <div class="bottomblue bottombluex">
-
-                      <p>20%</p>
-
-
-                      <div class="raiting">
-                       <%= image_tag("Star-filled.png")%>
-                        <%= image_tag("Star-filled.png")%>
-                        <%= image_tag("Star-filled.png")%>
-                        <%= image_tag("Star-filled.png")%>
-                        <%= image_tag("Star-unfilled.png")%>
-
+              <% @unfinished_courses.each do |unfinished_course| %>
+                <% course = @courses.find(unfinished_course.course_id) %>
+                <div class="item end">
+                  <div class="top">
+                    <% if current_user.present? %>
+                      <div class="follow_status">
+                        <%= render "partials/follow_status", object: course %>
                       </div>
-                    </div>
-
+                    <% end %>
                   </div>
-                <% end %>
+                  <div class="middle">
+                    <h4><%= link_to course.name, course, class:"course-name" %></h4>
+                  </div>
+                  <div class="border"></div>
+                  <div class="desc">
+                    <p><%=course.subtitle%></p>
+                  </div>
+                  <div class="bottomblue bottombluex">
+
+                    <p>20%</p>
+
+
+                    <div class="raiting">
+                     <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-unfilled.png")%>
+
+                    </div>
+                  </div>
+
+                </div>
               <% end %>
             </div>
 
@@ -68,36 +66,32 @@
 
 <div class="coursesx">
   
-    <% @finished_courses.each do |lol|%>
-      <% @courses.where(lol.id).each do |finished_course| %>
-        <div class="item end">
-          <div class="top">
-            <% if current_user.present? %>
-              <div class="follow_status">
-              </div>
-            <% end %>
-          </div>
-          <div class="middle">
-            <h4><%= finished_course.title %></h4>
-          </div>
-          <div class="border"></div>
-          <div class="desc">
-            <p>Основы iOS программирования для новичков. Базовые знания языка и UI элементов</p>
-          </div>
-          <div class="bottomblue">
-            <div class="raiting">
-             <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-unfilled.png")%>
-      
+    <% @finished_courses.each do |finished_course|%>
+      <% course = @courses.find(finished_course.course_id) %>
+      <div class="item end">
+        <div class="top">
+          <% if current_user.present? %>
+            <div class="follow_status">
             </div>
+          <% end %>
+        </div>
+        <div class="middle">
+          <h4><%= course.name %></h4>
+        </div>
+        <div class="border"></div>
+        <div class="desc">
+          <p>Основы iOS программирования для новичков. Базовые знания языка и UI элементов</p>
+        </div>
+        <div class="bottomblue">
+          <div class="raiting">
+           <%= image_tag("Star-filled.png")%>
+            <%= image_tag("Star-filled.png")%>
+            <%= image_tag("Star-filled.png")%>
+            <%= image_tag("Star-filled.png")%>
+            <%= image_tag("Star-unfilled.png")%>
           </div>
         </div>
-        <%end%>
+      </div>
   <%end%>
 
 </div>
-    
-

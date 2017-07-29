@@ -2,7 +2,14 @@
 <input id="whichlang" type="hidden" value="<%= Course.find(@lesson.course_id).language %>"></input>
 <input class="answersx" type="hidden" value="<%=@tasks.each.to_json%>"></input>
 
-<input id="user_to_course_id" type="hidden" value="<%= UserToCourse.find_by_course_id_and_user_id(Course.find(id=Part.find(id=@lesson.part_id).course_id), current_user.id).id%>"></input>
+<% if UserToCourse.exists?(course_id: @lesson.course_id,user_id: current_user.id) %>
+    <input id="user_to_course_id" type="hidden" value="<%= UserToCourse.find_by(course_id: @lesson.course_id,user_id: current_user.id).id %>"></input>
+<% else %>
+
+
+
+    <input id="user_to_course_id" type="hidden" value="<%nil%>"></input>
+<% end %>
 <input id="lesson_id" type="hidden" value="<%=@lesson.id%>"></input>
 
 
@@ -116,7 +123,7 @@ $("#button"+ language_code ).click(function(){
                 
                }else if(myanswer != answer) {
                   console.log(dict);
-                  console.log("Выполните все пункты из зазадний");
+                  console.log("Выполните все пункты из заданий");
                   
                }
             }

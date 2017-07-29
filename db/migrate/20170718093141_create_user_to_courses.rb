@@ -3,7 +3,7 @@ class CreateUserToCourses < ActiveRecord::Migration
     create_table :user_to_courses do |t|
       t.integer :user_id
       t.integer :course_id
-      t.integer :progress
+      t.integer :progress, default: 0
 
       t.timestamps null: false
     end
