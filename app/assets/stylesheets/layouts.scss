@@ -94,7 +94,12 @@ footer, nav{
   font-family: 'Lato', sans-serif!important;
 }
 .dropdown-menu{
+  // margin-left: 2px!important;
   margin-top: 22px;
+  padding: 5px 15px 5px 10px!important;
+}
+li .divider{
+  margin-left: 3px!important;
 }
 
 a:hover{

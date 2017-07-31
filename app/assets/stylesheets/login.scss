@@ -1,6 +1,11 @@
 .carousel-inner{
   padding: 0!important;
 }
+.welcome .item{
+  margin-top:1.8%;
+  margin-bottom: -0.2%!important;
+  height: 55.3vh!important;
+}
 .image{
   position: relative;
   z-index: 0;
@@ -105,10 +110,10 @@ label .checkbox{
 .submit .btn-default{
   font-family: 'Lato', sans-serif!important;
   border-radius: 6px!important;
-  position: absolute;
-  top: 270px;
-  left: 16px;
-  width: 88%;
+  position: relative;
+  top: 4vh!important;
+  // left: 16px;
+  width: 97%;
   padding: 10px 0 10px 0!important;
 }
 .navbar-right .btn-default{
@@ -216,10 +221,10 @@ width: 100%!important;
    height: 50.5vh!important;
  }
  .submit .btn-default{
-   position: absolute;
-   top: 250px;
-   left: 12px;
-   width: 90%;
+   position: relative;
+   top: 5vh;
+  //  left: 12px;
+   width: 96%;
  }
  .textrotator{
    position: absolute;
@@ -244,10 +249,9 @@ width: 100%!important;
    height: 56vh!important;
  }
  .submit .btn-default{
-   position: absolute;
-   top: 275px;
-   left: 12px;
-   width: 90%;
+   position: relative;
+   top: 5vh;
+
  }
  .textrotator{
    position: absolute;
@@ -274,10 +278,8 @@ width: 100%!important;
     height: 60vh!important;
   }
   .submit .btn-default{
-    position: absolute;
-    top: 275px;
-    left: 12px;
-    width: 90%;
+    position: relative;
+    top: 5vh;
   }
   .textrotator{
     position: absolute;
@@ -289,10 +291,11 @@ width: 100%!important;
 @media only screen and (max-width: 920px){
   .login{
     width: 40%;
-    height: 60vh;
+    height: 51vh;
     background-color: white;
     margin-left: 30%;
     margin-top: 4%;
+    margin-bottom: 10px!important;
   }
   .loginx{
     color: #606060;
@@ -304,10 +307,8 @@ width: 100%!important;
     display: none!important;
   }
   .submit .btn-default{
-    position: absolute;
-    top: 270px;
-    left: 12px;
-    width: 90%;
+    position: relative;
+    top: 5vh;
     padding: 10px 0 10px 0!important;
   }
   .navbar-right .btn-default{
@@ -320,10 +321,23 @@ width: 100%!important;
   margin-top: 10%;
   }
   }
+@media only screen and (max-width: 767px){
+  .navbar-right .btn-default{
+    border-radius: 30px!important;
+    margin-right: 0!important;
+    margin-top: 15px;
+    padding: 7px 50px 7px 50px!important;
+  }
+  .user ul{
+    margin-left: 0px;
+    margin-top: 15px!important;
+  }
+
+}
 @media only screen and (max-width: 680px){
   .login{
     width: 50%;
-    height: 60vh;
+    height: 57vh;
     background-color: white;
     margin-left: 25%;
     margin-top: 4%;
@@ -338,53 +352,33 @@ width: 100%!important;
     display: none!important;
   }
   .submit .btn-default{
-    position: absolute;
-    top: 270px;
-    left: 12px;
-    width: 90%;
+    position: relative;
+    top: 5vh;
     padding: 10px 0 10px 0!important;
-  }
-  .navbar-right .btn-default{
-    border-radius: 30px!important;
-    margin-right: 15px!important;
-    margin-top: 15px;
-    padding: 7px 50px 7px 50px!important;
   }
   form{
   margin-top: 10%;
   }
 }
-// @media only screen and (max-width: 760px){
-//   .login{
-//     width: 50%;
-//     height: 60vh;
-//     background-color: white;
-//     margin-left: 25%;
-//     margin-top: 4%;
-//   }
-//   .loginx{
-//     color: #606060;
-//     font-size: 22px;
-//     text-align: center;
-//     margin-top: 10%;
-//   }
-//   .welcome{
-//     display: none!important;
-//   }
-//   .submit .btn-default{
-//     position: absolute;
-//     top: 270px;
-//     left: 12px;
-//     width: 90%;
-//     padding: 10px 0 10px 0!important;
-//   }
-//   .navbar-right .btn-default{
-//     border-radius: 30px!important;
-//     margin-right: 15px!important;
-//     margin-top: 15px;
-//     padding: 7px 50px 7px 50px!important;
-//   }
-//   form{
-//   margin-top: 10%;
-//   }
-// }
+@media only screen and (max-width: 480px){
+  .login{
+    width: 90%;
+    height: 47vh;
+    margin-left: 5%;
+    margin-bottom: 25px;
+    margin-top: 20px!important;
+  }
+  .submit .btn-default{
+    position: relative;
+    top: 1vh!important;
+  }
+}
+@media only screen and (max-width: 330px){
+  .login{
+    height: 55vh;
+  }
+  .submit .btn-default{
+    position: relative;
+    top: 2vh;
+  }
+}
