@@ -13,7 +13,7 @@
       
       
       <% if current_user.present? && current_user.admin? %>
-        <%= link_to 'Добавить урок', new_lesson_path(:part_id => @part.id), class: "btn btn-default" %>
+        <%= link_to 'Добавить урок', new_lesson_path(:course_id => @part.course_id, :part_id => @part.id), class: "btn btn-default" %>
       <% end %>
       <%= link_to 'Назад', course_path(:id => @part.course_id), class: "btn btn-default"%>
 
