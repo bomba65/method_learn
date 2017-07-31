@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+  respond_to :html, :js
   before_filter :authorize_admin, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   

@@ -42,9 +42,7 @@
   <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
 </div>
 <div class="add-part-button">
-  <%= s.hidden_field :part_id, :value => params[:part_id] %>
-  <%= s.hidden_field :course_id, :value => Course.find(Part.find(params[:part_id]).course_id).id %>
-  <%= s.hidden_field :lesson_order, :value => Lesson.where(:part_id => params[:part_id]).size+1 %>
+  <%= link_to 'Назад', part_path(:id => @lesson.part_id) %>
 </div>
 
 <div class="lesson">
@@ -107,23 +105,7 @@
               <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=@lesson.course_id).language %>">
               </button>
               <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
-              <div class="success_panel">
-              
-                <%if Lesson.where(part_id: @lesson.part_id).size > @lesson.lesson_order%>
-                  <%=link_to "Начать следующий урок",lesson_path(Lesson.find_by_lesson_order_and_part_id(@lesson.lesson_order+1,@lesson.part_id)), class:"btn btn-success", id:"nextLesson"%>
-                  <span>Урок успешно пройден <a id="closeSuccess">+</a></span>
-                <%else%>
-                  <% if ProcessOfLesson.where(:user_to_course_id => UserToCourse.where(:course_id => @lesson.course_id,:user_id => current_user.id)).size >= Lesson.where(:course_id =>@lesson.course_id).size %>
-                    <a class="btn btn-success" id="endcourse"> Закончить курс </a>
-                    <input type="hidden" value="<%= UserToCourse.find_by_user_id_and_course_id(current_user.id ,@lesson.course_id ).id%>" id="endcoursedata" >
-                    <span>Курc успешно завершен<a id="closeSuccess">+</a></span>
-                  <%else %>
-                    <span>Пройди все части курса<a id="closeSuccess">+</a></span>
-                  <%end%>
-                <%end%>
-                
-                
-              </div>
+              <div class="success_panel"></div>
            </div>
           <%= render "partials/console" %>
           </div>

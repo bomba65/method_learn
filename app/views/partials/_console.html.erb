@@ -64,7 +64,7 @@ $("#button"+ language_code ).click(function(){
        
       },
       success:function(data){
-          $("#button"+ language_code ).prop('disabled', false);
+        $("#button"+ language_code ).prop('disabled', false);
         if(data.result.message == "Success"){
             
             console.log(data);
@@ -78,23 +78,24 @@ $("#button"+ language_code ).click(function(){
               console.log(myanswer);
               if(myanswer == answer.toLowerCase().trim()){
                 
-                 dict[i].value = true;
+                dict[i].value = true;
 
-                    $.ajax({
-                        url:'/process_of_lesson',
-                        type:'POST',
-                        dataType:'json',
-                        data:{
-                            user_to_course_id: document.getElementById("user_to_course_id").value,
-                            lesson_id: document.getElementById("lesson_id").value
-                        },
-                        success:function(data){
-                            
-                        },
-                        error:function(data){
-                           
-                        }
-                    });
+                $.ajax({
+                    url:'/process_of_lesson',
+                    type:'POST',
+                    dataType:'json',
+                    data:{
+                        user_to_course_id: document.getElementById("user_to_course_id").value,
+                        lesson_id: document.getElementById("lesson_id").value
+                    },
+                    success:function(data){
+                    },
+                    error:function(data){
+                       
+                    }
+                });
+                    
+                $(".success_panel").html("<%=escape_javascript(render "partials/show_success_panel")%>");
                             //  alert("Задание  выполнено");
 
 
@@ -124,11 +125,10 @@ $("#button"+ language_code ).click(function(){
                }else if(myanswer != answer) {
                   console.log(dict);
                   console.log("Выполните все пункты из заданий");
-                  
                }
             }
           
-            
+        
         }else {
              console.log(data);
              if(data.result.compilemessage == ""){
