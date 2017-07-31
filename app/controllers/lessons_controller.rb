@@ -1,6 +1,8 @@
 class LessonsController < ApplicationController
+  respond_to :html, :js
   before_filter :authorize_admin, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  
   def index
     redirect_to "/courses"
   end
@@ -49,9 +51,18 @@ class LessonsController < ApplicationController
     end
   end
   
+  def overcourse
+    u =  UserToCourse.find(params[:user_to_course_id])
+    u.update_attributes(progress: 1)
+     respond_to do |format|
+          format.html	{redirect_to courses_path}
+          format.js {}
+      end
+  end
+  
   private
   def lesson_params
-    params.require(:lesson).permit(:name, :part_id, :lesson_order)
+    params.require(:lesson).permit(:name, :part_id, :lesson_order,:course_id, :exist_code)
   end
   def set_lesson
     @lesson = Lesson.find(params[:id])

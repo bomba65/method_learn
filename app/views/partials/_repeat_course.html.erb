@@ -1,0 +1,25 @@
+
+<input type="hidden" value="<%= object.id %>" id="course_id_lala"></input>
+<a class="btn btn-default" id="send_unfollow">Repeat</a>
+
+
+<script type="text/javascript">
+
+var object_id_2 = $("#course_id_lala").val();
+
+$("#send_unfollow").click(function(){
+    $.ajax({
+        url: "/user_to_courses_repeat",
+        type: "POSt",
+        data: {
+            course_id: object_id_2,
+        },
+        success: function(resp){
+        
+            
+        }
+    });  
+});
+
+    
+</script> 
