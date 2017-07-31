@@ -15,19 +15,7 @@
 
 
 <script type="text/javascript">
-$("#endcourse").click(function(){
-    
-    $.ajax({
-        type: "POST",
-        url:"/overcourse",
-        data: {
-            user_to_course_id: $("#user_to_course_id").val(),
-        },
-        success: function(data){
-            
-        }
-    }); 
-});
+
 
 $("#clear").click(function(){
   document.getElementById("console_output").innerHTML = "";
@@ -53,6 +41,7 @@ console.log(dict);
 $("#button"+ language_code ).click(function(){
   
   codex = document.getElementById('console').value;
+  alert(codex);
   $("#button"+ language_code ).prop('disabled', true);
   $.ajax({
       type: "POST",

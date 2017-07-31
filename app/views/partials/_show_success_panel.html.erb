@@ -1,3 +1,18 @@
+<script>
+  $("#endcourse").click(function(){
+      alert(12);
+      $.ajax({
+          type: "POST",
+          url:"/overcourse",
+          data: {
+              user_to_course_id: $("#user_to_course_id").val(),
+          },
+          success: function(data){
+              
+          }
+      }); 
+  });
+</script>
 <%if Lesson.where(course_id: @lesson.course_id).size > @lesson.lesson_order%>
   <%=link_to "Начать следующий урок",lesson_path(Lesson.find_by_lesson_order_and_course_id(@lesson.lesson_order+1,@lesson.course_id)), class:"btn btn-success", id:"nextLesson"%>
   <span>Урок успешно пройден <a id="closeSuccess">+</a></span>

@@ -48,8 +48,9 @@ class CoursesController < ApplicationController
     @code = params[:code]
     @language = params[:language]
     @tasks = params[:tasks]
-    
-    @value = `curl -sX POST api.hackerrank.com/checker/submission.json -d 'source=#{@code}&lang=#{@language}&testcases=["1"]&api_key=hackerrank|672467-1620|8e88fd60861080d13008936134465f63c03a5e67'`
+    replacements = {'+' => '%2B'}
+    @valid_code = @code.gsub(Regexp.union(replacements.keys), replacements)
+    @value = `curl -sX POST api.hackerrank.com/checker/submission.json -d "source=#{@valid_code}&lang=#{@language}&testcases=['1']&api_key=hackerrank|672467-1620|8e88fd60861080d13008936134465f63c03a5e67"`
     
    
     respond_to do |format|
