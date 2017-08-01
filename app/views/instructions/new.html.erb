@@ -1,0 +1,18 @@
+<body>
+  <div class="add-new">
+    <%= form_for @instruction  do |s| %>
+    <div class="sub_category_creating">
+      <%= s.label :Инстукция %><br>
+      <%= s.text_area :content %>
+    </div>
+    <div class="sub_category_creating">
+      <%= s.hidden_field :lesson_id, :value => params[:lesson_id] %>
+    </div>
+    <div class="sub_category_creating">
+      <%= s.submit "Create Instruction", class:"btn btn-default btnex" %>
+    </div>
+    <% end %>
+
+  </div>
+  
+</body>

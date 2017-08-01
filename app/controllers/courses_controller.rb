@@ -40,9 +40,6 @@ class CoursesController < ApplicationController
     redirect_to courses_path
   end
   
-  def console
-    @language = "ruby"
-  end
   
   def pythonsave
     @code = params[:code]
@@ -58,11 +55,6 @@ class CoursesController < ApplicationController
     end
     
   end
-
- 
-
-  
-
   
   def getlanguages
     @value = `GET http://api.hackerrank.com/checker/languages.json`
