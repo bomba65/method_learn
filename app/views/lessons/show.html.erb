@@ -110,8 +110,6 @@
           </div>
           <div class="col-md-8 console" >
 
-            <%if !@lesson.exist_code %>
-               <textarea class="my-code-area" rows="10" id="console"style="width: 100%"></textarea>
             <% @tasks.each do  |task|%>
               <%if task.invisible_code?%>
                <input id="ivsCode" type="hidden" value="<%= task.invisible_code %>"></input>
@@ -119,6 +117,14 @@
                <input id="ivsCode" type="hidden" value=""></input>
               <%end%>
             <% end %>
+            
+
+            <%if !@lesson.exist_code %>
+               <textarea class="my-code-area" rows="10" id="console"style="width: 100%"></textarea>
+            <%else%>
+              <textarea class="my-code-area" rows="10" id="console"style="width: 100%"><%= @lesson.exist_code %></textarea>
+            <%end%>
+
             
             <div id="console_output" ></div>
           <div class="button-panel">
