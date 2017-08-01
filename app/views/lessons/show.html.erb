@@ -1,6 +1,11 @@
+<input type="hidden" id="refresh" value="no">
 <script>
+    $(document).ready(function(e) {
+        var $input = $('#refresh');
     
-   
+        $input.val() == 'yes' ? location.reload(true) : $input.val('yes');
+    });
+    
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -118,13 +123,13 @@
               <%end%>
             <% end %>
             
-
+        
             <%if !@lesson.exist_code %>
                <textarea class="my-code-area" rows="10" id="console"style="width: 100%"></textarea>
             <%else%>
               <textarea class="my-code-area" rows="10" id="console"style="width: 100%"><%= @lesson.exist_code %></textarea>
             <%end%>
-
+          
             
             <div id="console_output" ></div>
           <div class="button-panel">
