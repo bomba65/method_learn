@@ -128,11 +128,13 @@
             
             <div id="console_output" ></div>
           <div class="button-panel">
-             
-              <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=@lesson.course_id).language %>">
-              </button>
-              <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
-              <div class="success_panel"></div>
+              <%if UserToCourse.exists?(user_id: current_user.id ,course_id: @lesson.course_id ) %>
+                <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=@lesson.course_id).language %>"></button>
+                <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
+                <div class="success_panel"></div>
+              <% else %>
+                You need follow to this course!!! 
+              <% end %>
            </div>
           <%= render "partials/console" %>
           </div>
