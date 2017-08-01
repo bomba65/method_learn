@@ -37,15 +37,19 @@
             
         }
     }); 
-    
 </script>
- <div class="add-part-button">
-<%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
-</div>
-
-<div class="add-part-button">
-  <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
-</div>
+<% if current_user.admin? %>
+  <div class="add-part-button">
+    <%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
+  </div>
+  
+  <div class="add-part-button">
+    <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
+  </div>
+  <div class="add-part-button">
+    <%= link_to 'Добавить инстукцию', new_instruction_path(:lesson_id => @lesson.id) %>
+  </div>
+<% end %>
 <div class="add-part-button">
   <%= link_to 'Назад', part_path(:id => @lesson.part_id) %>
 </div>
@@ -73,16 +77,33 @@
                     <% end %>
                 </ul>
                 </div>
+                <% if current_user.admin? %>
+                  <hr>
+                  <div class="part2">
+                    <h4>ЗАДАЧИ</h4>
+                    <ul>
+                      <% counter = 1%>
+                      <% @tasks.each do  |task|%>
+                        <li><%=counter%>. <%= task.answer %></li>
+                        <% if current_user.admin? %>
+                          <%= link_to "Edit", edit_task_path(task) %>
+                          <%= link_to "Delete", task, method: :delete, data:	{confirm: "You sure?"} %>
+                        <% end %>
+                        <% counter+=1%>
+                      <% end %>
+                     </ul>
+                  </div>
+                <% end %>
                 <hr>
                 <div class="part2">
-                  <h4>ЗАДАЧИ</h4>
+                  <h4>ИНСТРУКЦИЙ</h4>
                   <ul>
                     <% counter = 1%>
-                    <% @tasks.each do  |task|%>
-                      <li><%=counter%>. <%= task.content %></li>
+                    <% @instructions.each do  |instruction|%>
+                      <li><%=counter%>. <%= instruction.content %></li>
                       <% if current_user.admin? %>
-                        <%= link_to "Edit", edit_task_path(task) %>
-                        <%= link_to "Delete", task, method: :delete, data:	{confirm: "You sure?"} %>
+                        <%= link_to "Edit", edit_instruction_path(instruction) %>
+                        <%= link_to "Delete", instruction, method: :delete, data:	{confirm: "You sure?"} %>
                       <% end %>
                       <% counter+=1%>
                     <% end %>
@@ -93,6 +114,7 @@
 
           </div>
           <div class="col-md-8 console" >
+
             <% @tasks.each do  |task|%>
               <%if task.invisible_code?%>
                <input id="ivsCode" type="hidden" value="<%= task.invisible_code %>"></input>
@@ -111,11 +133,13 @@
             
             <div id="console_output" ></div>
           <div class="button-panel">
-             
-              <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=@lesson.course_id).language %>">
-              </button>
-              <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
-              <div class="success_panel"></div>
+              <%if UserToCourse.exists?(user_id: current_user.id ,course_id: @lesson.course_id ) %>
+                <button type="button" class="btn btn-success" name="button" id="button<%= Course.find(id=@lesson.course_id).language %>"></button>
+                <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
+                <div class="success_panel"></div>
+              <% else %>
+                You need follow to this course!!! 
+              <% end %>
            </div>
           <%= render "partials/console" %>
           </div>

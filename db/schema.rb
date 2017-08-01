@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731143245) do
+ActiveRecord::Schema.define(version: 20170801115926) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 20170731143245) do
     t.datetime "image_updated_at"
   end
 
+  create_table "instructions", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
     t.integer  "part_id"
@@ -65,8 +72,13 @@ ActiveRecord::Schema.define(version: 20170731143245) do
     t.datetime "updated_at",        null: false
   end
 
-# Could not dump table "tasks" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "tasks", force: :cascade do |t|
+    t.string   "answer"
+    t.integer  "lesson_id"
+    t.text     "invisible_code"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "theories", force: :cascade do |t|
     t.text     "content"

@@ -1,0 +1,12 @@
+<% if @instruction.errors.any? %>
+  <ul>
+  <% @instruction.errors.full_messages.each do |m| %>
+    <li><%= m %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @instruction do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit "Edit" %>
+<% end %>
