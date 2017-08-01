@@ -42,7 +42,7 @@ class TasksController < ApplicationController
   
   private
   def task_params
-    params.require(:task).permit(:content, :answer, :lesson_id)
+    params.require(:task).permit(:content, :answer, :lesson_id, :invisible_code)
   end
   def set_task
     @task = Task.find(params[:id])
