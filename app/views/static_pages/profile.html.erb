@@ -1,34 +1,51 @@
-<div class="profilex">
-  <img class="avatarx" src="https://pp.userapi.com/c624427/v624427010/37e6d/HfKQNjgSBwo.jpg" width="100px" height="100px"alt="">
-  <h4>Шаяхметов Руслан</h4>
-  <i>Алматы</i>
-</div>
-<div class="courses-title">
-  <h4>Курсы которые я прохожу</h4>
-</div>
-<div class="coursesx lefted">
+<body>
 
-  <% @unfinished_courses.each do |unfinished_course| %>
-    <% course = @courses.find(unfinished_course.course_id) %>
-    <div class="item end">
-      <div class="top">
-        <% if current_user.present? %>
-          <div class="follow_status">
-            <%= render "partials/follow_status", object: course %>
-          </div>
-        <% end %>
-      </div>
-      <div class="middle">
-        <h4><%= link_to course.name, course, class:"course-name" %></h4>
-      </div>
-      <div class="border"></div>
-      <div class="desc">
-        <p><%=course.subtitle%></p>
-      </div>
-      <div class="bottomblue bottombluex">
+    <div class="profilex">
+      <img class="avatarx" src="https://pp.userapi.com/c624427/v624427010/37e6d/HfKQNjgSBwo.jpg" width="100px" height="100px"alt="">
+      <h4>Шаяхметов Руслан</h4>
+      <i>Алматы</i>
+    </div>
+    <div class="courses-title">
+          <h4>Мои курсы</h4>
+        </div>
+
+
+            <div class="coursesx lefted">
+            
+              <% @unfinished_courses.each do |unfinished_course| %>
+                <% course = @courses.find(unfinished_course.course_id) %>
+                <div class="item end">
+                  <div class="top">
+                    <% if current_user.present? %>
+                      <div class="follow_status">
+                        <%= render "partials/follow_status", object: course %>
+                      </div>
+                    <% end %>
+                  </div>
+                  <div class="middle">
+                    <h4><%= link_to course.name, course, class:"course-name" %></h4>
+                  </div>
+                  <div class="border"></div>
+                  <div class="desc">
+                    <p><%=course.subtitle%></p>
+                  </div>
+                  <div class="bottomblue bottombluex">
+
+                    <p>20%</p>
+
+
+                    <div class="raiting">
+                     <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-filled.png")%>
+                      <%= image_tag("Star-unfilled.png")%>
 
         <p>20%</p>
 
+                </div>
+              <% end %>
+            </div>
 
         <div class="raiting">
          <%= image_tag("Star-filled.png")%>
@@ -40,16 +57,9 @@
         </div>
       </div>
 
-    </div>
-  <% end %>
-</div>
-
-<div class="clear"></div>
-<div class="clear"></div>
-
-<div class="courses-title">
-  <h4>Курсы которые я прошел</h4>
-</div>
+        
+   </div>
+ </div>
 
 <div class="coursesx">
   

@@ -9,6 +9,10 @@
       <%= s.label :Ответ %><br>
       <%= s.text_field :answer %>
     </div>
+    <div class="sub_category_creating videomrg">
+      <%= s.label "Невидимый код" %><br>
+      <%= s.text_area :invisible_code %>
+    </div>
     <div class="sub_category_creating">
       <%= s.hidden_field :lesson_id, :value => params[:lesson_id] %>
     </div>
