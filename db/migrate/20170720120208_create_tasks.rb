@@ -3,6 +3,7 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :answer
       t.integer :lesson_id
+      t.text :invisible_code
 
       t.timestamps null: false
     end
