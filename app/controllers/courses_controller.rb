@@ -8,6 +8,11 @@ class CoursesController < ApplicationController
 
   def show
     @parts = @course.parts
+    unless @course.lessons.first.nil?
+      @start_course = lesson_path(@course.lessons.first)
+    else
+      @start_course = course_path(@course)
+    end
   end
   
   def new
