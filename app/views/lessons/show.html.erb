@@ -66,10 +66,10 @@
                     <% counter = 1%>
                     <% @theories.each do  |theory|%>
                       <li> <%= theory.content %></li>
-                      <% counter+=1%>
+                      <% counter+=1 %>
                       <% end %>
                       <% @theories.each do  |theory|%>
-                      <li><%=theory.video%></li>
+                      <li><%= theory.video %></li>
                       <% if current_user.admin? %>
                         <%= link_to "Edit", edit_theory_path(theory) %>
                         <%= link_to "Delete", theory, method: :delete, data:	{confirm: "You sure?"} %>
@@ -84,12 +84,13 @@
                     <ul>
                       <% counter = 1%>
                       <% @tasks.each do  |task|%>
-                        <li><%=counter%>. <%= task.answer %></li>
+                        <li><%= counter %>. Ответ: <%= task.answer %></li>
+                        <li>Невидымый код: <%= task.invisible_code %></li>
                         <% if current_user.admin? %>
                           <%= link_to "Edit", edit_task_path(task) %>
                           <%= link_to "Delete", task, method: :delete, data:	{confirm: "You sure?"} %>
                         <% end %>
-                        <% counter+=1%>
+                        <% counter+=1 %>
                       <% end %>
                      </ul>
                   </div>
