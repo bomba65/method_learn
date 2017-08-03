@@ -1,1 +1,1 @@
-$(".follow_status").html("<%= escape_javascript(render('partials/follow_status')) %>");
+$("#follow_status_<%= @course.id %>").html("<%= escape_javascript(render :partial => 'partials/follow_status', :locals => {:object => @course}) %>");

@@ -4,8 +4,8 @@ class UserToCoursesController < ApplicationController
         current_user.follow(params[:course_id])
         @course = Course.find(params[:course_id])
         respond_to do |format|
-            format.html	{redirect_to courses_path}
-            format.js {}
+            format.html{ redirect_to root_path}
+            format.js
         end
     end
     
@@ -13,8 +13,8 @@ class UserToCoursesController < ApplicationController
         current_user.unfollow(params[:course_id])
         @course = Course.find(params[:course_id])
         respond_to do |format|
-            format.html	{ redirect_to courses_path}
-            format.js {}
+            format.html
+            format.js
         end
     end
     

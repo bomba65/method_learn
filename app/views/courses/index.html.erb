@@ -14,7 +14,7 @@
         <div class="item end">
           <div class="top">
             <% if current_user.present? %>
-              <div class="follow_status">
+              <div id="follow_status_<%= course.id %>" class="follow_status">
                 <%= render "partials/follow_status", object: course %>
               </div>
             <% end %>
@@ -41,8 +41,8 @@
             </div>
 
             <% if current_user.present? && current_user.admin? %>
-              <%= link_to "Edit", edit_course_path(course),class: "admin-button" %>
-              <%= link_to "Delete", course, method: :delete, data:	{confirm: "You sure?"},class: "admin-button" %>
+              <%= link_to "Edit", edit_course_path(course), class: "admin-button" %>
+              <%= link_to "Delete", course, method: :delete, data:	{confirm: "You sure?"}, class: "admin-button" %>
             <% end %>
 
           </div>
