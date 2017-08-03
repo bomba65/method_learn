@@ -15,7 +15,7 @@
 </script>
 <%if UserToCourse.exists?(user_id: current_user.id ,course_id: @lesson.course_id ) %>
   <%if Lesson.where(course_id: @lesson.course_id).size > @lesson.lesson_order%>
-    <%=link_to "Начать следующий урок",lesson_path(Lesson.find_by_lesson_order_and_course_id(@lesson.lesson_order+1,@lesson.course_id)), class:"btn btn-success", id:"nextLesson"%>
+    <%=link_to "Начать следующий урок",lesson_path(Lesson.where("lesson_order > ?", @lesson.lesson_order).first), class:"btn btn-success", id:"nextLesson"%>
     <span>Урок успешно пройден <a id="closeSuccess">+</a></span>
   <%else%>
     <% if ProcessOfLesson.where(:user_to_course_id => UserToCourse.where(:course_id => @lesson.course_id,:user_id => current_user.id)).size+1 >= Lesson.where(:course_id =>@lesson.course_id).size %>

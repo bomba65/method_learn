@@ -22,7 +22,14 @@
 
             </div>
             <h3 class="course-title-x"><%= @course.title%></h3>
-            <a  class="btn btn-default startx" href="<%= @start_course %>" role="button">НАЧАТЬ КУРС</a>
+            
+            <% if @start.size != 0 %>
+              <%= link_to 'ПРОДОЛЖИТЬ КУРС', lesson_path(Lesson.where("lesson_order > ?", @last.lesson_order).first), class:"btn btn-default startx" %>
+            <% elsif current_user.following?(@course.id) %>
+              <%= link_to 'НАЧАТЬ КУРС', @start_course, class:"btn btn-default startx" %>
+            <% else %>
+              <%= link_to 'НАЧАТЬ КУРС', user_to_courses_path(course_id: @course.id), method: :post, class:"btn btn-default startx" %>
+            <% end %>
         </div>
 
 </div>
@@ -52,6 +59,10 @@
 
       <% end %>
     </div>
+    <% if current_user.present? && current_user.admin? %>
+      <%= link_to "Edit", edit_course_path(@course), class: "btn btn-default" %>
+      <%= link_to "Delete", @course, method: :delete, data:	{confirm: "You sure?"}, class: "btn btn-default" %>
+    <% end %>
     <%= link_to 'Назад', courses_path, class: "btn btn-default"%>
 </div>
 

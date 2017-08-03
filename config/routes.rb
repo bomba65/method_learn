@@ -14,7 +14,8 @@ Rails.application.routes.draw do
 
   get "/getlanguages", to: "courses#getlanguages"
   post "/overcourse", to: "lessons#overcourse"
-  
+
+  get "/start_course", to: "courses#start_course"  
   root 'static_pages#home'
 
   resources :courses
