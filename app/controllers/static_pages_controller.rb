@@ -6,17 +6,12 @@ class StaticPagesController < ApplicationController
 
   def about
   end
-  def getconsole 
-    @console_code = "$('#console').ace({ theme: 'twilight', lang: 'ruby'});";
-    @my_hash = {:code => @console_code}
-    respond_to do |format|
-      format.json { render json: @my_hash }
-    end
-  end 
+  
   def profile
     @courses = Course.all
     @finished_courses = UserToCourse.where(user_id: current_user.id, progress: 1)
     @unfinished_courses = UserToCourse.where(user_id: current_user.id, progress: 0)
+    @lessons = Lesson.all
   end
   
 end

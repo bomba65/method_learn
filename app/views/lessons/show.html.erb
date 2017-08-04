@@ -66,8 +66,18 @@
                     <% counter = 1%>
                     <% @theories.each do  |theory|%>
                       <li> <%= theory.content %></li>
+<<<<<<< HEAD
                       <% counter+=1%>
                        <% if current_user.admin? %>
+=======
+                      <% counter+=1 %>
+                      <% end %>
+                      <% @theories.each do  |theory|%>
+                      <% if theory.video!="" %>
+                        <iframe width="200" height="100" src=<%= "https://www.youtube.com/embed/" + theory.video %>></iframe>
+                      <% end %>
+                      <% if current_user.admin? %>
+>>>>>>> e6efca6650002a8f9b45ae68e2a592ed5fd32adf
                         <%= link_to "Edit", edit_theory_path(theory) %>
                         <%= link_to "Delete", theory, method: :delete, data:	{confirm: "You sure?"} %>
                       <% end %>
@@ -85,12 +95,13 @@
                     <ul>
                       <% counter = 1%>
                       <% @tasks.each do  |task|%>
-                        <li><%=counter%>. <%= task.answer %></li>
+                        <li><%= counter %>. Ответ: <%= task.answer %></li>
+                        <li>Невидымый код: <%= task.invisible_code %></li>
                         <% if current_user.admin? %>
                           <%= link_to "Edit", edit_task_path(task) %>
                           <%= link_to "Delete", task, method: :delete, data:	{confirm: "You sure?"} %>
                         <% end %>
-                        <% counter+=1%>
+                        <% counter+=1 %>
                       <% end %>
                      </ul>
                   </div>
@@ -148,5 +159,3 @@
       </div>
       
       <div class="clear"></div>
-
-     

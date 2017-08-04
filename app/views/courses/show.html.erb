@@ -1,29 +1,36 @@
 <div class="course-photo-container attention">
 
 
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-              <div id="overlay2" class="overlay"></div>
-              <div class="image2"style="background-image: url('https://4.bp.blogspot.com/-pigPfRWS3Sw/VWX-feGd7II/AAAAAAABjLE/K3JemRkjclI/s0/Coding_with_Style_wallpaper.jpg');
-              background-size: cover;"></div>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+        <div id="overlay2" class="overlay"></div>
+        <div class="image2"style="background-image: url('https://4.bp.blogspot.com/-pigPfRWS3Sw/VWX-feGd7II/AAAAAAABjLE/K3JemRkjclI/s0/Coding_with_Style_wallpaper.jpg');
+        background-size: cover;"></div>
+    </div>
+  </div>
 
-          </div>
+  <div class="course-info">
+      <h2 class="course-title"><%= @course.name %></h2>
+      <div class="raiting">
+        <%= image_tag("Star-unfilled.png")%>
+        <%= image_tag("Star-unfilled.png")%>
+        <%= image_tag("Star-unfilled.png")%>
+        <%= image_tag("Star-filled.png")%>
+        <%= image_tag("Star-filled.png")%>
 
-        </div>
-
-        <div class="course-info">
-            <h2 class="course-title"><%= @course.name %></h2>
-            <div class="raiting">
-              <%= image_tag("Star-unfilled.png")%>
-              <%= image_tag("Star-unfilled.png")%>
-              <%= image_tag("Star-unfilled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-
-            </div>
-            <h3 class="course-title-x"><%= @course.title%></h3>
-            <a  class="btn btn-default startx" href="<%= @start_course %>" role="button">НАЧАТЬ КУРС</a>
-        </div>
+      </div>
+      <h3 class="course-title-x"><%= @course.title%></h3>
+      
+      <% if @start.size == @lessons.size %>
+        <%= link_to 'ПОВТОРИТЬ КУРС', @start_course, class:"btn btn-default startx" %>
+      <% elsif @start.size != 0%>
+        <%= link_to 'ПРОДОЛЖИТЬ КУРС', lesson_path(@lessons.where("course_id = ? AND lesson_order > ?", @last.course_id, @last.lesson_order).first), class:"btn btn-default startx" %>
+      <% elsif current_user.following?(@course.id) %>
+        <%= link_to 'НАЧАТЬ КУРС', @start_course, class:"btn btn-default startx" %>
+      <% else %>
+        <%= link_to 'НАЧАТЬ КУРС', user_to_courses_path(course_id: @course.id), method: :post, class:"btn btn-default startx" %>
+      <% end %>
+  </div>
 
 </div>
 <div class="course-sylabus-container">
@@ -52,6 +59,10 @@
 
       <% end %>
     </div>
+    <% if current_user.present? && current_user.admin? %>
+      <%= link_to "Edit", edit_course_path(@course), class: "btn btn-default" %>
+      <%= link_to "Delete", @course, method: :delete, data:	{confirm: "You sure?"}, class: "btn btn-default" %>
+    <% end %>
     <%= link_to 'Назад', courses_path, class: "btn btn-default"%>
 </div>
 

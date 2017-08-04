@@ -3,9 +3,16 @@ class UserToCoursesController < ApplicationController
     def create
         current_user.follow(params[:course_id])
         @course = Course.find(params[:course_id])
-        respond_to do |format|
-            format.html	{redirect_to courses_path}
-            format.js {}
+        unless @course.lessons.first.nil?
+            respond_to do |format|
+                format.html{ redirect_to @course.lessons.first}
+                format.js
+            end
+        else
+            respond_to do |format|
+                format.html{ redirect_to @course}
+                format.js
+            end
         end
     end
     
@@ -13,8 +20,8 @@ class UserToCoursesController < ApplicationController
         current_user.unfollow(params[:course_id])
         @course = Course.find(params[:course_id])
         respond_to do |format|
-            format.html	{ redirect_to courses_path}
-            format.js {}
+            format.html{ redirect_to :back}
+            format.js
         end
     end
     

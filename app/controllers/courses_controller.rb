@@ -4,10 +4,18 @@ class CoursesController < ApplicationController
   
   def index
     @courses = Course.all
+    @userToCourses = UserToCourse.all
+    @lessons = Lesson.all
+    @processOfLessons = ProcessOfLesson.all
   end
 
   def show
     @parts = @course.parts
+    @start = ProcessOfLesson.where(user_to_course_id: UserToCourse.where(course_id: @course, user_id: current_user))
+    @lessons = Lesson.where(course_id: @course)
+    if @start.size > 0
+      @last = Lesson.find(@start.last.lesson_id)
+    end
     unless @course.lessons.first.nil?
       @start_course = lesson_path(@course.lessons.first)
     else
@@ -41,7 +49,7 @@ class CoursesController < ApplicationController
   
   def destroy
     @course.destroy
-    flash[:success] = "Part deleted!"
+    flash[:success] = "Course deleted!"
     redirect_to courses_path
   end
   
