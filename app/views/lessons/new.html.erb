@@ -1,7 +1,6 @@
 <body>
   <div class="add-new">
     <%= form_for @lesson  do |s| %>
-      <%= s.label :Название %><br>
       <%= s.text_field :name, placeholder: "Name of lesson"%>
       <%= s.text_area :exist_code, placeholder: "Exist Code"%>
       <%= s.hidden_field :part_id, :value => params[:part_id] %>
