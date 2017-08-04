@@ -23,9 +23,11 @@
       
       <h3 class="course-title-x"><%= @course.title%></h3>
       
-      <% if @start.size == @lessons.size %>
+      <% if @lessons.size == 0 %>
+        <div class="course-title-x">Пока что вы не можете начать курс ,так как отсутствуют уроки</div>
+      <% elsif @start.size == @lessons.size %>
         <%= link_to 'ПОВТОРИТЬ КУРС', @start_course, class:"btn btn-default startx" %>
-      <% elsif @start.size != 0%>
+      <% elsif @start.size != 0 %>
         <%= link_to 'ПРОДОЛЖИТЬ КУРС', lesson_path(@lessons.where("course_id = ? AND lesson_order > ?", @last.course_id, @last.lesson_order).first), class:"btn btn-default startx" %>
       <% elsif current_user.following?(@course.id) %>
         <%= link_to 'НАЧАТЬ КУРС', @start_course, class:"btn btn-default startx" %>
@@ -53,11 +55,25 @@
             <li>
             <%= link_to part.name, part, class:"parts-name" %>
             <% if current_user.present? && current_user.admin? %>
+              <%= link_to 'Добавить урок', new_lesson_path(:course_id => part.course_id, :part_id => part.id), class: "btn btn-default" %>
+            <% end %>
+            <% if current_user.present? && current_user.admin? %>
               <%= link_to "Edit", edit_part_path(part), class:"add-part-button" %>
               <%= link_to "Delete", part, method: :delete, data:	{confirm: "You sure?"}, class:"add-part-button"%>
             <% end %>
             </li>
           </ul>
+          <% part.lessons.each do  |lesson|%>
+            <ul>
+              <li>
+              <%= link_to lesson.name, lesson, class:"parts-name" %>
+              <% if current_user.present? && current_user.admin? %>
+                <%= link_to "Edit", edit_lesson_path(lesson), class:"add-part-button" %>
+                <%= link_to "Delete", lesson, method: :delete, data:	{confirm: "You sure?"}, class:"add-part-button"%>
+              <% end %>
+              </li>
+            </ul>
+          <% end %>
 
       <% end %>
     </div>
