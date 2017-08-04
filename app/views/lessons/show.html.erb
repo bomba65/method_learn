@@ -67,13 +67,14 @@
                     <% @theories.each do  |theory|%>
                       <li> <%= theory.content %></li>
                       <% counter+=1%>
-                      <% end %>
-                      <% @theories.each do  |theory|%>
-                      <li><%=theory.video%></li>
-                      <% if current_user.admin? %>
+                       <% if current_user.admin? %>
                         <%= link_to "Edit", edit_theory_path(theory) %>
                         <%= link_to "Delete", theory, method: :delete, data:	{confirm: "You sure?"} %>
                       <% end %>
+                      <% end %>
+                      <% @theories.each do  |theory|%>
+                      <li><%=theory.video%></li>
+                     
                     <% end %>
                 </ul>
                 </div>
@@ -117,9 +118,9 @@
 
             <% @tasks.each do  |task|%>
               <%if task.invisible_code?%>
-               <input id="ivsCode" type="hidden" value="<%= task.invisible_code %>"></input>
+               <input class="ivsCode" type="hidden" value="<%= task.invisible_code %>"></input>
                <%else%>
-               <input id="ivsCode" type="hidden" value=""></input>
+               <input class="ivsCode" type="hidden" value=""></input>
               <%end%>
             <% end %>
             
