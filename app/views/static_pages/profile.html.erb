@@ -54,11 +54,12 @@
       <% course = @courses.find(finished_course.course_id) %>
       <div class="item end">
         <div class="top">
-          <div class="follow_status">
+          <div id="follow_status_<%= course.id %>" class="follow_status">
+            <%= link_to 'ПОВТОРИТЬ КУРС', lesson_path(course.lessons.first), class:"btn btn-default" %>
           </div>
         </div>
         <div class="middle">
-          <h4><%= course.name %></h4>
+          <h4><%= link_to course.name, course, class:"course-name" %></h4>
         </div>
         <div class="border"></div>
         <div class="desc">

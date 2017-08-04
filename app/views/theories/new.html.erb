@@ -7,13 +7,13 @@
     </div>
     <div class="sub_category_creating videomrg">
       <%= s.label :"Код с YouTube на видео" %><br>
-      <%= s.text_field :video %>
+      https://www.youtube.com/watch?v=<%= s.text_field :video, placeholder: "ID of your youtube video" %>
     </div>
     <div class="sub_category_creating">
       <%= s.hidden_field :lesson_id, :value => params[:lesson_id] %>
     </div>
     <div class="sub_category_creating">
-      <%= s.submit "Create Lesson", class: "btn btn-default"%>
+      <%= s.submit "Create Theory", class: "btn btn-default"%>
     </div>
     <% end %>
   </div>
