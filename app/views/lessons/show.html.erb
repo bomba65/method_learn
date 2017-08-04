@@ -13,7 +13,6 @@
         success: function(data){
             // console.log(data);
             var lang = []; // create an empty array
-
             
             
              for(var key in data.languages.codes) {
@@ -66,25 +65,14 @@
                     <% counter = 1%>
                     <% @theories.each do  |theory|%>
                       <li> <%= theory.content %></li>
-<<<<<<< HEAD
-                      <% counter+=1%>
-                       <% if current_user.admin? %>
-=======
                       <% counter+=1 %>
                       <% end %>
                       <% @theories.each do  |theory|%>
-                      <% if theory.video!="" %>
-                        <iframe width="200" height="100" src=<%= "https://www.youtube.com/embed/" + theory.video %>></iframe>
-                      <% end %>
+                      <li><%= theory.video %></li>
                       <% if current_user.admin? %>
->>>>>>> e6efca6650002a8f9b45ae68e2a592ed5fd32adf
                         <%= link_to "Edit", edit_theory_path(theory) %>
                         <%= link_to "Delete", theory, method: :delete, data:	{confirm: "You sure?"} %>
                       <% end %>
-                      <% end %>
-                      <% @theories.each do  |theory|%>
-                      <li><%=theory.video%></li>
-                     
                     <% end %>
                 </ul>
                 </div>
@@ -129,9 +117,9 @@
 
             <% @tasks.each do  |task|%>
               <%if task.invisible_code?%>
-               <input class="ivsCode" type="hidden" value="<%= task.invisible_code %>"></input>
+               <input id="ivsCode" type="hidden" value="<%= task.invisible_code %>"></input>
                <%else%>
-               <input class="ivsCode" type="hidden" value=""></input>
+               <input id="ivsCode" type="hidden" value=""></input>
               <%end%>
             <% end %>
             
