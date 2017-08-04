@@ -24,9 +24,10 @@
       <% if(current_user.present?) %>
         <ul class="nav navbar-nav navbar-right">
                 <li><div class="user">
-                   <a type="button" class="profile dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://wallpaperscraft.com/image/paris_france_building_sky_street_108895_1920x1080.jpg" alt="..." class="img-circle"></a>
+                   <a type="button" class="profile dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= image_tag current_user.avatar.url, class: 'img-circle' %></a>
                    <ul class="dropdown-menu">
                      <li><a href="<%= profile_path %>">Мой профиль</a></li>
+                     <li><%= link_to 'Изменить профиль', edit_user_registration_path %></li>
 
                      <li role="separator" class="divider"></li>
                      <li><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>
