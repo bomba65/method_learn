@@ -1,5 +1,10 @@
 RailsAdmin.config do |config|
-
+  
+  config.main_app_name = ["Method", "Обучающие курсы"]
+  # or something more dynamic
+  config.main_app_name = Proc.new { |controller| [ "Method", "Обучающие курсы - #{controller.params[:action].try(:titleize)}" ] }
+  
+ 
   ### Popular gems integration
 
   ## == Devise ==
@@ -12,7 +17,7 @@ RailsAdmin.config do |config|
   # config.authorize_with :cancan
 
   ## == Pundit ==
-  # config.authorize_with :pundit
+  config.authorize_with :pundit
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0

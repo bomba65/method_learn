@@ -13,7 +13,6 @@
         success: function(data){
             // console.log(data);
             var lang = []; // create an empty array
-
             
             
              for(var key in data.languages.codes) {
@@ -69,9 +68,7 @@
                       <% counter+=1 %>
                       <% end %>
                       <% @theories.each do  |theory|%>
-                      <% if theory.video!="" %>
-                        <iframe width="200" height="100" src=<%= "https://www.youtube.com/embed/" + theory.video %>></iframe>
-                      <% end %>
+                      <li><%= theory.video %></li>
                       <% if current_user.admin? %>
                         <%= link_to "Edit", edit_theory_path(theory) %>
                         <%= link_to "Delete", theory, method: :delete, data:	{confirm: "You sure?"} %>
