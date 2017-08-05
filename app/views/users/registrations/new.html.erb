@@ -1,67 +1,81 @@
-<div class="login ">
-  <p class="loginx">ПАНЕЛЬ ДЛЯ РЕГИСТРАЦИИ</p>
- 
+<div class="container-fluid">
+<div class="enter">
+
+  <div class="signup">
+    <p class="signupx">ПАНЕЛЬ ДЛЯ РЕГИСТРАЦИИ</p>
 
 
 
-<%- flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, id: "flash_#{name}" %>
-<%- end -%>
+
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+  <%- end -%>
 
 
-<div class="div">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-    
-    <div class="form-group">
-      <div class="input-group">
-          <%= f.email_field :email, autofocus: true, type: "text", class: "form-control",id: "exampleInputEmail1", placeholder: "Почтовый адрес"%>
-      </div>
-    </div>
-    
-    <div class="form-group">
-      <div class="input-group">
-          <%= f.text_field :first_name, autofocus: true, type: "text", class: "form-control",id: "exampleInputEmail1", placeholder: "Введите ваше имя"%>
-      </div>
-    </div>
-    
-    <div class="form-group">
-      <div class="input-group">
-          <%= f.text_field :last_name, autofocus: true, type: "text", class: "form-control",id: "exampleInputEmail1", placeholder: "Введите ваше фамилие"%>
-      </div>
-    </div>
-    
-    <div class="form-group">
-      <div class="input-group">
-          <%= f.file_field :avatar%>
-      </div>
-    </div>
-    
-    <div class="form-group">
-      <div class="input-group">
-       
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, class: "form-control", autocomplete: "off",placeholder: "Введите ваш пароль"%>
-      </div>
-    </div>
-    
-    <div class="form-group">
-      <div class="input-group">
-       
-        <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control",placeholder: "Введите ваш пароль еще раз"%>    
-      </div>
-    </div>
-    
-    <div class="form-group">
-      <div class="input-group">
-         <%= f.submit "Sign up", class: "btn btn-default submitx another" %>
-      </div>
-    </div>
+  <div class="starthere">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-  <% end %>
+      <div class="form-group">
+        <div class="input-group"><span class="input-group-addon" id="basic-addon1"><span class="email"><%= image_tag("email.svg", :alt => "Method Coding School", :height => 17) %></span></span>
+            <%= f.email_field :email, autofocus: true, type: "text", class: "form-control",id: "exampleInputEmail1", placeholder: "Почтовый адрес"%>
+        </div>
+      </div>
 
-  
+      <div class="form-group">
+        <div class="input-group"><span class="input-group-addon" id="basic-addon1"><span class="email"><%= image_tag("email.svg", :alt => "Method Coding School", :height => 17) %></span></span>
+            <%= f.text_field :first_name, autofocus: true, type: "text", class: "form-control",id: "exampleInputEmail1", placeholder: "Введите ваше имя"%>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group"><span class="input-group-addon" id="basic-addon1"><span class="email"><%= image_tag("email.svg", :alt => "Method Coding School", :height => 17) %></span></span>
+            <%= f.text_field :last_name, autofocus: true, type: "text", class: "form-control",id: "exampleInputEmail1", placeholder: "Введите ваше фамилие"%>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+            <%= f.file_field :avatar%>
+        </div>
+      </div>
+
+      <% if @minimum_password_length %>
+      <em>(Минимум <%= @minimum_password_length %> символов)</em>
+        <% end %>
+
+
+      <div class="form-group">
+        <div class="input-group extra">
+          <span class="input-group-addon" id="basic-addon1"><span class="lock"><%= image_tag("2.svg", :alt => "Method Coding School", :height => 20) %></span></span>
+
+
+
+            <%= f.password_field :password, class: "form-control", autocomplete: "off",placeholder: "Введите ваш пароль"%>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><span class="lock"><%= image_tag("2.svg", :alt => "Method Coding School", :height => 20) %></span></span>
+          <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control",placeholder: "Введите ваш пароль еще раз"%>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+           <%= f.submit "Регистрация", class: "btn btn-default signnow" %>
+        </div>
+      </div>
+
+    <% end %>
+
+
+  </div>
+  </div>
+
+
+
+
 </div>
 </div>
