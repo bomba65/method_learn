@@ -37,21 +37,54 @@
         }
     }); 
 </script>
-<% if current_user.admin? %>
-  <div class="add-part-button">
-    <%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
-  </div>
+<div class="blockchik">
+  <% if current_user.admin? %>
   
+    <div class="add-part-button">
+      <%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
+    </div>
+    
+    <div class="add-part-button">
+      <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
+    </div>
+    <div class="add-part-button">
+      <%= link_to 'Добавить инстукцию', new_instruction_path(:lesson_id => @lesson.id) %>
+    </div>
+  <% end %>
   <div class="add-part-button">
-    <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
+    <%= link_to 'Назад', part_path(:id => @lesson.part_id) %>
   </div>
-  <div class="add-part-button">
-    <%= link_to 'Добавить инстукцию', new_instruction_path(:lesson_id => @lesson.id) %>
+  <!-- Large modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <% @parts.each do  |part|%>
+          <ul>
+            <li>
+            <%= link_to part.name, part, class:"parts-name" %>
+            
+            </li>
+          </ul>
+          <% part.lessons.each do  |lesson|%>
+            <ul>
+              <li>
+              <% @usertocourses do  |usertocourse|%>
+                <% @procesessOfLessons do  |processOfLessons|%>
+                  <%= link_to lesson.name, lesson, class:"lessons-name" %>
+                <%end%>
+                  
+              <%end%>
+              </li>
+            </ul>
+          <% end %>
+
+      <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
-<div class="add-part-button">
-  <%= link_to 'Назад', part_path(:id => @lesson.part_id) %>
-</div>
+  </div>
 
 <div class="lesson">
           <div class="col-md-2 taskpanel">

@@ -1,0 +1,71 @@
+body {
+  background: #F1F1F1;
+}
+.main-first-info {
+  padding: 40px;
+  font-family: 'Lato', sans-serif!important;
+  text-align: center;
+  background: white;
+}
+
+.main-welcome-video {
+}
+
+.main-welcome-video .overlay {
+  position: relative;
+  height: 600px;
+  background: black;
+  z-index: 1;
+  width:100%;
+  margin-bottom: -600px;
+  background: url(overlay.png);
+  background-size: cover;
+}
+
+.play-button {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: url(play.png);
+  background-size: 100% 100%;
+  margin-top: 250px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.main-first-info {
+
+  margin-bottom: 10px;
+}
+
+.companies-content {
+
+}
+.companies-content .itemx {
+  display: inline-block;
+  margin: 20px 70px;
+}
+.main-first-info p{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.contactus {
+  padding: 50px;
+  text-align: center;
+  font-family: 'Lato', sans-serif!important;
+  background: url(contact.png);
+  background-size: cover;
+  color: white;
+}
+
+.contactus h3 {
+  width: 500px;
+  margin: 0 auto;
+  font-weight: lighter;
+  width: 100%;
+}
