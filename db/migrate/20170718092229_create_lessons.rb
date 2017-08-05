@@ -6,6 +6,7 @@ class CreateLessons < ActiveRecord::Migration
       t.integer :lesson_order
       t.integer :course_id
       t.text :exist_code
+      t.integer :point
 
       t.timestamps null: false
     end

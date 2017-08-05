@@ -3,6 +3,7 @@
     <%= form_for @lesson  do |s| %>
       <%= s.text_field :name, placeholder: "Name of lesson"%>
       <%= s.text_area :exist_code, placeholder: "Exist Code"%>
+      <%= s.number_field  :point, placeholder: "Point" %>
       <%= s.hidden_field :part_id, :value => params[:part_id] %>
       <%= s.hidden_field :course_id, :value => Course.find(Part.find(params[:part_id]).course_id).id %>
       <%= s.hidden_field :lesson_order, :value => Lesson.where(:course_id => params[:course_id]).size+1 %>
