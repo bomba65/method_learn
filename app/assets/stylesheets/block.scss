@@ -1,11 +1,10 @@
 .program .partners{
   height: 96px;
-  background-color: white;
+  background-color: white!important;
 }
-.partners{
-  margin-top: -9px;
-  margin-left: 12px;
-  width: 98.3%;
+.program .partners{
+  height: 96px;
+  background-color: white!important;
 }
 .logo img{
   margin-top: 10px!important;
@@ -20,26 +19,29 @@
   margin-right: 10px;
 }
 .text1{
+  width: 289px;
   font-family: Lato;
   font-size: 15px;
   font-weight: bold;
   letter-spacing: 0.8px!important;
   color: #14282c;
   position: absolute!important;
-  top: 22px;
-    left: 180px;
-    width: 289px;
+  top: 25px;
+  left: 60px;
+}
+.text1, .text2{
+  display: inline;
 }
 .text2{
+  width: 289px;
   font-family: Lato;
   font-size: 11px;
   font-weight: bold;
   letter-spacing: 0.5px;
   color: #5d8790;
   position: absolute;
-  top: 44px;
-    left: 154px;
-    width: 289px;
+  top: 49px;
+  left: -40px;
 }
 .text3{
   font-size: 18px;
@@ -48,7 +50,7 @@
   color: #14282c;
   position: absolute;
   top: 25px;
-  right: 22%;
+  right: 350px;
 }
 .number{
   color: white;
@@ -75,38 +77,18 @@
     border-radius: 100px;
     background-color: #2fd3b0;
 }
-@media only screen and (max-width:1180px){
-  .text3{
-    position: absolute;
-    right: 22.8%;
-  }
-}
-@media only screen and (max-width:1080px){
-  .text3{
-    position: absolute;
-    right: 23.5%;
-  }
-}
 @media only screen and (max-width:980px){
   .text p{
     display: none;
   }
-  .text3{
-    position: absolute;
-    right: 25.2%;
-  }
 }
-@media only screen and (max-width:640px){
+@media only screen and (max-width:600px){
   .logo img{
     display: none;
   }
   .text3{
     position: absolute;
-    left: 20px;
-  }
-  #myProgress{
-    position: absolute;
-    left: 20px;
+    left: 5px;
   }
 }
 @media only screen and (max-width:500px){
@@ -115,45 +97,57 @@
   }
 }
 
+
+
+
+
+
+
+
+@media only screen and (max-width:1300px){
+   .partners{
+     width: 97.8%;
+   }
+ }
  @media only screen and (max-width:1280px){
    .partners{
-     width: 98%;
+     width: 97.5%;
    }
  }
  @media only screen and (max-width:1080px){
    .partners{
-     width: 97.5%;
+     width: 97%;
    }
  }
  @media only screen and (max-width:980px){
    .partners{
-     width: 97.5%;
+     width: 97%;
    }
  }
  @media only screen and (max-width: 880px){
    .partners{
-     width: 97.3%;
+     width: 96.9%;
    }
  }
 @media only screen and (max-width:779px){
   .partners{
-    width: 97.1%;
+    width: 96.6%;
   }
 }
 @media only screen and (max-width:680px){
   .partners{
-    width: 96.5%;
+    width: 96%;
     background-color: white!important;
   }
 }
 @media only screen and (max-width:580px){
   .partners{
-    width: 95.7%;
+    width: 95.2%;
   }
 }
 @media only screen and (max-width:480px){
   .partners{
-    width: 95.4%;
+    width: 94.9%;
   }
   #overlay2{
     position: absolute;
