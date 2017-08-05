@@ -4,7 +4,7 @@
 .welcome .item{
   margin-top:1.8%;
   margin-bottom: -0.2%!important;
-  height: 55.3vh!important;
+  height: 370px!important;
 }
 .image{
   position: relative;
@@ -29,7 +29,7 @@ label .checkbox{
   border-style: none!important;
 }
 .another{
-  margin-top: 5px!important;
+  margin-top: -7px!important;
   margin-left: 1%;
 }
 .div{
@@ -81,7 +81,7 @@ label .checkbox{
 
 .login{
   width: 26%;
-  height: 60vh;
+  height: 400px!important;
   background-color: white;
   margin-left: 4%;
   margin-top: 4%;
@@ -95,7 +95,7 @@ label .checkbox{
 }
 .welcome{
   width: 64%;
-  height: 60vh;
+  height: 400px;
   background-color: white;
   margin-top: 4%;
   margin-left: 2%;
@@ -209,16 +209,11 @@ width: 100%!important;
 }
 //checkbox only
 @media only screen and (max-width: 1280px){
- .login{
- height: 55vh;
- }
- .welcome{
-   height: 55vh;
- }
  .welcome .item{
    margin-top:1.8%;
    margin-bottom:-0.2%;
-   height: 50.5vh!important;
+  //  height: 50.5vh!important;
+  height: 370px!important;
  }
  .submit .btn-default{
    position: relative;
@@ -234,16 +229,10 @@ width: 100%!important;
  }
 }
 @media only screen and (max-width: 1080px){
- .login{
- height: 58vh;
- }
- .welcome{
-   height: 58vh;
- }
  .welcome .item{
    margin-top:2.2%;
    margin-bottom:-0.8%;
-   height: 54vh!important;
+
  }
  .whensm{
    height: 56vh!important;
@@ -261,12 +250,6 @@ width: 100%!important;
  }
 }
 @media only screen and (max-width: 980px){
-  .login{
-  height: 58vh;
-  }
-  .welcome{
-    height: 58vh;
-  }
   .item{
     margin-top:2.5%;
     margin-bottom:-0.8%;
@@ -288,14 +271,16 @@ width: 100%!important;
     font-size: 25px;
   }
 }
+
 @media only screen and (max-width: 920px){
   .login{
     width: 40%;
-    height: 51vh;
+    height: 365px!important;
     background-color: white;
     margin-left: 30%;
     margin-top: 4%;
     margin-bottom: 10px!important;
+    padding-top: 0;
   }
   .loginx{
     color: #606060;
@@ -337,7 +322,6 @@ width: 100%!important;
 @media only screen and (max-width: 680px){
   .login{
     width: 50%;
-    height: 57vh;
     background-color: white;
     margin-left: 25%;
     margin-top: 4%;
@@ -363,14 +347,13 @@ width: 100%!important;
 @media only screen and (max-width: 480px){
   .login{
     width: 90%;
-    height: 47vh;
     margin-left: 5%;
     margin-bottom: 25px;
     margin-top: 20px!important;
   }
   .submit .btn-default{
     position: relative;
-    top: 1vh!important;
+    top: 5vh!important;
   }
 }
 @media only screen and (max-width: 330px){
@@ -381,4 +364,47 @@ width: 100%!important;
     position: relative;
     top: 2vh;
   }
+}
+//ADDING FRONT END... TOO TIRED FROM TRANSFORMING FOR A USUAL FILE
+.submit p{
+  text-align: center;
+  position: relative;
+  top: 38px;
+}
+@media only screen and (max-width:1280px){
+  .submit p{
+    position: relative;
+    top: 38px;
+  }
+}
+.submit a{
+  color: #B96C35 !important;
+}
+@media only screen and (max-width: 480px){
+  .submit p{
+    position: relative;
+    top: 42px;
+  }
+  .submit .btn-default{
+    position: relative;
+    top: 5vh !important;
+  }
+}
+@media only screen and (max-width: 330px){
+  .submit p{
+    position: relative;
+    top: 24px;
+  }
+  .submit .btn-default{
+    position: relative;
+    top: 3vh !important;
+  }
+}
+.submit .btn-default {
+    position: relative;
+    top: 35px !important;
+}
+.submit p{
+  position: relative;
+  top: 42px;
 }
