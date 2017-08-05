@@ -1,8 +1,4 @@
-<div class="login col-xs-12 col-sm-6 col-md-8">
-  <p class="loginx">ПАНЕЛЬ ДЛЯ ВХОДА</p>
-<%- flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, id: "flash_#{name}" %>
-<%- end -%>
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div class="div">
