@@ -1,0 +1,91 @@
+.program .partners{
+  height: 96px;
+}
+.logo img{
+  margin-top: 10px!important;
+  margin-left: 15px;
+}
+.wings img{
+  margin-top: -25px;
+  width: 130px;
+  height: 70px;
+  float: right;
+  clear: both;
+  margin-right: 10px;
+}
+.text1{
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.8px!important;
+  text-align: center;
+  color: #14282c;
+  position: absolute!important;
+  top: 25px;
+  left: 60px;
+}
+.text2{
+  font-family: Lato;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #5d8790;
+  position: absolute;
+  top: 49px;
+  left: -40px;
+}
+.text3{
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  color: #14282c;
+  position: absolute;
+  top: 25px;
+  right: 350px;
+}
+.number{
+  color: white;
+  position: absolute;
+  z-index: 3;
+  top: 40%;
+  right:82px;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
+#myProgress {
+    width: 18%;
+    border-radius: 20px;
+    background-color: #d8d8d8;
+    position: absolute;
+    top: 60px;
+    right: 200px;
+}
+#myBar {
+    width: 17%;
+    height: 7px;
+    border-radius: 100px;
+    background-color: #2fd3b0;
+}
+
+@media only screen and (max-width:980px){
+  .text p{
+    display: none;
+  }
+}
+@media only screen and (max-width:600px){
+  .logo img{
+    display: none;
+  }
+  .text3{
+    position: absolute;
+    left: 5px;
+  }
+}
+@media only screen and (max-width:500px){
+  .text3, #myProgress{
+    display: none;
+  }
+}
