@@ -37,8 +37,8 @@
           </ul>
         <% else %>
           <ul class="nav navbar-nav navbar-right">
-            <li><a  class="btn btn-default loginbutton" href="<%= signin_path(:state=> "login") %>" role="button">Войти</a></li>
-            <li><a  class="btn btn-default loginbutton" href="<%= signin_path(:state=> "registration") %>" role="button">Регистрация</a></li>
+            <li><a  class="btn btn-default loginbutton" href="<%= signin_path %>" role="button">Войти</a></li>
+            <li><a  class="btn btn-default loginbutton" href="<%= new_user_registration_path %>" role="button">Регистрация</a></li>
           
           </ul>
         <% end %>

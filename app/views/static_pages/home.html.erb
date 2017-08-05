@@ -10,11 +10,13 @@
   <div class="container-fluid">
     <div class="enter">
       <% unless(current_user.present?) %>
-           <% if  @state == "login"%>
-            <%= render "users/sessions/new" %>
-          <% elsif @state == "signin" %>
-            <%= render "users/registrations/new" %>
-          <% end %>
+          <div class="login col-xs-12 col-sm-6 col-md-8">
+            <p class="loginx">ПАНЕЛЬ ДЛЯ ВХОДА</p>
+          <%- flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, id: "flash_#{name}" %>
+          <%- end -%>
+          <%= render("users/sessions/new")%>
+          </div>
 
           <div class="welcome col-xs-6 col-md-4">
           <p class="textrotator text"></p>
