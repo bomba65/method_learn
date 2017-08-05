@@ -12,4 +12,8 @@ class StaticPagesController < ApplicationController
     @lessons = Lesson.all
   end
   
+  def main 
+    @courses = Course.all
+  end
+  
 end
