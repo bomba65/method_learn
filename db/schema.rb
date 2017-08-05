@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170804113430) do
     t.integer  "lesson_order"
     t.integer  "course_id"
     t.text     "exist_code"
+    t.integer  "point"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170804113430) do
   create_table "process_of_lessons", force: :cascade do |t|
     t.integer  "user_to_course_id"
     t.integer  "lesson_id"
+    t.integer  "point"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end

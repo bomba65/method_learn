@@ -1,7 +1,6 @@
 <div class="profilex">
   <%= image_tag current_user.avatar.url, class: 'avatarx' %>
-  <h4>Шаяхметов Руслан</h4>
-  <i>Алматы</i>
+  <h4><%= current_user.last_name %> <%= current_user.first_name %></h4>
 </div>
 <div class="courses-title">
   <h4>Курсы которые я прохожу</h4>

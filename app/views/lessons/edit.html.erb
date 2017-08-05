@@ -9,5 +9,6 @@
 <%= form_for @lesson do |f| %>
   <%= f.text_field :name, placeholder: "Name of lesson"%>
   <%= f.text_area :exist_code, placeholder: "Exist Code" %>
+  <%= f.number_field  :point, placeholder: "Point" %>
   <%= f.submit "Edit" %>
 <% end %>
