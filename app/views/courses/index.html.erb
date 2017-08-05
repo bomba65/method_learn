@@ -37,13 +37,7 @@
 
           <div class="bottomblue bottombluex">
 
-            <div class="raiting">
-             <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-filled.png")%>
-              <%= image_tag("Star-unfilled.png")%>
-            </div>
+        
 
             <% if current_user.present? && current_user.admin? %>
               <%= link_to "Edit", edit_course_path(course), class: "admin-button" %>

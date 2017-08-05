@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   post "/overcourse", to: "lessons#overcourse"
 
   get "/start_course", to: "courses#start_course"  
-  root 'static_pages#home'
+  root 'static_pages#main'
+  get "/signin", to: "static_pages#home"
 
   resources :courses
   resources :lessons

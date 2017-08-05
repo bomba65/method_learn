@@ -2,6 +2,12 @@ class StaticPagesController < ApplicationController
   before_filter :authorize_user, only: [:profile]
   
   def home
+    @state = "login"
+    if params[:state] == "login"
+      @state = "login"
+    else 
+      @state = "signin"
+    end
   end
 
   def about

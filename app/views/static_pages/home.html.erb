@@ -1,14 +1,20 @@
-<body>
+<script>
+  
+  
+  
+  
+</script>
+<input type="hidden" id="signstate" ></input>
   <% provide :title, "Home" %>
 
   <div class="container-fluid">
     <div class="enter">
       <% unless(current_user.present?) %>
-          <div class="login col-xs-12 col-sm-6 col-md-8">
-            <p class="loginx">ПАНЕЛЬ ДЛЯ ВХОДА</p>
+           <% if  @state == "login"%>
             <%= render "users/sessions/new" %>
-
-          </div>
+          <% elsif @state == "signin" %>
+            <%= render "users/registrations/new" %>
+          <% end %>
 
           <div class="welcome col-xs-6 col-md-4">
           <p class="textrotator text"></p>
@@ -58,4 +64,4 @@
    </div>
   </div>
 
-</body>
+

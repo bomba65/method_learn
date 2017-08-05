@@ -1,3 +1,5 @@
+<div class="login col-xs-12 col-sm-6 col-md-8">
+  <p class="loginx">ПАНЕЛЬ ДЛЯ ВХОДА</p>
 <%- flash.each do |name, msg| -%>
   <%= content_tag :div, msg, id: "flash_#{name}" %>
 <%- end -%>
@@ -24,12 +26,15 @@
     <% if devise_mapping.rememberable? -%>
     <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
     <label style="font-family: 'Lato', sans-serif!important; font-size: 14px; font-weight: normal;"for="styled-checkbox-1"> Запомнить пароль</label>
-    <% end -%>
+    <% end %>
   </div>
 
   <div class="submit">
     <%= f.submit "ВОЙТИ В СИСТЕМУ", class: "btn btn-default submitx another" %>
+    <a href=""><p style="font-family: 'Lato', sans-serif!important; font-size: 14px; font-weight: normal;">Не зарегистрированы?</p></a>
+  
   </div>
   <% end %>
 </div>
 
+</div>
