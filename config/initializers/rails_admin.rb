@@ -13,11 +13,7 @@ RailsAdmin.config do |config|
   # config.authorize_with :cancan
 
   ## == Pundit ==
-<<<<<<< HEAD
   #config.authorize_with :pundit
-=======
-  # config.authorize_with :pundit
->>>>>>> 6364dd391bb99b4abfe00249229acda1c076fc1a
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
