@@ -14,16 +14,19 @@
   });
 </script>
 <%if UserToCourse.exists?(user_id: current_user.id ,course_id: @lesson.course_id ) %>
-  <%if Lesson.where(course_id: @lesson.course_id).size > @lesson.lesson_order%>
-    <%=link_to "Начать следующий урок",lesson_path(Lesson.where("lesson_order > ?", @lesson.lesson_order).first), class:"btn btn-success", id:"nextLesson"%>
+  <%if Lesson.where("part_id = ? AND id > ?", @lesson.part_id, @lesson.id).size == 1 %>
+    <%=link_to "Начать следующий урок",lesson_path(Lesson.where("part_id = ? AND id > ?", @lesson.part_id, @lesson).first), class:"btn btn-success", id:"nextLesson"%>
+    <span>Урок успешно пройден <a id="closeSuccess">+</a></span>
+  <% elsif Part.where("course_id = ? AND id > ?", @lesson.course_id, @lesson.part_id).size == 1%>
+    <%=link_to "Начать следующий урок",lesson_path(Lesson.where("course_id = ? AND part_id > ?", @lesson.course_id, @lesson.part_id).first), class:"btn btn-success", id:"nextLesson"%>
     <span>Урок успешно пройден <a id="closeSuccess">+</a></span>
   <%else%>
     <% if ProcessOfLesson.where(:user_to_course_id => UserToCourse.where(:course_id => @lesson.course_id,:user_id => current_user.id)).size+1 >= Lesson.where(:course_id =>@lesson.course_id).size %>
-      <a class="btn btn-success" id="endcourse"> Закончить курс <%=ProcessOfLesson.where(:user_to_course_id => UserToCourse.where(:course_id => @lesson.course_id,:user_id => current_user.id)).size%></a>
+      <a class="btn btn-success" id="endcourse"> Закончить курс </a>
       <input type="hidden" value="<%= UserToCourse.find_by_user_id_and_course_id(current_user.id ,@lesson.course_id ).id%>" id="endcoursedata" >
       <span>Курc успешно завершен<a id="closeSuccess">+</a></span>
     <%else %>
-      <span>Пройди все части курса<%=ProcessOfLesson.where(:user_to_course_id => UserToCourse.where(:course_id => @lesson.course_id,:user_id => current_user.id)).size%><a id="closeSuccess">+</a></span>
+      <span>Пройди все части курса<a id="closeSuccess">+</a></span>
     <%end%>
   <%end%>
 <%end%>
