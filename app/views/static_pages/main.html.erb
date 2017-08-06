@@ -1,0 +1,159 @@
+
+
+<div class="main-first-info">
+    <div class="main-image">
+      <div class="main-image-text">
+        ОБУЧЕНИЕ ПРОГРАММИРОВАНИЮ ДЛЯ УЧИТЕЛЕЙ
+        METHOD.KZ
+      </div>
+      <a href="#" class="button-default">ВОЙТИ</a>
+      <a href="#" class="button-default">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+    </div>
+    <div class="list-of-image">
+      <div class="image-item" style="background: url(assets/first.png);background-size:cover;">
+        <h3>ПРИСОЕДЕНИСЬ К НАМ ПО ПРИГЛАШЕНИЮ</h3>
+        <span class="next-level"></span></div>
+
+      <div class="image-item" style="background: url(assets/second.png);background-size:cover;">
+        <h3>ПРИСОЕДЕНИСЬ К НАМ ПО ПРИГЛАШЕНИЮ</h3>
+      <span class="next-level"></span></div>
+      <div class="image-item" style="background: url(assets/third.png);background-size:cover;">
+        <h3>ПРИСОЕДЕНИСЬ К НАМ ПО ПРИГЛАШЕНИЮ</h3>
+      </div>
+    </div>
+</div>
+
+<div class="main-first-info">
+      <h1>Наши партнеры</h1>
+      <div class="companies-content">
+        <div class="itemx">
+        <%=image_tag src="yandex.png", class:"community-user-photo"%>
+        
+        </div>
+        <div class="itemx">
+          <%=image_tag src="sdu.png", class:"community-user-photo"%>
+        </div>
+        <div class="itemx">
+          <%=image_tag src="google.png", class:"community-user-photo"%>
+        </div>
+        <div class="itemx">
+          <%=image_tag src="method.png", class:"community-user-photo"%>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-first-infox">
+      <div class="item">
+          <h1>Наше сообщество</h1>
+          <ul id="content-slider" class="content-slider">
+              <li>
+                <h3>“Школа программирования Method. Сначала мы долго переживали, что школа не открывается, потом долго переживали, что не подходим по возрасту, но вчера моя девятилетняя деточка пошла на первый урок и к концу урока напрограммировала две (мне такое в девять лет и не снилось ))))) игры. Счастью нет предела! ))) Огромное спасибо талантливым ребятам, которых, к сожалению, я всех не знаю лично.”
+                </h3>
+                <%=image_tag src="lion.png", class:"community-user-photo"%>
+              </li>
+              <li>
+                <h3>“Школа программирования Method. Сначала мы долго переживали, что школа не открывается, потом долго переживали, что не подходим по возрасту, но вчера моя девятилетняя деточка пошла на первый урок и к концу урока напрограммировала две (мне такое в девять лет и не снилось ))))) игры. Счастью нет предела! ))) Огромное спасибо талантливым ребятам, которых, к сожалению, я всех не знаю лично.”
+                </h3>
+              </li>
+              <li>
+                <h3>“Школа программирования Method. Сначала мы долго переживали, что школа не открывается, потом долго переживали, что не подходим по возрасту, но вчера моя девятилетняя деточка пошла на первый урок и к концу урока напрограммировала две (мне такое в девять лет и не снилось ))))) игры. Счастью нет предела! ))) Огромное спасибо талантливым ребятам, которых, к сожалению, я всех не знаю лично.”
+                </h3>
+              </li>
+              <li>
+                <h3>“Школа программирования Method. Сначала мы долго переживали, что школа не открывается, потом долго переживали, что не подходим по возрасту, но вчера моя девятилетняя деточка пошла на первый урок и к концу урока напрограммировала две (мне такое в девять лет и не снилось ))))) игры. Счастью нет предела! ))) Огромное спасибо талантливым ребятам, которых, к сожалению, я всех не знаю лично.”
+                </h3>
+              </li>
+              <li>
+                <h3>“Школа программирования Method. Сначала мы долго переживали, что школа не открывается, потом долго переживали, что не подходим по возрасту, но вчера моя девятилетняя деточка пошла на первый урок и к концу урока напрограммировала две (мне такое в девять лет и не снилось ))))) игры. Счастью нет предела! ))) Огромное спасибо талантливым ребятам, которых, к сожалению, я всех не знаю лично.”
+                </h3>
+              </li>
+              <li>
+                <h3>“Школа программирования Method. Сначала мы долго переживали, что школа не открывается, потом долго переживали, что не подходим по возрасту, но вчера моя девятилетняя деточка пошла на первый урок и к концу урока напрограммировала две (мне такое в девять лет и не снилось ))))) игры. Счастью нет предела! ))) Огромное спасибо талантливым ребятам, которых, к сожалению, я всех не знаю лично.”
+                </h3>
+              </li>
+          </ul>
+
+      </div>
+
+      </div>
+
+
+    <div class="main-first-info">
+      <h1>Наши программы</h1>
+    </div>
+    
+    <div class="container-fluid main">
+      <div class="row">
+        <div class="coursesx lefted animated bounce">
+        <% @courses.each do |course| %>
+    
+            <div class="item end">
+              <div class="top">
+                
+              </div>
+    
+              <div class="middle">
+                <h4><%= link_to course.name, course, class:"course-name" %></h4>
+              </div>
+    
+              <div class="border"></div>
+    
+              <div class="desc">
+                <p><%=course.subtitle%></p>
+              </div>
+    
+              <div class="bottomblue bottombluex">
+    
+    
+    
+                <% if current_user.present? && current_user.admin? %>
+                  <%= link_to "Edit", edit_course_path(course), class: "admin-button" %>
+                  <%= link_to "Delete", course, method: :delete, data:	{confirm: "You sure?"}, class: "admin-button" %>
+                <% end %>
+    
+              </div>
+            </div>
+    
+          <% end %>
+          </div>
+        </div>
+      </div>
+
+    <div class="contactus">
+      <h1>Наши программы</h1>
+      <h3>Если у вас есть какие либо вопросы или предложения. Если вам нужно помочь. Звоните нам в любое время</h3>
+      <a href="#" class="button-center">СВЯЗАТСЯ СЕЙЧАС</a>
+    </div>
+
+
+
+
+    <script>
+      $(document).ready(function() {
+			$("#content-slider").lightSlider({
+                loop:true,
+                keyPress:true
+            });
+            $('#image-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                thumbItem:9,
+                slideMargin: 0,
+                speed:500,
+                auto:true,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }
+            });
+		});
+      
+    </script>
+    <script type="text/javascript">
+
+      $("#play").click(function(){
+        $(".overlay").attr('class', 'hidden');
+      });
+
+
+    </script>

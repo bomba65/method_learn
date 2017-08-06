@@ -1,3 +1,5 @@
+
+
 <% provide :title, "Courses" %>
 
 
@@ -35,16 +37,11 @@
     <div class="coursesx lefted animated bounce">
 
       <% @courses.each do |course| %>
-
+        <% counter = 1%>
         <div class="item end">
           <div class="top">
             <% if current_user.present? %>
               <div id="follow_status_<%= course.id %>" class="follow_status">
-                <% if @userToCourses.exists?(course_id: course, user_id: current_user) %>
-                  <% if @userToCourses.find_by_course_id(course.id).progress != 1 %>
-                    <%= @processOfLessons.where(user_to_course_id: @userToCourses.find_by_course_id(course.id)).size.to_f/@lessons.where(course_id: course).size*100%>%
-                  <% end %>
-                <% end %>
                 <%= render "partials/follow_status", object: course %>
               </div>
             <% end %>
@@ -61,14 +58,29 @@
           </div>
 
           <div class="bottomblue bottombluex">
+    
 
-
-
+  
             <% if current_user.present? && current_user.admin? %>
               <%= link_to "Edit", edit_course_path(course), class: "admin-button" %>
               <%= link_to "Delete", course, method: :delete, data:	{confirm: "You sure?"}, class: "admin-button" %>
             <% end %>
-
+            
+            <% if @userToCourses.exists?(course_id: course, user_id: current_user) %>
+              <% if @userToCourses.find_by_course_id(course.id).progress != 1 %>
+                
+                <div class="progress-background" >
+                <div class="progress-content"  id="progress-bar<%=counter%>">
+                  
+          
+                </div>
+              </div>
+          
+              <input type="hidden" name="" id="progress-value<%=counter%>" value="<%= @processOfLessons.where(user_to_course_id: @userToCourses.find_by_course_id(course.id)).size.to_f/@lessons.where(course_id: course).size*100%>">
+              <%counter+=1%>
+              <% end %>
+            <% end %>
+            
           </div>
         </div>
 
@@ -79,3 +91,10 @@
   </div>
 
 </div>
+
+<script type="text/javascript">
+  $(".progress-content").each(function(i, obj){
+    console.log(obj.id);
+    $("#"+obj.id).animate({width: ""+$("#progress-value"+(i+1)).val()+"%"},500);
+  });
+</script>

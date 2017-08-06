@@ -1,30 +1,8 @@
 
 
-<div class="blockchik">
-  <div class="container-fluid">
-      <div class="row program">
-        <div class="partners col-xs-12 col-md-12">
-          <div class="logo">
-            <%=image_tag "lion.png", width:"80px", height:"75px" %>
-          </div>
-          <div class="text">
-            <p class="text1">НАЧНИТЕ ЭТОТ КУРС</p>
-            <p class="text2">ПОДНИМИТЕ СЕБЕ УРОВЕНЬ ПРОЙДЯ КУРС</p>
-          </div>
-          <div class="achievement">
-            <p class="text3">ВАШ УРОВЕНЬ</p>
-            <div id="myProgress">
-            <div id="myBar"></div>
-</div>
-          </div>
-          <div class="wings">
-            <p class="number">5</p>
-            <%=image_tag "rai.png" %>
-          </div>
-        </div>
-      </div>
-  </div>
+<%= render "partials/helper",  message1: "НАЧНИТЕ ЭТОТ КУРС", message2: "ПОДНИМИТЕ СЕБЕ УРОВЕНЬ ПРОЙДЯ КУРС"%>
 
+<div class="blockchik">
   <% if current_user.present? && current_user.admin? %>
       <%= link_to "Изменить", edit_course_path(@course), class: "admin-btn" %>
       <%= link_to "Удалить", @course, method: :delete, data:	{confirm: "You sure?"}, class: "admin-btn" %>

@@ -1,0 +1,82 @@
+@font-face {
+    font-family: GothaProBol;
+    src: url(GothamCyrillic/GothaProBol.otf);
+}
+@font-face {
+    font-family: GothaProReg;
+    src: url(GothamCyrillic/GothaProReg.otf);
+}
+.main-image {
+  background: url(main-image.png);
+  background-size: cover;
+
+  padding: 100px;
+  padding-left: 20px;
+}
+
+.main-image-text {
+  display: block;
+  width: 300px;
+  color: white;
+  font-family:GothaProBol;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 1.45;
+  margin-left: 40px;
+  text-align: left;
+}
+
+.list-of-image {
+
+}
+
+.image-item {
+
+  display: inline-block;
+  width: 33%;
+  height: 150px;
+  margin: 3px 0px;
+}
+
+.next-level {
+  position: relative;
+  width: 56px;
+  height: 36px;
+  display: block;
+  right: 0px;
+  left: 94%;
+  top:-30%;
+  background: #2FD3B0;
+  margin: 0px;
+  border-radius: 30px;
+}
+.image-item h3 {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+.contactus {
+  text-align: center;
+  margin: 0px auto;
+}
+
+.button-center  {
+  position: relative;
+  padding: 20px 0px;
+  width: 300px;
+  display: block;
+  margin: 20px auto 0px auto;
+  background: #2FD3B0;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 5px;
+  transition: background 0.5s;
+}
+
+

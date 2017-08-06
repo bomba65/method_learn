@@ -1,0 +1,198 @@
+@font-face {
+    font-family: GothaProBol;
+    src: url(GothamCyrillic/GothaProBol.otf);
+}
+@font-face {
+    font-family: GothaProReg;
+    src: url(GothamCyrillic/GothaProReg.otf);
+}
+
+body {
+  background: #F1F1F1;
+
+}
+
+.main-first-info  h1{
+  font-family: GothaProBol;
+  letter-spacing: 2.84px;
+  font-size: 22px;
+  color: #19353B;
+}
+
+.contactus  h1 {
+  font-family: GothaProBol;
+  letter-spacing: 2.84;
+  font-size: 24px;
+}
+.main-first-info {
+  padding: 10px;
+  font-family: 'Lato', sans-serif!important;
+  text-align: center;
+  background: white;
+}
+
+.main-welcome-video {
+}
+
+.main-welcome-video .overlay {
+  position: relative;
+  height: 600px;
+  background: black;
+  z-index: 1;
+  width:100%;
+  margin-bottom: -600px;
+  background: url(overlay.png);
+  background-size: cover;
+}
+
+.play-button {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: url(play.png);
+  background-size: 100% 100%;
+  margin-top: 250px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.main-first-info {
+
+  margin-bottom: 10px;
+}
+
+.companies-content {
+
+}
+.companies-content .item {
+  display: inline-block;
+  margin: 20px 70px;
+}
+.main-first-info p{
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 20px;
+  color: #19353B;
+  font-size: 19px;
+  font-family: GothaProReg;
+  line-height: 29px;
+  letter-spacing: 0.7px;
+}
+
+.contactus {
+  padding: 50px;
+  text-align: center;
+  font-family: 'Lato', sans-serif!important;
+  background: url(contact.png);
+  background-size: cover;
+  color: white;
+}
+
+.contactus h3 {
+  width: 500px;
+  margin: 0 auto;
+  font-weight: lighter;
+  width: 100%;
+}
+
+.left-helper {
+  float: left;
+  margin: 10px;
+}
+
+.lionava {
+  width: 70px;
+}
+
+.clear {
+  clear: both;
+}
+
+
+ul{
+list-style: none outside none;
+  padding-left: 0;
+      margin: 0;
+}
+  .demo .item{
+      margin-bottom: 60px;
+  }
+.content-slider li{
+  text-align: center;
+  color: #19353B;
+  height: 100%;
+}
+.content-slider h3 {
+  font-size: 19px;
+  font-family: GothaProReg;
+  line-height: 29px;
+  letter-spacing: 0.7px;
+  margin: 20px 20px;
+}
+.demo{
+  width: 800px;
+}
+
+.community-user-photo {
+  width: 80px;
+  padding-bottom: 40px;
+}
+
+.contactus h3 {
+  font-family: GothaProReg;
+  width: 741px;
+  letter-spacing: 3.84px;
+  line-height: 26px;
+}
+
+.contactus {
+  padding-bottom: 90px;
+}
+.button-default {
+  position: relative;
+  padding: 15px 60px;
+  top: 30px;
+  background: #2FD3B0;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.button-default:hover {
+  background: #27B496;
+}
+
+
+.main-first-infox {
+  padding: 10px;
+  font-family: 'Lato', sans-serif!important;
+  text-align: center;
+  background: white;
+  margin-bottom: 10px;
+}
+
+.button-default {
+  position: relative;
+  padding: 20px 0px;
+  width: 300px;
+  display: block;
+  margin: 10px;
+  margin-left: 40px;
+  background: #2FD3B0;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 5px;
+  transition: background 0.5s;
+}
+
+.button-default:hover {
+  background: #27B496;
+}
