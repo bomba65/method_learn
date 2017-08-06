@@ -194,7 +194,11 @@
  }
  .z{
    display: inline-block;
+<<<<<<< HEAD
    width: 110px!important;
+=======
+   width: 100px;
+>>>>>>> 85a94df7610aefe17a1d596dc9ab4accf104cce3
    height: 100%;
    text-align: center;
    background-color: transparent;
@@ -237,7 +241,7 @@
  }
  #overlay3{
    background-color: rgba(25, 53, 59, 0.6);
-   width: 76px;
+   width: 72px;
    height: 72px;
    border-radius: 50px;
    position: absolute;
