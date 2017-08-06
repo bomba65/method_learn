@@ -2,14 +2,14 @@
 
 
     <div class="container-fluid">
-        <div class="row program">
+        <div class="row program program2">
           <div class="partners col-xs-12 col-md-12">
             <div class="logo">
               <%=image_tag "lion.png", width:"80px", height:"75px" %>
             </div>
             <div class="text">
-              <p class="text1">ВЫ ПРОСТО СУПЕР</p>
-              <p class="text2">ВАШИ УСПЕХИ ГОВОРЯТ ОБ ЭТОМ</p>
+              <p class="text1">ДОБРО ПОЖАЛОВАТЬ МОЙ ДРУГ</p>
+              <p class="text2">ВЫБЕРИ КУРСЫ КОТОРЫЕ ТЕБЕ ПО ДУШЕ</p>
             </div>
             <div class="achievement">
               <p class="text3">ВАШ УРОВЕНЬ</p>
@@ -42,7 +42,7 @@
               <div id="follow_status_<%= course.id %>" class="follow_status">
                 <% if @userToCourses.exists?(course_id: course, user_id: current_user) %>
                   <% if @userToCourses.find_by_course_id(course.id).progress != 1 %>
-                    <%= @processOfLessons.where(user_to_course_id: @userToCourses.find_by_course_id(course.id)).size.to_f/@lessons.where(course_id: course).size*100  %>%
+                    <%= @processOfLessons.where(user_to_course_id: @userToCourses.find_by_course_id(course.id)).size.to_f/@lessons.where(course_id: course).size*100%>%
                   <% end %>
                 <% end %>
                 <%= render "partials/follow_status", object: course %>

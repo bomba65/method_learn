@@ -3,19 +3,21 @@ html, body{
   padding: 0;
 }
 .dropdown-menu{
-  background-color: #19353B;
-  opacity: 0.8!important;
-  border-radius: 0;
+  background-color: white;
+  opacity: 1!important;
+  border-radius: 5px;
+  text-align: center;
 }
 .dropdown-menu a{
   // color: #eb8b47!important;
-  color: white!important;
+  color: #19353B!important;
 }
 .dropdown-menu li :hover{
-  background-color: #eb8b47!important;
-
+  color: #2FD3B0!important;
 }
-
+.nav{
+  color: white;
+}
 footer{
   position: static;
   bottom: 0;
@@ -100,6 +102,10 @@ footer, nav{
 }
 li .divider{
   margin-left: 3px!important;
+  color: #19353B!important;
+}
+.black{
+  color: #19353B!important;
 }
 
 a:hover{
