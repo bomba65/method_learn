@@ -1,11 +1,13 @@
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="myModal" aria-labelledby="myLargeModalLabel">
 <div class="modal-dialog modal-lg" role="document">
 <div class="modal-content">
 <center><%=image_tag "lion.png", width:"90px", height:"90px", class:'logoup' %></center>
 <% @parts.each do  |part|%>
-          <div class="closebtn">
+          <div class="closebtn" id="closebtn">
             <button type="button" name="button" class="btn btn-default">
-               <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+               <span  class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
             </button>
           </div>
          <ul>
@@ -48,3 +50,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    
+    $("#closebtn").click(function(){
+        $('#myModal').modal('hide');
+    });
+</script>
