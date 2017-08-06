@@ -25,6 +25,7 @@
       <a class="btn btn-success" id="endcourse"> Закончить курс </a>
       <input type="hidden" value="<%= UserToCourse.find_by_user_id_and_course_id(current_user.id ,@lesson.course_id ).id%>" id="endcoursedata" >
       <span>Курc успешно завершен<a id="closeSuccess">+</a></span>
+      
     <%else %>
       <span>Пройди все части курса<a id="closeSuccess">+</a></span>
     <%end%>

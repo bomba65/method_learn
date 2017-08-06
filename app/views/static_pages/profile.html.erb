@@ -1,27 +1,14 @@
+<% if user_signed_in? %>
+
+<%= render "partials/helper",  message1: "НАЧНИТЕ ЭТОТ КУРС", message2: "ПОДНИМИТЕ СЕБЕ УРОВЕНЬ ПРОЙДЯ КУРС"%>
+
+<% end%>
+<br>git</br>
 <div class="allofme">
   <div class="container-fluid">
 
       <div class="row program program2">
-        <div class="partners col-xs-12 col-md-12">
-          <div class="logo">
-            <%=image_tag "lion.png", width:"80px", height:"75px" %>
-          </div>
-          <div class="text">
-            <center><p class="text1">ВЫ ПРОСТО СУПЕР</p></center>
-            <center><p class="text2">ВАШИ УСПЕХИ ГОВОРЯТ ОБ ЭТОМ</p></center>
-          </div>
-          <div class="achievement">
-            <p class="text3">ВАШ УРОВЕНЬ</p>
-            <div id="myProgress">
-            <div id="myBar"></div>
-            </div>
-          </div>
-          <div class="wings">
-            <p class="number">5</p>
-            <%=image_tag "rai.png" %>
-          </div>
-
-        </div>
+        
 
         <div class="container-fluid up">
               <div class="row">
@@ -85,6 +72,7 @@
 
   <% @unfinished_courses.each do |unfinished_course| %>
     <% course = @courses.find(unfinished_course.course_id) %>
+    <% counter = 1%>
     <div class="item end">
       <div class="top">
         <div id="follow_status_<%= course.id %>" class="follow_status">
@@ -100,15 +88,20 @@
       </div>
       <div class="bottomblue bottombluex">
 
-        <p>20%</p>
+        <p><%= @processOfLessons.where(user_to_course_id: @userToCourses.find_by_course_id(course.id)).size.to_f/@lessons.where(course_id: course).size*100%>%</p>
 
 
         <div class="raiting">
-         <%= image_tag("Star-filled.png")%>
-          <%= image_tag("Star-filled.png")%>
-          <%= image_tag("Star-filled.png")%>
-          <%= image_tag("Star-filled.png")%>
-          <%= image_tag("Star-unfilled.png")%>
+          
+         <div class="progress-background" >
+            <div class="progress-contents"  id="progress-bar<%=counter%>">
+              
+      
+            </div>
+          </div>
+      
+          <input type="hidden" name="" id="progress-value<%=counter%>" value="<%= @processOfLessons.where(user_to_course_id: @userToCourses.find_by_course_id(course.id)).size.to_f/@lessons.where(course_id: course).size*100%>">
+          <%counter+=1%>
 
         </div>
       </div>
@@ -153,3 +146,10 @@
   <%end%>
 
 </div>
+
+<script type="text/javascript">
+  $(".progress-contents").each(function(i, obj){
+    console.log(obj.id);
+    $("#"+obj.id).animate({width: ""+$("#progress-value"+(i+1)).val()+"%"},500);
+  });
+</script>

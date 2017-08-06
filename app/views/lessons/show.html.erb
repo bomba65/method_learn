@@ -1,3 +1,9 @@
+<% if user_signed_in? %>
+
+<%= render "partials/helper",  message1: "НАЧНИТЕ ЭТОТ КУРС", message2: "ПОДНИМИТЕ СЕБЕ УРОВЕНЬ ПРОЙДЯ КУРС"%>
+
+<% end%>
+
 <input type="hidden" id="refresh" value="no">
 <script>
     $(document).ready(function(e) {
@@ -38,29 +44,6 @@
     });
 </script>
 
-<div class="container-fluid">
-    <div class="row program program2">
-      <div class="partners col-xs-12 col-md-12">
-        <div class="logo">
-          <%=image_tag "lion.png", width:"80px", height:"75px" %>
-        </div>
-        <div class="text">
-          <center><p class="text1">ВЫПОЛНИТЕ УРОК</p></center>
-          <center><p class="text2">ПРИ ВЫПОЛНЕНИИ УРОКА ИНДИКАТОР УРОВНЯ РАСТЕТ</p></center>
-        </div>
-        <div class="achievement">
-          <p class="text3">ВАШ УРОВЕНЬ</p>
-          <div id="myProgress">
-          <div id="myBar"></div>
-        </div>
-        </div>
-        <div class="wings">
-          <p class="number">5</p>
-          <%=image_tag "rai.png" %>
-        </div>
-      </div>
-    </div>
-</div>
 
 
 <div class="blockchik">
@@ -86,8 +69,11 @@
   <!-- Large modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
 
-  
+
        <%= render "partials/modal"%>
+
+
+      
 
 
 </div>
