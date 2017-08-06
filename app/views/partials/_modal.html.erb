@@ -1,0 +1,44 @@
+<center><%=image_tag "lion.png", width:"80px", height:"75px", class:'logoup' %></center>
+<% @parts.each do  |part|%>
+          <div class="closebtn">
+            <button type="button" name="button" class="btn btn-default">
+               <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+            </button>
+          </div>
+         <ul>
+           <center><li>
+           <%= link_to part.name, part, class:"parts-name" %>
+
+         </li><center>
+       </ul>
+         <% part.lessons.each do  |lesson|%>
+
+           <ul>
+             <li>
+               <div class="achievement2">
+                 <h5>68%</h5>
+                 <div class="mypro"id="myProgress2">
+                 <div id="myBar2"></div>
+               </div>
+             <% @usertocourses.each do  |usertocourse|%>
+               <%if @procesessOfLessons.where(user_to_course_id: usertocourse.id ).size >0%>
+                 <% @procesessOfLessons.where(user_to_course_id: usertocourse.id ).each do  |processOfLessons|%>
+                   <%if processOfLessons.lesson_id == lesson.id %>
+                   <%= link_to lesson.name, lesson, class:"lessons-name" %>
+                   done
+                   <%else%>
+                   <%= link_to lesson.name, lesson, class:"lessons-name" %>
+                   <%= lesson.point %>
+                   <%end%>
+                 <%end%>
+               <%else%>
+                 <%= link_to lesson.name, lesson, class:"lessons-name" %>
+                 <%= lesson.point %>
+               <%end%>
+
+             <%end%>
+             </li>
+           </ul>
+         <% end %>
+
+     <% end %>
