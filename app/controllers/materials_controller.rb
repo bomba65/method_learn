@@ -20,11 +20,7 @@ class MaterialsController < ApplicationController
     flash[:success] = "Material deleted!"
     redirect_to Lesson.find(@delete.lesson_id)
   end
-  
-  def download_file
-    send_file Rails.root.join('public' + Material.find(params[:id]).file.url(:original, false)), :type => 'application/pdf', :x_sendfile=>true
-  end
-  
+
   private
   def material_params
     params.require(:material).permit(:lesson_id, :file)
