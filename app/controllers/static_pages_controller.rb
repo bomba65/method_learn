@@ -10,6 +10,9 @@ class StaticPagesController < ApplicationController
     @finished_courses = UserToCourse.where(user_id: current_user.id, progress: 1)
     @unfinished_courses = UserToCourse.where(user_id: current_user.id, progress: 0)
     @lessons = Lesson.all
+    
+    @userToCourses = UserToCourse.all
+    @processOfLessons = ProcessOfLesson.all
   end
   
   def main 

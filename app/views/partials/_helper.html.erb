@@ -6,24 +6,24 @@
           <%=image_tag "lion.png", width:"80px", height:"75px" %>
         </div>
         <div class="text">
-          <p class="text1"><%=message1%></p>
-          <p class="text2"><%=message2%></p>
+          <center><p class="text1"><%=message1%></p></center>
+          <center><p class="text2"><%=message2%></p></center>
         </div>
-    
+
         <div class="level-panel">
           <h3 id="level"></h3>
         </div>
         <div class="progress-background" >
           <div class="progress-content"  id="energy">
-    
+
           </div>
         </div>
-    
+
         <input type="hidden" name="" id="energy-value" value="<%= ProcessOfLesson.where(user_to_course_id: UserToCourse.where(user_id: current_user)).sum(:point) %>">
-    
-       
-        
-        
+
+
+
+
       </div>
     </div>
 </div>
