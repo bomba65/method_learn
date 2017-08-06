@@ -3,5 +3,5 @@ class Material < ActiveRecord::Base
     
     has_attached_file :file
     validates_attachment :file, presence: true,
-    content_type: { content_type: "application/pdf" }    
+    content_type: { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }    
 end

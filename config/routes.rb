@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get '/profile' , to: "static_pages#profile"
   get '/about' , to: "static_pages#about"
   get '/home' , to: "static_pages#home"
-  get '/download_file' , to: "materials#download_file"
 
   post "/pythonsave", to: "courses#pythonsave"
 
