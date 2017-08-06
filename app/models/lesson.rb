@@ -4,4 +4,5 @@ class Lesson < ActiveRecord::Base
     has_many :tasks, :dependent => :destroy
     has_many :process_of_lesson, :dependent => :destroy
     has_many :instructions, :dependent => :destroy
+    has_many :materials, :dependent => :destroy
 end

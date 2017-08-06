@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/profile' , to: "static_pages#profile"
   get '/about' , to: "static_pages#about"
   get '/home' , to: "static_pages#home"
+  get '/download_file' , to: "materials#download_file"
 
   post "/pythonsave", to: "courses#pythonsave"
 
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
   resources :theories
   resources :tasks
   resources :instructions
+  resources :materials
   
   resources :user_to_courses, only: [:create]
 
