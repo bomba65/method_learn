@@ -3,6 +3,7 @@
 <%= render "partials/helper",  message1: "НАЧНИТЕ ЭТОТ КУРС", message2: "ПОДНИМИТЕ СЕБЕ УРОВЕНЬ ПРОЙДЯ КУРС"%>
 
 <% end%>
+
 <% provide :title, "Courses" %>
 
 
@@ -51,7 +52,7 @@
               <% if @userToCourses.find_by_course_id(course.id).progress != 1 %>
                 
                 <div class="progress-background" >
-                <div class="progress-content"  id="progress-bar<%=counter%>">
+                <div class="progress-contents"  id="progress-bar<%=counter%>">
                   
           
                 </div>
@@ -74,7 +75,7 @@
 </div>
 
 <script type="text/javascript">
-  $(".progress-content").each(function(i, obj){
+  $(".progress-contents").each(function(i, obj){
     console.log(obj.id);
     $("#"+obj.id).animate({width: ""+$("#progress-value"+(i+1)).val()+"%"},500);
   });
