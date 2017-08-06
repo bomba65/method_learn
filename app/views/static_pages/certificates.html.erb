@@ -1,0 +1,13 @@
+<div class="courses-title">
+  <h4>Мои сертификаты</h4>
+</div>
+
+<div class="coursesx">
+    <% @finished_courses.each do |finished_course|%>
+      <% course = @courses.find(finished_course.course_id) %>
+      <%= image_tag("certificate.jpg", size: "350x250", alt: "Certificate") %>
+      <%= current_user.first_name + " " + current_user.last_name%>
+      <%= course.name %>
+    <%end%>
+
+</div>

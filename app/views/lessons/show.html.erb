@@ -142,7 +142,6 @@
                     <% @materials.each do  |material|%>
                       <li><%=counter%>. <%= link_to material.file.original_filename, material.file.url %></li>
                       <% if current_user.admin? %>
-                        <%= link_to "Edit", edit_material_path(material) %>
                         <%= link_to "Delete", material, method: :delete, data:	{confirm: "You sure?"} %>
                       <% end %>
                       <% counter+=1%>

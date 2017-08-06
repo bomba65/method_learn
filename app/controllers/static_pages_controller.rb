@@ -19,5 +19,10 @@ class StaticPagesController < ApplicationController
     @courses = Course.all
   end
   
+  def certificates 
+    @courses = Course.all
+    @finished_courses = UserToCourse.where(user_id: current_user.id, progress: 1)
+  end
+  
   
 end
