@@ -50,11 +50,7 @@
                   <div class="top">
                     <% if current_user.present? %>
                       <div id="follow_status_<%= course.id %>" class="follow_status">
-                        <% if @userToCourses.exists?(course_id: course, user_id: current_user) %>
-                          <% if @userToCourses.find_by_course_id(course.id).progress != 1 %>
-                            <%= @processOfLessons.where(user_to_course_id: @userToCourses.find_by_course_id(course.id)).size.to_f/@lessons.where(course_id: course).size*100  %>%
-                          <% end %>  
-                        <% end %>
+                        
                         <%= render "partials/follow_status", object: course %>
                       </div>
                     <% end %>
