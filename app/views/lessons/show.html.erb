@@ -157,7 +157,7 @@
                   <ul>
                     <% counter = 1%>
                     <% @materials.each do  |material|%>
-                      <li><%=counter%>. <%= material.file.original_filename %> <%= link_to 'Скачать', download_file_path(:id => material), class:"btn btn-default" %></li>
+                      <li><%=counter%>. <%= link_to material.file.original_filename, material.file.url %></li>
                       <% if current_user.admin? %>
                         <%= link_to "Edit", edit_material_path(material) %>
                         <%= link_to "Delete", material, method: :delete, data:	{confirm: "You sure?"} %>
