@@ -19,7 +19,7 @@
           </div>
         </div>
     
-        <input type="hidden" name="" id="energy-value" value="130">
+        <input type="hidden" name="" id="energy-value" value="<%= ProcessOfLesson.where(user_to_course_id: UserToCourse.where(user_id: current_user)).sum(:point) %>">
     
        
         
