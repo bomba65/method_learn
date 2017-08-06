@@ -28,7 +28,7 @@
                  <% @procesessOfLessons.where(user_to_course_id: usertocourse.id ).each do  |processOfLessons|%>
                    <%if processOfLessons.lesson_id == lesson.id %>
                    <%= link_to lesson.name, lesson, class:"lessons-name" %>
-                   done
+                   <h3 color="black">done</h3>
                    <%else%>
                    <%= link_to lesson.name, lesson, class:"lessons-name" %>
                    <%= lesson.point %>
