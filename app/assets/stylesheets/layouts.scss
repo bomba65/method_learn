@@ -11,9 +11,11 @@ html, body{
 .dropdown-menu a{
   // color: #eb8b47!important;
   color: #19353B!important;
+  font-family: 'Lato'sans-serif!important;
 }
 .dropdown-menu li :hover{
   color: #2FD3B0!important;
+  font-family: 'Lato'sans-serif!important;
 }
 .nav{
   color: white;
@@ -89,7 +91,13 @@ footer, nav{
 }
 .user a{
   border-radius: 20px!important;
-  padding-left: -100%!important;
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #35a6bf;
+  font-family: 'Lato', sans-serif!important;
 }
 
 .dropdown-menu{
@@ -133,6 +141,7 @@ color: white!important;
  position: absolute;
  top: 5px;
  font-family: 'Lato', sans-serif;
+ margin-left: 15px;
 }
 footer{
   background-color: #19353B;

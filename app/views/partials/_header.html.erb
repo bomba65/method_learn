@@ -26,11 +26,11 @@
                 <li><div class="user">
                    <a type="button" class="profile dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= image_tag current_user.avatar.url, class: 'img-circle' %></a>
                    <ul class="dropdown-menu">
-                     <li><a href="<%= profile_path %>">Мой профиль</a></li>
-                     <li><%= link_to 'Изменить профиль', edit_user_registration_path %></li>
+                     <li><a href="<%= profile_path %>">МОЙ ПРОФИЛЬ</a></li>
+                     <li><%= link_to 'ИЗМЕНИТЬ', edit_user_registration_path %></li>
 
                      <li role="separator" class="divider"></li>
-                     <li class="black"><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>
+                     <li class="black"><%= link_to 'ВЫЙТИ', destroy_user_session_path, method: :delete %></li>
                    </ul>
                 </div></li>
 

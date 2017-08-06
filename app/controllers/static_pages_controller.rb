@@ -16,4 +16,5 @@ class StaticPagesController < ApplicationController
     @courses = Course.all
   end
   
+  
 end

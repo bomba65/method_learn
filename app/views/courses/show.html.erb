@@ -2,6 +2,7 @@
 
 <%= render "partials/helper",  message1: "НАЧНИТЕ ЭТОТ КУРС", message2: "ПОДНИМИТЕ СЕБЕ УРОВЕНЬ ПРОЙДЯ КУРС"%>
 
+
 <div class="blockchik">
   <% if current_user.present? && current_user.admin? %>
       <%= link_to "Изменить", edit_course_path(@course), class: "admin-btn" %>

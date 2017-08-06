@@ -10,6 +10,7 @@ class LessonsController < ApplicationController
     @theories = @lesson.theories
     @tasks = @lesson.tasks
     @instructions = @lesson.instructions
+    @materials = @lesson.materials
     @parts = Part.where(course_id: @lesson.course_id) 
     @lessons = Part.where(course_id: @lesson.course_id)
     @usertocourses = UserToCourse.where(course_id: @lesson.course_id)

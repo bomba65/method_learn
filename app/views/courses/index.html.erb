@@ -1,31 +1,12 @@
+<% if user_signed_in? %>
 
+<%= render "partials/helper",  message1: "НАЧНИТЕ ЭТОТ КУРС", message2: "ПОДНИМИТЕ СЕБЕ УРОВЕНЬ ПРОЙДЯ КУРС"%>
 
+<% end%>
 <% provide :title, "Courses" %>
 
 
-    <div class="container-fluid">
-        <div class="row program program2">
-          <div class="partners col-xs-12 col-md-12">
-            <div class="logo">
-              <%=image_tag "lion.png", width:"80px", height:"75px" %>
-            </div>
-            <div class="text">
-              <p class="text1">ДОБРО ПОЖАЛОВАТЬ МОЙ ДРУГ</p>
-              <p class="text2">ВЫБЕРИ КУРСЫ КОТОРЫЕ ТЕБЕ ПО ДУШЕ</p>
-            </div>
-            <div class="achievement">
-              <p class="text3">ВАШ УРОВЕНЬ</p>
-              <div id="myProgress">
-              <div id="myBar"></div>
- </div>
-            </div>
-            <div class="wings">
-              <p class="number">5</p>
-              <%=image_tag "rai.png" %>
-            </div>
-          </div>
-        </div>
-    </div>
+  
 
 <% if current_user.present? && current_user.admin? %>
   <div class="add-part-button"><%= link_to 'Добавить курс', new_course_path() %></div>
