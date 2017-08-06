@@ -24,17 +24,18 @@
 .courses-title {
   background: white;
   text-align: center;
-  padding: 20px;
+  padding: 20px 0;
   text-transform: uppercase;
   color: #315A63;
   margin-left: 12px;
   margin-top: 13px;
+  width: 98.2%;
 }
-
 .coursesx {
   margin-left: 12px;
   margin-top: 10px;
   text-align: center;
+  width: 97%;
 }
 
 .coursesx .item {
@@ -116,7 +117,7 @@
   margin-top: 11px;
 }
 .block2{
-   width: 64.2%;
+   width: 64.3%;
    height: 364px;
    background-color: white;
    margin-top: 11px;
@@ -130,9 +131,7 @@
    top: 5px;
    left: 0px;
  }
- .up{
-   margin-top: 0;
- }
+
  .profileimg h4{
    font-family: 'Lato', sans-serif!important;
   font-size: 24px!important;
@@ -195,7 +194,7 @@
  }
  .z{
    display: inline-block;
-   width: 14%;
+   width: 100px;
    height: 100%;
    text-align: center;
    background-color: transparent;
@@ -238,7 +237,7 @@
  }
  #overlay3{
    background-color: rgba(25, 53, 59, 0.6);
-   width: 76px;
+   width: 72px;
    height: 72px;
    border-radius: 50px;
    position: absolute;
@@ -246,16 +245,31 @@
    top: 150px;
    z-index: 3;
  }
-
+ @media only screen and (max-width:1280px){
+   .block2{
+     width: 63.9%;
+   }
+ }
+@media only screen and (max-width:980px){
+  .x2{
+    padding-left: 25%;
+  }
+}
+@media only screen and (max-width:900px){
+  .block1{
+    width: 97.5%;
+  }
+  .block2{
+    width: 97.5%;
+    margin-left: 12px;
+  }
+}
 @media only screen and (max-width:779px){
   .block1{
     width: 96.6%;
   }
-  .block2{
-    width: 99.5%;
-    height: 126px;
-  }
 }
+
 @media only screen and (max-width:680px){
   .block1{
     width: 96.1%;

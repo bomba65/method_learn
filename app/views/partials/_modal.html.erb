@@ -1,0 +1,32 @@
+ <% @parts.each do  |part|%>
+          <ul>
+            <li>
+            <%= link_to part.name, part, class:"parts-name" %>
+            
+            </li>
+          </ul>
+          <% part.lessons.each do  |lesson|%>
+            <ul>
+              <li>
+              <% @usertocourses.each do  |usertocourse|%>
+                <%if @procesessOfLessons.where(user_to_course_id: usertocourse.id ).size >0%>
+                  <% @procesessOfLessons.where(user_to_course_id: usertocourse.id ).each do  |processOfLessons|%>
+                    <%if processOfLessons.lesson_id == lesson.id %>
+                    <%= link_to lesson.name, lesson, class:"lessons-name" %>
+                    done
+                    <%else%>
+                    <%= link_to lesson.name, lesson, class:"lessons-name" %>
+                    <%= lesson.point %>
+                    <%end%>
+                  <%end%>
+                <%else%>
+                  <%= link_to lesson.name, lesson, class:"lessons-name" %>
+                  <%= lesson.point %>
+                <%end%>
+                  
+              <%end%>
+              </li>
+            </ul>
+          <% end %>
+
+      <% end %>
