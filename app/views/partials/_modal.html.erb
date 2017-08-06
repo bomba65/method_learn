@@ -11,47 +11,44 @@
             </button>
           </div>
          <ul>
-           <center><li>
+           <center class="center2"><li>
            <%= link_to part.name, part, class:"parts-name" %>
 
          </li><center>
-       </ul>
-         <% part.lessons.each do  |lesson|%>
+         </ul>
 
+         <% part.lessons.each do  |lesson|%>
+          <div class="vivaldi">
            <ul>
              <li>
-               <div class="achievement2">
-                 <h5>68%</h5>
-                 <div class="mypro"id="myProgress2">
-                 <div id="myBar2"></div>
-               </div>
              <% @usertocourses.each do  |usertocourse|%>
                <%if @procesessOfLessons.where(user_to_course_id: usertocourse.id ).size >0%>
                  <% @procesessOfLessons.where(user_to_course_id: usertocourse.id ).each do  |processOfLessons|%>
                    <%if processOfLessons.lesson_id == lesson.id %>
-                   <%= link_to lesson.name, lesson, class:"lessons-name" %>
+                   <center class="c2"><%= link_to lesson.name, lesson, class:"lessons-name" %><center>
                     <p style="color:red;">DONE</p>
                    <%else%>
-                   <%= link_to lesson.name, lesson, class:"lessons-name" %>
+                   <center class="c2"><%= link_to lesson.name, lesson, class:"lessons-name" %></center>
                    <%= lesson.point %>
                    <%end%>
                  <%end%>
                <%else%>
-                 <%= link_to lesson.name, lesson, class:"lessons-name" %>
+                 <center class="c2"><%= link_to lesson.name, lesson, class:"lessons-name" %></center>
                  <%= lesson.point %>
                <%end%>
 
              <%end%>
              </li>
            </ul>
+           </div>
          <% end %>
 
      <% end %>
+
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-=======
+
 
 <script>
 
@@ -59,4 +56,3 @@
         $('#myModal').modal('hide');
     });
 </script>
->>>>>>> fd187a0298fa700d406bf0b24f95b74f7f6dc28c
