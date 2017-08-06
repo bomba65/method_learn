@@ -76,6 +76,9 @@
     <div class="add-part-button">
       <%= link_to 'Добавить инстукцию', new_instruction_path(:lesson_id => @lesson.id) %>
     </div>
+    <div class="add-part-button">
+      <%= link_to 'Добавить материал', new_material_path(:lesson_id => @lesson.id) %>
+    </div>
   <% end %>
   <div class="add-part-button">
     <%= link_to 'Назад', part_path(:id => @lesson.part_id) %>
@@ -143,6 +146,21 @@
                       <% if current_user.admin? %>
                         <%= link_to "Edit", edit_instruction_path(instruction) %>
                         <%= link_to "Delete", instruction, method: :delete, data:	{confirm: "You sure?"} %>
+                      <% end %>
+                      <% counter+=1%>
+                    <% end %>
+                   </ul>
+                </div>
+                <hr>
+                <div class="part2">
+                  <h4>Материалы</h4>
+                  <ul>
+                    <% counter = 1%>
+                    <% @materials.each do  |material|%>
+                      <li><%=counter%>. <%= material.file.original_filename %> <%= link_to 'Скачать', download_file_path(:id => material), class:"btn btn-default" %></li>
+                      <% if current_user.admin? %>
+                        <%= link_to "Edit", edit_material_path(material) %>
+                        <%= link_to "Delete", material, method: :delete, data:	{confirm: "You sure?"} %>
                       <% end %>
                       <% counter+=1%>
                     <% end %>

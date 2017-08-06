@@ -1,0 +1,18 @@
+<body>
+  <div class="add-new">
+    <%= form_for @material  do |s| %>
+    <div class="sub_category_creating videomrg">
+      <%= s.label "Невидимый код" %><br>
+      <%= s.file_field :file %>
+    </div>
+    <div class="sub_category_creating">
+      <%= s.hidden_field :lesson_id, :value => params[:lesson_id] %>
+    </div>
+    <div class="sub_category_creating">
+      <%= s.submit "Add Material", class:"btn btn-default btnex" %>
+    </div>
+    <% end %>
+
+  </div>
+  
+</body>
