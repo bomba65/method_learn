@@ -12,12 +12,12 @@
   margin-left: 15px;
 }
 .wings img{
-  margin-top: -25px;
-  width: 130px;
-  height: 70px;
+  margin-top: -9px;
+  width: 104px;
+  height: 54px;
   float: right;
   clear: both;
-  margin-right: 10px;
+  margin-right: 11px;
 }
 .text1{
   font-family: Lato;
@@ -28,7 +28,7 @@
   position: absolute!important;
   top: 22px;
     left: 180px;
-    width: 289px;
+    width: 329px;
 }
 .text2{
   font-family: Lato;
@@ -39,7 +39,12 @@
   position: absolute;
   top: 44px;
     left: 154px;
-    width: 289px;
+    width: 329px;
+}
+.program2 .text2{
+  position: absolute;
+  left: 184px;
+
 }
 .text3{
   font-size: 18px;
@@ -54,8 +59,8 @@
   color: white;
   position: absolute;
   z-index: 3;
-  top: 40%;
-  right:82px;
+  top: 37%;
+  right:70px;
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 1.4px;

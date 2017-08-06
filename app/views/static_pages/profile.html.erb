@@ -1,3 +1,26 @@
+<<<<<<< HEAD
+<div class="allofme">
+  <div class="container-fluid">
+      <div class="row program program2">
+        <div class="partners col-xs-12 col-md-12">
+          <div class="logo">
+            <%=image_tag "lion.png", width:"80px", height:"75px" %>
+          </div>
+          <div class="text">
+            <p class="text1">ВЫ ПРОСТО СУПЕР</p>
+            <p class="text2">ВАШИ УСПЕХИ ГОВОРЯТ ОБ ЭТОМ</p>
+          </div>
+          <div class="achievement">
+            <p class="text3">ВАШ УРОВЕНЬ</p>
+            <div id="myProgress">
+            <div id="myBar"></div>
+  </div>
+          </div>
+          <div class="wings">
+            <p class="number">5</p>
+            <%=image_tag "rai.png" %>
+          </div>
+=======
 <div class="profilex">
   <%= image_tag current_user.avatar.url, class: 'avatarx' %>
 
@@ -37,27 +60,72 @@
           <%= image_tag("Star-filled.png")%>
           <%= image_tag("Star-unfilled.png")%>
  
+>>>>>>> 97a23b83e8568fb8474325b408437866a515b793
         </div>
       </div>
- 
-    </div>
-  <% end %>
-</div>
+  </div>
 
-<div class="clear"></div>
- 
-<div class="courses-title">
-  <h4>Курсы которые я прошел</h4>
-</div>
- 
-<div class="coursesx">
- 
-    <% @finished_courses.each do |finished_course|%>
-      <% course = @courses.find(finished_course.course_id) %>
+  <div class="container-fluid up">
+        <div class="row">
+
+          <div class="block1 col-xs-12 col-sm-6 col-md-8">
+              <div class="profileimg">
+                <%= image_tag current_user.avatar.url, class: 'avatarx'%>
+
+
+                <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
+                <p>Уровень:</p>
+                <%=image_tag "rai.png", width:"150px", height:"75px" %>
+                <p class="number">5</p>
+              </div>
+          </div>
+
+          <div class="block2 col-xs-6 col-md-4">
+            <div class="x">
+
+              <div class="z">
+                <div class="y">
+
+                </div>
+                <%=image_tag "lion.png", class: 'lion', width:"80px", height:"75px" %>
+                <%=image_tag "lion.png", class: 'lion', width:"80px", height:"75px" %>
+                <div class="overlay">
+                  <div id="overlay3" class="overlay"></div>
+                  <div class="imageee">
+                    <%=image_tag "lion.png", width:"80px", class: 'lion my',height:"75px" %>
+                    <p class="place">14-место</p>
+                  </div>
+                </div>
+                <%=image_tag "lion.png", width:"80px",class: 'lion', height:"75px" %>
+                <%=image_tag "lion.png", width:"80px", class: 'lion',height:"75px" %>
+                <%=image_tag "lion.png", width:"80px",class: 'lion', height:"75px" %>
+                <%=image_tag "lion.png", width:"80px",class: 'lion', height:"75px" %>
+                <%=image_tag "lion.png", width:"80px",class: 'lion', height:"75px" %>
+                <%=image_tag "lion.png", width:"80px",class: 'lion', height:"75px" %>
+              </div>
+            </div>
+            <div class="x2">
+              <p class="ratingg">РЕЙТИНГ</p>
+              <p class="sleva">Слева преведен рейтинг лучших учеников<br> нашего сайта</p>
+            </div>
+          </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="courses-title">
+    <h4>Курсы которые я прохожу</h4>
+  </div>
+  <div class="coursesx lefted">
+
+    <% @unfinished_courses.each do |unfinished_course| %>
+      <% course = @courses.find(unfinished_course.course_id) %>
       <div class="item end">
         <div class="top">
           <div id="follow_status_<%= course.id %>" class="follow_status">
-            <%= link_to 'ПОВТОРИТЬ КУРС', lesson_path(course.lessons.first), class:"btn btn-default" %>
+            <%= render "partials/follow_status", object: course %>
           </div>
         </div>
         <div class="middle">
@@ -65,18 +133,62 @@
         </div>
         <div class="border"></div>
         <div class="desc">
-          <p>Основы iOS программирования для новичков. Базовые знания языка и UI элементов</p>
+          <p><%=course.subtitle%></p>
         </div>
-        <div class="bottomblue">
+        <div class="bottomblue bottombluex">
+
+          <p>20%</p>
+
+
           <div class="raiting">
            <%= image_tag("Star-filled.png")%>
             <%= image_tag("Star-filled.png")%>
             <%= image_tag("Star-filled.png")%>
             <%= image_tag("Star-filled.png")%>
             <%= image_tag("Star-unfilled.png")%>
+
           </div>
         </div>
+
       </div>
-  <%end%>
- 
+    <% end %>
+  </div>
+
+  <div class="clear"></div>
+
+  <div class="courses-title">
+    <h4>Курсы которые я прошел</h4>
+  </div>
+
+  <div class="coursesx">
+
+      <% @finished_courses.each do |finished_course|%>
+        <% course = @courses.find(finished_course.course_id) %>
+        <div class="item end">
+          <div class="top">
+            <div id="follow_status_<%= course.id %>" class="follow_status">
+              <%= link_to 'ПОВТОРИТЬ КУРС', lesson_path(course.lessons.first), class:"btn btn-default" %>
+            </div>
+          </div>
+          <div class="middle">
+            <h4><%= link_to course.name, course, class:"course-name" %></h4>
+          </div>
+          <div class="border"></div>
+          <div class="desc">
+            <p>Основы iOS программирования для новичков. Базовые знания языка и UI элементов</p>
+          </div>
+          <div class="bottomblue">
+            <div class="raiting">
+             <%= image_tag("Star-filled.png")%>
+              <%= image_tag("Star-filled.png")%>
+              <%= image_tag("Star-filled.png")%>
+              <%= image_tag("Star-filled.png")%>
+              <%= image_tag("Star-unfilled.png")%>
+            </div>
+          </div>
+        </div>
+    <%end%>
+
+  </div>
+
 </div>
