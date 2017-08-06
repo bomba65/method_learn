@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="allofme">
   <div class="container-fluid">
       <div class="row program program2">
@@ -19,6 +20,47 @@
             <p class="number">5</p>
             <%=image_tag "rai.png" %>
           </div>
+=======
+<div class="profilex">
+  <%= image_tag current_user.avatar.url, class: 'avatarx' %>
+
+  <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
+  <h4>Твои баллы <%= ProcessOfLesson.where(user_to_course_id: UserToCourse.where(user_id: current_user)).sum(:point) %></h4>
+
+</div>
+<div class="courses-title">
+  <h4>Курсы которые я прохожу</h4>
+</div>
+<div class="coursesx lefted">
+ 
+  <% @unfinished_courses.each do |unfinished_course| %>
+    <% course = @courses.find(unfinished_course.course_id) %>
+    <div class="item end">
+      <div class="top">
+        <div id="follow_status_<%= course.id %>" class="follow_status">
+          <%= render "partials/follow_status", object: course %>
+        </div>
+      </div>
+      <div class="middle">
+        <h4><%= link_to course.name, course, class:"course-name" %></h4>
+      </div>
+      <div class="border"></div>
+      <div class="desc">
+        <p><%=course.subtitle%></p>
+      </div>
+      <div class="bottomblue bottombluex">
+ 
+        <p>20%</p>
+ 
+ 
+        <div class="raiting">
+         <%= image_tag("Star-filled.png")%>
+          <%= image_tag("Star-filled.png")%>
+          <%= image_tag("Star-filled.png")%>
+          <%= image_tag("Star-filled.png")%>
+          <%= image_tag("Star-unfilled.png")%>
+ 
+>>>>>>> 97a23b83e8568fb8474325b408437866a515b793
         </div>
       </div>
   </div>
