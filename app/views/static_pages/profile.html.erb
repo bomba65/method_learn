@@ -7,8 +7,8 @@
             <%=image_tag "lion.png", width:"80px", height:"75px" %>
           </div>
           <div class="text">
-            <p class="text1">ВЫ ПРОСТО СУПЕР</p>
-            <p class="text2">ВАШИ УСПЕХИ ГОВОРЯТ ОБ ЭТОМ</p>
+            <center><p class="text1">ВЫ ПРОСТО СУПЕР</p></center>
+            <center><p class="text2">ВАШИ УСПЕХИ ГОВОРЯТ ОБ ЭТОМ</p></center>
           </div>
           <div class="achievement">
             <p class="text3">ВАШ УРОВЕНЬ</p>
@@ -82,7 +82,7 @@
   <h4>Курсы которые я прохожу</h4>
 </div>
 <div class="coursesx lefted">
- 
+
   <% @unfinished_courses.each do |unfinished_course| %>
     <% course = @courses.find(unfinished_course.course_id) %>
     <div class="item end">
@@ -99,32 +99,32 @@
         <p><%=course.subtitle%></p>
       </div>
       <div class="bottomblue bottombluex">
- 
+
         <p>20%</p>
- 
- 
+
+
         <div class="raiting">
          <%= image_tag("Star-filled.png")%>
           <%= image_tag("Star-filled.png")%>
           <%= image_tag("Star-filled.png")%>
           <%= image_tag("Star-filled.png")%>
           <%= image_tag("Star-unfilled.png")%>
- 
+
         </div>
       </div>
- 
+
     </div>
   <% end %>
 </div>
 
 <div class="clear"></div>
- 
+
 <div class="courses-title">
   <h4>Курсы которые я прошел</h4>
 </div>
- 
+
 <div class="coursesx">
- 
+
     <% @finished_courses.each do |finished_course|%>
       <% course = @courses.find(finished_course.course_id) %>
       <div class="item end">
@@ -151,5 +151,10 @@
         </div>
       </div>
   <%end%>
- 
+<<<<<<< HEAD
+
 </div>
+=======
+
+</div>
+>>>>>>> 85a94df7610aefe17a1d596dc9ab4accf104cce3

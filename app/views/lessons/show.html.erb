@@ -2,10 +2,10 @@
 <script>
     $(document).ready(function(e) {
         var $input = $('#refresh');
-    
+
         $input.val() == 'yes' ? location.reload(true) : $input.val('yes');
     });
-    
+
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -13,37 +13,63 @@
         success: function(data){
             // console.log(data);
             var lang = []; // create an empty array
-            
-            
+
+
              for(var key in data.languages.codes) {
-              
+
                 lang.push({
                     key:   data.languages.codes[key],
                     value: data.languages.names[key]
                 });
              }
-             
+
             for(var i in lang) {
               var dict = lang[i].key;
               if($("#button"+lang[i].key).length){
-                  
+
                   $("#button"+lang[i].key).html(lang[i].value);
-                  
+
               }
-              
+
             }
-              
-            
+
+
         }
-    }); 
+    });
 </script>
+
+<div class="container-fluid">
+    <div class="row program program2">
+      <div class="partners col-xs-12 col-md-12">
+        <div class="logo">
+          <%=image_tag "lion.png", width:"80px", height:"75px" %>
+        </div>
+        <div class="text">
+          <center><p class="text1">ВЫПОЛНИТЕ УРОК</p></center>
+          <center><p class="text2">ПРИ ВЫПОЛНЕНИИ УРОКА ИНДИКАТОР УРОВНЯ РАСТЕТ</p></center>
+        </div>
+        <div class="achievement">
+          <p class="text3">ВАШ УРОВЕНЬ</p>
+          <div id="myProgress">
+          <div id="myBar"></div>
+        </div>
+        </div>
+        <div class="wings">
+          <p class="number">5</p>
+          <%=image_tag "rai.png" %>
+        </div>
+      </div>
+    </div>
+</div>
+
+
 <div class="blockchik">
   <% if current_user.admin? %>
-  
+
     <div class="add-part-button">
       <%= link_to 'Добавить теорию', new_theory_path(:lesson_id => @lesson.id) %>
     </div>
-    
+
     <div class="add-part-button">
       <%= link_to 'Добавить задание', new_task_path(:lesson_id => @lesson.id) %>
     </div>
@@ -153,15 +179,15 @@
                <input id="ivsCode" type="hidden" value=""></input>
               <%end%>
             <% end %>
-            
-        
+
+
             <%if !@lesson.exist_code %>
                <textarea class="my-code-area" rows="10" id="console"style="width: 100%"></textarea>
             <%else%>
               <textarea class="my-code-area" rows="10" id="console"style="width: 100%"><%= @lesson.exist_code %></textarea>
             <%end%>
-          
-            
+
+
             <div id="console_output" ></div>
           <div class="button-panel">
               <%if UserToCourse.exists?(user_id: current_user.id ,course_id: @lesson.course_id ) %>
@@ -169,12 +195,12 @@
                 <button type="button"  name="button" class="btn btn-primary" id="clear">clear</button>
                 <div class="success_panel"></div>
               <% else %>
-                You need follow to this course!!! 
+                You need follow to this course!!!
               <% end %>
            </div>
           <%= render "partials/console" %>
           </div>
 
       </div>
-      
+
       <div class="clear"></div>

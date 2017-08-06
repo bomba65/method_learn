@@ -27,8 +27,14 @@
   color: #14282c;
   position: absolute!important;
   top: 22px;
-    left: 180px;
+    left: 125px;
     width: 329px;
+}
+.text{
+ position: absolute;
+ top: 5px;
+ font-family: 'Lato', sans-serif;
+ margin-left: 15px;
 }
 .text2{
   font-family: Lato;
@@ -39,12 +45,11 @@
   position: absolute;
   top: 44px;
     left: 154px;
-    width: 329px;
+    width: 364px;
 }
 .program2 .text2{
   position: absolute;
-  left: 184px;
-
+  left: 105px;
 }
 .text3{
   font-size: 18px;
@@ -68,16 +73,16 @@
 }
 #myProgress {
     width: 18%;
-    border-radius: 20px;
+    border-radius: 2000px!important;
     background-color: #d8d8d8;
     position: absolute;
     top: 60px;
     right: 200px;
 }
 #myBar {
-    width: 17%;
+    width: 68%;
     height: 7px;
-    border-radius: 100px;
+    border-radius: 100px!important;
     background-color: #2fd3b0;
 }
 @media only screen and (max-width:1180px){
