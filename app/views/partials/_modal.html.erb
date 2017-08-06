@@ -29,7 +29,7 @@
                     <p style="color:red;">DONE</p>
                    <%else%>
                    <center class="c2"><%= link_to lesson.name, lesson, class:"lessons-name" %></center>
-                   <%= lesson.point %>
+                   <span class="point"><%= lesson.point %></span>
                    <%end%>
                  <%end%>
                <%else%>
