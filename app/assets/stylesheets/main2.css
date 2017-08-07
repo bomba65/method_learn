@@ -126,12 +126,28 @@ list-style: none outside none;
   color: #19353B;
   height: 100%;
 }
+.i1{
+  width: 90px!important;
+  height: 80px;
+}
+.i2{
+  width: 90px!important;
+  height: 77px;
+}
+.i3{
+  width: 120px!important;
+  height: 80px;
+}
+.i4{
+  width: 140px!important;
+  height: 80px;
+}
 .content-slider h3 {
   font-size: 19px;
   font-family: GothaProReg;
   line-height: 29px;
   letter-spacing: 0.7px;
-  margin: 20px 20px;
+  margin: 20px 70px;
 }
 .demo{
   width: 800px;

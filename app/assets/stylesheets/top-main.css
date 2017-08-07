@@ -45,10 +45,16 @@ margin-left: -1px;
   display: block;
   right: 0px;
   left: 94%;
-  top:-45px;
+  top:-22px;
   background: #2FD3B0;
   margin: 0px;
   border-radius: 30px;
+}
+@media only screen and (max-width:1318px){
+  .next-level {
+    position: relative;
+    top:-42px;
+  }
 }
 .image-item h3 {
   position: relative;
@@ -85,5 +91,5 @@ margin-left: -1px;
   }
 }
 @media only screen and (max-width:855px){
-  
+
 }

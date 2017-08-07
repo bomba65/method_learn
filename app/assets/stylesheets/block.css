@@ -168,8 +168,13 @@
   #overlay2{
     position: absolute;
     left: 0;
-    top: 1095px!important;
+    top: 0!important;
     z-index: 2;
+  }
+}
+@media only screen and (max-width:346px){
+  .level-panel{
+    margin-top: -25px;
   }
 }
 @media only screen and (max-width:400px){

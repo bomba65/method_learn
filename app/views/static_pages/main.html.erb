@@ -27,17 +27,17 @@
       <h1>Наши партнеры</h1>
       <div class="companies-content">
         <div class="itemx">
-        <%=image_tag src="yandex.png", class:"community-user-photo"%>
-        
+        <%=image_tag src="yandex.png", class:"community-user-photo i1"%>
+
         </div>
         <div class="itemx">
-          <%=image_tag src="sdu.png", class:"community-user-photo"%>
+          <%=image_tag src="sdu.png", class:"community-user-photo i2"%>
         </div>
         <div class="itemx">
-          <%=image_tag src="google.png", class:"community-user-photo"%>
+          <%=image_tag src="google.png", class:"community-user-photo i3"%>
         </div>
         <div class="itemx">
-          <%=image_tag src="method.png", class:"community-user-photo"%>
+          <%=image_tag src="method.png", class:"community-user-photo i4"%>
         </div>
       </div>
     </div>
@@ -81,39 +81,39 @@
     <div class="main-first-info">
       <h1>Наши программы</h1>
     </div>
-    
+
     <div class="container-fluid main">
       <div class="row">
         <div class="coursesx lefted animated bounce">
         <% @courses.each do |course| %>
-    
+
             <div class="item end">
               <div class="top">
-                
+
               </div>
-    
+
               <div class="middle">
                 <h4><%= link_to course.name, course, class:"course-name" %></h4>
               </div>
-    
+
               <div class="border"></div>
-    
+
               <div class="desc">
                 <p><%=course.subtitle%></p>
               </div>
-    
+
               <div class="bottomblue bottombluex">
-    
-    
-    
+
+
+
                 <% if current_user.present? && current_user.admin? %>
                   <%= link_to "Edit", edit_course_path(course), class: "admin-button" %>
                   <%= link_to "Delete", course, method: :delete, data:	{confirm: "You sure?"}, class: "admin-button" %>
                 <% end %>
-    
+
               </div>
             </div>
-    
+
           <% end %>
           </div>
         </div>
@@ -147,7 +147,7 @@
                 }
             });
 		});
-      
+
     </script>
     <script type="text/javascript">
 
