@@ -1,22 +1,24 @@
-<div class="courses-title">
-  <h4>Мои сертификаты</h4>
+<div class="courses-title certificates">
+  <center><h4 >Мои сертификаты</h4></center>
 </div>
 
 <div class="coursesx">
-    
-    
-    <% @finished_courses.each do |finished_course|%>
-      <% course = @courses.find(finished_course.course_id) %>
-      <div class="cirtificate">
-        <%= image_tag("certificate.jpg", size: "350x250", alt: "Certificate") %>
-        <p class="certificate-name"><%= current_user.first_name + " " + current_user.last_name%></p>
-        <p class="certificate-course-name"><%= course.name %></p>
-        <a class="btn btn-default">Скачать</a> 
-      </div>
-      
-      
-      
-    <%end%>
-    
+
+<div class="photos">
+  <% @finished_courses.each do |finished_course|%>
+    <% course = @courses.find(finished_course.course_id) %>
+    <div class="cirtificate">
+      <%= image_tag("cert.jpg", size: "350x250", alt: "Certificate") %>
+      <p class="certificate-name"><%= current_user.first_name + " " + current_user.last_name%></p>
+      <p class="certificate-course-name"><%= course.name %></p>
+
+    </div>
+
+
+
+  <%end%>
+</div>
+
+
 
 </div>
