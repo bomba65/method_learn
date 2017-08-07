@@ -9,7 +9,6 @@
 .main-image {
   background: url(main-image.png);
   background-size: cover;
-
   padding: 100px;
   padding-left: 20px;
 }
@@ -31,13 +30,36 @@ margin-left: -1px;
 }
 
 .image-item {
-
   display: inline-block;
-  width: 33%;
+  width: 33.1%;
   height: 150px;
   margin: 3px 0.5px;
 }
-
+@media only screen and (max-width:1327px){
+  .list-of-image {
+  margin-left: -1.0px;
+  }
+}
+@media only screen and (max-width:1212px){
+  .image-item{
+    width: 33%;
+  }
+}
+@media only screen and (max-width:855px){
+  .image-item{
+    width: 32.9%;
+  }
+}
+@media only screen and (max-width:663px){
+  .image-item{
+    width: 32.8%;
+  }
+}
+@media only screen and (max-width:540px){
+  .image-item{
+    display: none;
+  }
+}
 .next-level {
   position: relative;
   width: 56px;
