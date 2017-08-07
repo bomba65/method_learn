@@ -3,11 +3,20 @@
 </div>
 
 <div class="coursesx">
+    
+    
     <% @finished_courses.each do |finished_course|%>
       <% course = @courses.find(finished_course.course_id) %>
-      <%= image_tag("certificate.jpg", size: "350x250", alt: "Certificate") %>
-      <%= current_user.first_name + " " + current_user.last_name%>
-      <%= course.name %>
+      <div class="cirtificate">
+        <%= image_tag("certificate.jpg", size: "350x250", alt: "Certificate") %>
+        <p class="certificate-name"><%= current_user.first_name + " " + current_user.last_name%></p>
+        <p class="certificate-course-name"><%= course.name %></p>
+        <a class="btn btn-default">Скачать</a> 
+      </div>
+      
+      
+      
     <%end%>
+    
 
 </div>

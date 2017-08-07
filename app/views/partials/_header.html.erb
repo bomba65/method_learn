@@ -29,6 +29,7 @@
                    <ul class="dropdown-menu">
                      <li><a href="<%= profile_path %>">Мой профиль</a></li>
                      <li><%= link_to 'Изменить', edit_user_registration_path %></li>
+                     <li><%= link_to 'Мои сертификаты', certificates_path %></li>
 
                      <li role="separator" class="divider"></li>
                      <li class="black"><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>

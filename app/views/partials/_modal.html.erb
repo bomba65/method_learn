@@ -22,7 +22,7 @@
            <ul>
              <li>
              <% @usertocourses.each do  |usertocourse|%>
-               <%if @procesessOfLessons.where(user_to_course_id: usertocourse.id ).size >0%>
+               <%if @procesessOfLessons.where(user_to_course_id: usertocourse.id ).size > 0%>
                  <% @procesessOfLessons.where(user_to_course_id: usertocourse.id ).each do  |processOfLessons|%>
                    <%if processOfLessons.lesson_id == lesson.id %>
                    <center class="c2"><%= link_to lesson.name, lesson, class:"lessons-name" %><center>

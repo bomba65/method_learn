@@ -68,3 +68,31 @@
 .lessons-name:hover {
     color:#20927A !important;
 }
+
+
+.cirtificate {
+    display: inline-block;
+    width: 493px;
+    padding: 18px;
+    text-align: center;
+    background: white;
+}
+
+.cirtificate img {
+    width: 456.84px;
+    height: 206px;
+}
+
+.certificate-name {
+    position:relative;
+    color:white;
+    top:-60px;
+    left:-40px;
+    margin-top:-60px;
+}
+
+.certificate-course-name {
+    position:relative;
+    color:white;
+    top:-120px;
+}

@@ -35,7 +35,7 @@ class LessonsController < ApplicationController
 
   def update
     if @lesson.update_attributes lesson_params
-      redirect_to Part.find(@lesson.part_id)
+      redirect_to Course.find(@lesson.course_id)
     else
       render "edit"
     end
