@@ -181,17 +181,6 @@
    margin-left: 52px;
    background-color: transparent;
  }
- .y{
-   display: inline-block;
-   width: 15px;
-   height: 180%;
-   background-color: #2FD3B0;
-   position: absolute;
-   top: -1;
-   left: 47px!important;
-   border-top-right-radius: 40px;
-   border-top-left-radius: 40px;
- }
  .z{
    display: inline-block;
    width: 110px!important;
@@ -212,6 +201,17 @@
  .z .lion{
    width: 60px;
    height: 60px;
+ }
+ 
+ .y:not(:last-child){
+    display: inline-block;
+    width: 12px;
+    height: 50px;
+    background-color: #2FD3B0;
+    position:absolute;
+    margin-top: -45px;
+    margin-left: 25px;
+
  }
  .imageee{
    height: 102px!important;
@@ -236,14 +236,14 @@
    z-index: 3;
  }
  #overlay3{
-   background-color: rgba(25, 53, 59, 0.6);
-   width: 72px;
-   height: 72px;
-   border-radius: 50px;
-   position: absolute;
-   left: 11.9px!important;
-   top: 149px;
-   z-index: 3;
+  background-color: rgba(25, 53, 59, 0.6);
+  width: 75px;
+  height: 75px;
+  border-radius: 50px;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: 9.5px;
+  z-index: 3;
  }
  .text1, .text2, p, h1, h2, h5, h4{
    font-family: 'Lato', sans-serif!important;

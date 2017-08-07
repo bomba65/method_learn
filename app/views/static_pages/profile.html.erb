@@ -28,24 +28,28 @@
                   <div class="x">
 
                     <div class="z">
-                      <div class="y">
-
-                      </div>
-                      <%=image_tag "lion.png", class: 'lion', width:"80px", height:"75px" %>
-                      <%=image_tag "lion.png", class: 'lion', width:"80px", height:"75px" %>
-                      <div class="overlay">
-                        <div id="overlay3" class="overlay"></div>
-                        <div class="imageee">
-                          <%=image_tag "lion.png", width:"80px", class: 'lion my',height:"75px" %>
-                          <p class="place">14-место</p>
-                        </div>
-                      </div>
-                      <%=image_tag "lion.png", width:"80px",class: 'lion', height:"75px" %>
-                      <%=image_tag "lion.png", width:"80px", class: 'lion',height:"75px" %>
-                      <%=image_tag "lion.png", width:"80px",class: 'lion', height:"75px" %>
-                      <%=image_tag "lion.png", width:"80px",class: 'lion', height:"75px" %>
-                      <%=image_tag "lion.png", width:"80px",class: 'lion', height:"75px" %>
-                      <%=image_tag "lion.png", width:"80px",class: 'lion', height:"75px" %>
+                      <% count = 1 
+                        hash = Hash.new
+                        @users.each do |user|
+                          hash[user] =  ProcessOfLesson.where(user_to_course_id: UserToCourse.where(user_id: user)).sum(:point) 
+                        end
+                        hash = hash.sort_by {|_key, value| value} %>
+                        
+                      <% hash.sort_by {|_key, value| value}.reverse.each do |key, value|%>
+                        <% if key != current_user %>
+                          <%=image_tag key.avatar.url, class: 'lion', width:"80px", height:"75px" %>
+                        <% else %>
+                          <div class="overlay">
+                            <div id="overlay3" class="overlay"></div>
+                            <div class="imageee">
+                              <%=image_tag key.avatar.url, width:"80px", class: 'lion my',height:"75px" %>
+                            </div>
+                          </div>
+                        <%end%>
+                        <p class="place"><%= count %>-место</p>
+                        <div class="y"></div>
+                        <% count += 1 %>
+                      <%end%>
                     </div>
                   </div>
                   <div class="x2">
