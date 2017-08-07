@@ -8,13 +8,16 @@
   <% provide :title, "Home" %>
 
   <div class="container-fluid">
+
     <div class="enter">
       <% unless(current_user.present?) %>
           <div class="login col-xs-12 col-sm-6 col-md-8">
             <p class="loginx">ПАНЕЛЬ ДЛЯ ВХОДА</p>
-          <%- flash.each do |name, msg| -%>
-            <%= content_tag :div, msg, id: "flash_#{name}" %>
-          <%- end -%>
+            <div class="add-on add-onx">
+              <%- flash.each do |name, msg| -%>
+                <%= content_tag :div, msg, id: "flash_#{name}" %>
+              <%- end -%>
+            </div>
           <%= render("users/sessions/new")%>
           </div>
 

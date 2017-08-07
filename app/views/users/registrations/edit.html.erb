@@ -1,9 +1,13 @@
-<body>
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-  <div class="container-fluid"> 
-    <div class="enter">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= devise_error_messages! %>
+<div class="container-fluid">
+<div class="enter enterx">
+  <div class="add-on">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+  </div>
+
+  <div class="signup">
+    <p class="signupx">ИЗМЕНИТЬ ПРОФИЛЬ <br><%= resource_name.to_s.humanize %></p>
+      <div class="starthere itstime">
 
         <div class="field">
           <%= f.label :email %><br />
@@ -20,10 +24,12 @@
           <%= f.text_field :last_name, autofocus: true %>
         </div>
 
-        <%= image_tag current_user.avatar.url(:medium) %>
-        <div class="field">
-          <%= f.label :avatar %><br />
-          <%= f.file_field :avatar %>
+        <div class="photoimp">
+          <%= image_tag current_user.avatar.url(:medium),class:"avatarr" %>
+          <div class="field">
+            <%= f.label :avatar %><br />
+            <%= f.file_field :avatar %>
+          </div>
         </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -53,15 +59,20 @@
           <%= f.submit "Update" %>
         </div>
       <% end %>
+      <div class="cancelx">
+        <center>
+        <p>Unhappy?</p>
+        <h3>Cancel my account</h3>
+        </center>
+        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:'sure'%>
 
-      <h3>Cancel my account</h3>
+        <%= link_to "Back", :back %>
+      </div>
 
-      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-      <%= link_to "Back", :back %>
 
 
    </div>
   </div>
 
-</body>
+</div>
+</div>
