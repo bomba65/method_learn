@@ -1,0 +1,105 @@
+.partsx {
+  position:relative;
+  z-index:1;
+    background: white;
+    padding: 10px;
+    height:47px;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+.partsx h3 {
+float:left;
+font-size: 20px;
+padding: 0px;
+margin: 0px;
+display: inline-block;
+}
+.removed-edit-panel {
+display: inline-block;
+float: right;
+}
+.lessonsx {
+  position:relative;
+  z-index:1;
+background: white;
+padding: 10px;
+margin: 10px;
+margin-top: 0px;
+width:98.4%;
+display: none;
+
+}
+
+.lessonsx ul li {
+list-style-type: none;
+}
+
+.lessonsx ul li a {
+text-decoration: none;
+}
+
+.edit {
+  position:relative;
+  z-index:2;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background: url(edit.png);
+  background-size: cover;
+  margin-right: 10px;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+.delete {
+  position:relative;
+  z-index:2;
+  width: 15px;
+  height: 19px;
+  margin-right: 10px;
+  opacity: 0.4;
+  display: inline-block;
+  background: url(delete.png);
+  background-size: cover;
+  transition: opacity 0.3s;
+}
+
+.delete:hover, .edit:hover {
+opacity: 1;
+}
+
+.lessonsx ul li .removed-edit-panel .edit{
+width: 10px;
+height: 11px;
+background-size: cover;
+}
+.lessonsx ul li .removed-edit-panel .delete{
+width: 8px;
+height: 12px;
+background-size: cover;
+}
+.add {
+position: relative;
+opacity: 0.4;
+color: #19353B;
+display: inline-block;
+text-decoration: none;
+margin: 10px;
+margin-top: 0px;
+bottom: 3px;
+font-size: 25px;
+transition: opacity 0.3s;
+}
+
+.add:hover {
+opacity: 1;
+}
+
+.parts-name {
+  float:left;
+}
+
+.clearx {
+  background:none;
+  clear:both;
+}
+      
