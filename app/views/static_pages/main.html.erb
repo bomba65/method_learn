@@ -6,8 +6,14 @@
         ОБУЧЕНИЕ ПРОГРАММИРОВАНИЮ ДЛЯ УЧИТЕЛЕЙ
         METHOD.KZ
       </div>
-      <a href="#" class="button-default">ВОЙТИ</a>
-      <a href="#" class="button-default">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+      
+      <% if(current_user.present?) %>
+        <a href="<%= courses_path %>" class="button-default">КУРСЫ</a>
+      <%else%>
+        <a href="<%= signin_path %>" class="button-default">ВОЙТИ</a>
+        <a href="<%= new_user_registration_path %>" class="button-default">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+      <% end %>
+      
     </div>
     <div class="list-of-image">
       <div class="image-item" style="background: url(assets/first.png);background-size:cover;">

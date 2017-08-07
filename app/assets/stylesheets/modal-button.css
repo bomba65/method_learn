@@ -1,0 +1,8 @@
+.modal-button {
+    border-radius: 0px;
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+    background-size: 100% 100%;
+    background: url(menu.png);
+}

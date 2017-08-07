@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 
-<%= render "partials/helper",  message1: "НАЧНИТЕ ЭТОТ КУРС", message2: "ПОДНИМИТЕ СЕБЕ УРОВЕНЬ ПРОЙДЯ КУРС"%>
+<%= render "partials/helper",  message1: "ВЫПОЛНИТЕ УРОК", message2: "ПРИ ВЫПОЛНЕНИИ УРОКА ИДИКАТОР УРОВНЯ РАСТЕТ"%>
 
 <% end%>
 
@@ -62,12 +62,13 @@
     <div class="add-part-button">
       <%= link_to 'Добавить материал', new_material_path(:lesson_id => @lesson.id) %>
     </div>
+    
   <% end %>
   <div class="add-part-button">
     <%= link_to 'Назад', part_path(:id => @lesson.part_id) %>
   </div>
   <!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+<button type="button" class="btn btn-primary modal-button" data-toggle="modal" data-target=".bs-example-modal-lg"></button>
 
        <%= render "partials/modal"%>
 
