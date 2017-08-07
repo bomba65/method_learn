@@ -1,0 +1,43 @@
+.overlay-congrad {
+
+width: 100%;
+height: 100%;
+position: fixed;
+top:0px;
+z-index:1000;
+background: rgba(0,0,0,0.5);
+text-align: center;
+display:none;
+}
+.modal-congrad {
+
+border-radius: 20px;
+display: inline-block;
+width: 90%;
+background: white;
+padding: 10px;
+margin: 20px;
+text-align: center;
+}
+.modal-congrad img {
+width: 200px;
+margin: 50px;
+margin-left: 90px;
+}
+
+#closeModal {
+float: right;
+width: 20px;
+height: 20px;
+margin: 10px;
+
+}
+.modal-congrad h2 {
+margin-top: -20px;
+}
+.modal-congrad h4 {
+margin-bottom: 0px;
+width: 80%;
+display: inline-block;
+margin: 10px auto 40px auto;
+}
