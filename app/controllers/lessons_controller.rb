@@ -13,7 +13,8 @@ class LessonsController < ApplicationController
     @materials = @lesson.materials
     @parts = Part.where(course_id: @lesson.course_id) 
     @lessons = Part.where(course_id: @lesson.course_id)
-    @usertocourses = UserToCourse.where(course_id: @lesson.course_id)
+    
+    @usertocourses = UserToCourse.where(user_id: current_user, course_id: @lesson.course_id)
     @procesessOfLessons = ProcessOfLesson.all
   end
 
