@@ -17,7 +17,7 @@
   <%if Lesson.where("part_id = ? AND id > ?", @lesson.part_id, @lesson.id).size >= 1 %>
     <%=link_to "Начать следующий урок",lesson_path(Lesson.where("part_id = ? AND id > ?", @lesson.part_id, @lesson).first), class:"btn btn-success", id:"nextLesson"%>
     <span>Урок успешно пройден <a id="closeSuccess">+</a></span>
-  <% elsif Part.where("course_id = ? AND id > ?", @lesson.course_id, @lesson.part_id).size >= 1%>
+  <% elsif Part.where("course_id = ? AND id > ?", @lesson.course_id, @lesson.part_id).size >= 1 %>
     <%=link_to "Начать следующий урок",lesson_path(Lesson.where("course_id = ? AND part_id > ?", @lesson.course_id, @lesson.part_id).first), class:"btn btn-success", id:"nextLesson"%>
     <span>Урок успешно пройден <a id="closeSuccess">+</a></span>
   <%else%>
