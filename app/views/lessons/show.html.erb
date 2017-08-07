@@ -68,7 +68,9 @@
     <%= link_to 'Назад', part_path(:id => @lesson.part_id) %>
   </div>
   <!-- Large modal -->
-<button type="button" class="btn btn-primary modal-button" data-toggle="modal" data-target=".bs-example-modal-lg"></button>
+<button type="button" class="btn btn-primary modal-button" data-toggle="modal" data-target=".bs-example-modal-lg">
+  <p><b><%= @part.name%>: <span><%= @lesson.name %></span> </b> <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></p>
+</button>
 
        <%= render "partials/modal"%>
 
@@ -160,9 +162,9 @@
 
 
             <%if !@lesson.exist_code %>
-               <textarea class="my-code-area" rows="10" id="console"style="width: 100%"></textarea>
+               <textarea class="my-code-area" rows="10" id="console" ></textarea>
             <%else%>
-              <textarea class="my-code-area" rows="10" id="console"style="width: 100%"><%= @lesson.exist_code %></textarea>
+              <textarea class="my-code-area" rows="10" id="console" ><%= @lesson.exist_code %></textarea>
             <%end%>
 
 
@@ -178,7 +180,7 @@
            </div>
           <%= render "partials/console" %>
           </div>
-
-      </div>
+          <div class="clear"></div>
+</div>
 
       <div class="clear"></div>

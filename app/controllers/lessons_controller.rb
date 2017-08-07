@@ -11,6 +11,7 @@ class LessonsController < ApplicationController
     @tasks = @lesson.tasks
     @instructions = @lesson.instructions
     @materials = @lesson.materials
+    @part = Part.find(@lesson.part_id)
     @parts = Part.where(course_id: @lesson.course_id) 
     @lessons = Part.where(course_id: @lesson.course_id)
     

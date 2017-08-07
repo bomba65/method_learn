@@ -1,5 +1,5 @@
 #console_output {
-  width: 100%;
+  width: 97.6%;
   height: 220px;
   background: #19353B;
   color: white;
@@ -26,9 +26,21 @@
 }
 
 .console .panel {
-  border: 1px solid red;
-  background:#19353B;
+  background: #19353B;
 }
 .ace-scroller{
 width: 0%!important;
+}
+
+.console {
+    width: 75.5% !important;
+}
+
+.my-code-area {
+  width: 100% !important;
+}
+
+
+.ace_editor {
+  width: 100%;
 }
