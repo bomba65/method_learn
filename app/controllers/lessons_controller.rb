@@ -25,7 +25,7 @@ class LessonsController < ApplicationController
   def create
     @lesson = Lesson.new(lesson_params)
     if @lesson.save
-      redirect_to Part.find(@lesson.part_id)
+      redirect_to Course.find(@lesson.course_id)
     else
       render "new"
     end
