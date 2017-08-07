@@ -37,16 +37,16 @@
                         
                       <% hash.sort_by {|_key, value| value}.reverse.each do |key, value|%>
                         <% if key != current_user %>
-                          <%=image_tag key.avatar.url, class: 'lion', width:"80px", height:"75px" %>
+                          <%=image_tag key.avatar.url, class: 'lion', width:"80px", height:"80px" %>
                         <% else %>
                           <div class="overlay">
-                            <div id="overlay3" class="overlay"></div>
+                           
                             <div class="imageee">
-                              <%=image_tag key.avatar.url, width:"80px", class: 'lion my',height:"75px" %>
+                              <%=image_tag key.avatar.url, width:"80px", class: 'lion my',height:"80px" %>
                             </div>
                           </div>
                         <%end%>
-                        <p class="place"><%= count %>-место</p>
+                        <p class="place" style="margin-top:-3px;"><%= count %>-место</p>
                         <div class="y"></div>
                         <% count += 1 %>
                       <%end%>

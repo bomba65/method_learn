@@ -1,3 +1,14 @@
+<div class="overlay-congrad" id="congradulation-modal">
+  <div class="modal-congrad">
+      <%=image_tag "game.gif", alt:""%>
+      <h2>Congradulations!</h2>
+      <h4>You successfuly complete this course! Press continue to over course! </h4>
+      <br>
+      <a class="btn btn-success" id="endcourse"> Закончить курс </a>
+      <br>
+      <br>
+  </div>
+</div>
 <% if user_signed_in? %>
 
 <%= render "partials/helper",  message1: "ВЫПОЛНИТЕ УРОК", message2: "ПРИ ВЫПОЛНЕНИИ УРОКА ИДИКАТОР УРОВНЯ РАСТЕТ"%>
@@ -182,3 +193,4 @@
 </div>
 
       <div class="clear"></div>
+

@@ -62,7 +62,7 @@ class LessonsController < ApplicationController
     u =  UserToCourse.find(params[:user_to_course_id])
     u.update_attributes(progress: 1)
      respond_to do |format|
-          format.html	{redirect_to courses_path}
+          format.html	{redirect_to certificates_path}
           format.js {}
       end
   end
