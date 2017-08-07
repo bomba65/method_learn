@@ -127,16 +127,22 @@
               <%= link_to 'ПОВТОРИТЬ КУРС', lesson_path(course.lessons.first), class:"btn btn-default" %>
             </div>
           </div>
-        </div>
-        <div class="middle">
-          <h4><%= link_to course.name, course, class:"course-name" %></h4>
-        </div>
-        <div class="border"></div>
-        <div class="desc">
-          <p><%=course.description%></p>
-        </div>
-        <div class="bottomblue" style="position:relative;bottom:-10px;">
-          
+          <div class="middle">
+            <h4><%= link_to course.name, course, class:"course-name" %></h4>
+          </div>
+          <div class="border"></div>
+          <div class="desc">
+            <p>Основы iOS программирования для новичков. Базовые знания языка и UI элементов</p>
+          </div>
+          <div class="bottomblue">
+            <div class="raiting">
+             <%= image_tag("Star-filled.png")%>
+              <%= image_tag("Star-filled.png")%>
+              <%= image_tag("Star-filled.png")%>
+              <%= image_tag("Star-filled.png")%>
+              <%= image_tag("Star-unfilled.png")%>
+            </div>
+          </div>
         </div>
     <%end%>
 
