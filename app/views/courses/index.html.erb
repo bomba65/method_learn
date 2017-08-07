@@ -24,7 +24,7 @@
           <div class="top">
             <% if current_user.present? %>
               <div id="follow_status_<%= course.id %>" class="follow_status">
-                <% if @userToCourses.exists?(course_id: course) && @userToCourses.find_by_course_id(course).progress == 1 %>
+                <% if @userToCourses.exists?(user_id: current_user, course_id: course) && @userToCourses.find_by_course_id(course).progress == 1 %>
                   <%= link_to 'ПОВТОРИТЬ КУРС', lesson_path(course.lessons.first), class:"btn btn-default" %>
                 <% else %>
                   <%= render "partials/follow_status", object: course %>
