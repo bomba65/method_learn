@@ -3,12 +3,12 @@
 <%= render "partials/helper",  message1: "НАЧНИТЕ ЭТОТ КУРС", message2: "ПОДНИМИТЕ СЕБЕ УРОВЕНЬ ПРОЙДЯ КУРС"%>
 
 <% end%>
-<br>git</br>
+<br>
 <div class="allofme">
   <div class="container-fluid">
 
       <div class="row program program2">
-        
+
 
         <div class="container-fluid up">
               <div class="row">
@@ -92,14 +92,14 @@
 
 
         <div class="raiting">
-          
+
          <div class="progress-background" >
             <div class="progress-contents"  id="progress-bar<%=counter%>">
-              
-      
+
+
             </div>
           </div>
-      
+
           <input type="hidden" name="" id="progress-value<%=counter%>" value="<%= @processOfLessons.where(user_to_course_id: @userToCourses.find_by_course_id(course.id)).size.to_f/@lessons.where(course_id: course).size*100%>">
           <%counter+=1%>
 

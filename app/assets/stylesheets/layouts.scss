@@ -9,9 +9,9 @@ html, body{
   text-align: center;
 }
 .dropdown-menu a{
-  // color: #eb8b47!important;
   color: #19353B!important;
   font-family: 'Lato'sans-serif!important;
+  text-transform: uppercase;
 }
 .dropdown-menu li :hover{
   color: #2FD3B0!important;
@@ -203,16 +203,18 @@ margin-bottom: 5px;
   padding-bottom: 3px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #EB8B47;
-  border-color: #EB8B47;
+  background-color: #2FD3B0;
   color: white;
   margin-top: 18px;
   font-family: 'Lato', sans-serif;
   padding: 2px 40px !important;
   color: white !important;
   border: none !important;
+  transition: background-color 0.5s;
 }
-
+.courses-info .btn-default :hover{
+ background: #27B496;
+}
 .btn-default a {
   margin: 0px;
   padding: 0px;
@@ -251,16 +253,25 @@ margin-bottom: 5px;
   }
 }
 
-.submitx:hover {
+.submit .btn-default:hover {
   background:#B96C35 !important;
 }
-.submitx:active {
+.submit .btn-default:active {
   background:#B96C35 !important;
 }
 .maybelast{
   margin-top: 0px;
 }
 @media only screen and (max-width:767px){
+  .dropdown-menu a{
+    color: #777!important;
+    font-family: 'Lato'sans-serif!important;
+    text-transform: none;
+  }
+  .dropdown-menu li :hover{
+    color: white!important;
+    font-family: 'Lato'sans-serif!important;
+  }
   .user img{
   margin-left: 25px;
   margin-top: -15px;

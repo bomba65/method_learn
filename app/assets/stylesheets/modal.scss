@@ -6,6 +6,9 @@
   letter-spacing: 0.8px;
   color: #14282c;
 }
+.closebtn .btn-default :hover{
+ background-color: transparent!important;
+}
  .lessons-name{
   font-family: 'Lato', sans-serif;
   width: 151.1px;
@@ -87,4 +90,8 @@ center{
 }
 .c2{
   height: 50px!important;
+}
+
+.points {
+  color: red;
 }

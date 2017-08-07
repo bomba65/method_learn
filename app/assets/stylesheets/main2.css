@@ -167,7 +167,13 @@ list-style: none outside none;
 .button-default:hover {
   background: #27B496;
 }
-
+.btn-default :hover{
+  background: #27B496!important;
+}
+.btn-default{
+  background: #2FD3B0;
+  transition: background 0.3s;
+}
 
 .main-first-infox {
   padding: 10px;
@@ -196,5 +202,3 @@ list-style: none outside none;
 .button-default:hover {
   background: #27B496;
 }
-
-

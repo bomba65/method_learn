@@ -1,3 +1,19 @@
+.submit .button-default{
+  position: relative;
+    padding: 12px 0px;
+    width: 97%;
+    display: block;
+    margin: 10px;
+    margin-left: 3px;
+    background: #2FD3B0;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 5px;
+    transition: background 0.5s;
+}
+
 .carousel-inner{
   padding: 0!important;
 }
@@ -62,9 +78,6 @@ label .checkbox{
   padding-left:5px!important;
   padding-right:5px!important;
 }
-// .form-group :hover{
-//   background: #eb8b47;
-// }
 .checkbox{
   padding-left: 5px!important;
 }
@@ -141,10 +154,10 @@ width: 100%!important;
   width: 100%!important;
 }
 .textrotator{
-  position: absolute;
+  position: absolute!important;
   color: white;
   font-family: 'PT Serif Caption', serif!important;
-  top: 45%;
+  top: 45%!important;
   left: 25%;
   z-index: 2;
   font-size: 30px;
@@ -173,7 +186,7 @@ width: 100%!important;
 
   // Box hover
   &:hover + label:before {
-    background: #eb8b47;
+    background: #2FD3B0;
   }
 
   // Box focus
@@ -183,7 +196,7 @@ width: 100%!important;
 
   // Box checked
   &:checked + label:before {
-    background: #eb8b47;
+    background: #2FD3B0;
   }
 // Checkmark. Could be replaced with an image
   &:checked + label:after {
