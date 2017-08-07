@@ -6,7 +6,7 @@
   background-color: transparent!important;
 }
 .startx:hover {
-  background:#B96C35 !important;
+  background:#27B496 !important;
 }
 .block{
   margin: 0 60px 60px 15px;
@@ -42,8 +42,15 @@
 .course-sylabus-container h1{
   color: #213e44!important;
 }
+.allofme2{
+  width: auto;
+  height: auto;
+}
+.allofme2 .coursesx{
+  margin-top: 28px!important;
+}
 .coursesx{
-  margin-bottom: 40px!important;
+  margin-bottom: 0px;
 }
 .option {
     -webkit-animation-duration: 0s;
@@ -130,7 +137,7 @@ height: 338px!important;
 }
 .course-info {
   position:relative;
-  top:-205px;
+  top:-170px;
 }
 .course-info a{
   padding: 15px 110px 15px 110px!important;
@@ -152,19 +159,6 @@ height: 338px!important;
 }
 .course-sylabus-container p{
   color: #182e33!important;
-}
-
-
-.parts-name {
-
-  font-family: 'Lato', sans-serif;
-  font-size:20px;
-}
-
-.parts-name:hover {
-
-  font-family: 'Lato', sans-serif;
-
 }
 
 .add-part-button {
@@ -218,10 +212,21 @@ margin-bottom: -5px!important;
   text-align: center;
   margin-left: -50px;
 }
+.sugar{
+  width: auto;
+  height: auto;
+}
+.sugar .progress-background{
+  margin-top: 3px!important;
+}
 .coursesx .item .desc p{
   height: 60px;
  margin-bottom:-20px;
  overflow: hidden;
+ font-family: 'Lato', sans-serif;
+}
+.middle h4{
+  font-family: 'Lato', sans-serif!important;
 }
 .follow_status{
   position: relative;
@@ -262,7 +267,7 @@ margin-bottom: -5px!important;
   }
   .course-info {
     position:relative;
-    top:-196px;
+    top:-146px;
   }
   .course-info .btn-default{
     margin-top: 0!important;
@@ -282,7 +287,7 @@ margin-bottom: -5px!important;
   }
   .course-info {
     position:relative;
-    top:-177px;
+    top:-130px;
   }
 }
 @media only screen and (max-width: 415px){
@@ -300,6 +305,6 @@ margin-bottom: -5px!important;
   }
   .course-info {
     position:relative;
-    top:-177px;
+    top:-120px;
   }
 }

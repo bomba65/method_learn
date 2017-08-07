@@ -3,7 +3,7 @@
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="myModal" aria-labelledby="myLargeModalLabel">
 <div class="modal-dialog modal-lg" role="document">
 <div class="modal-content">
-<center><%=image_tag "lion.png", width:"90px", height:"90px", class:'logoup' %></center>
+<center><%=image_tag "lion.png", width:"120px", height:"120px", class:'logoup' %></center>
 <% @parts.each do  |part|%>
           <div class="closebtn" id="closebtn">
             <button type="button" name="button" class="btn btn-default">
@@ -23,15 +23,18 @@
              <li>
              <% @usertocourses.each do  |usertocourse|%>
                <%if @procesessOfLessons.where(user_to_course_id: usertocourse.id ).size > 0%>
-                 
+
                    <%if @procesessOfLessons.exists?(lesson_id: lesson) %>
                        <center class="c2"><%= link_to lesson.name, lesson, class:"lessons-name" %><center>
-                        <p style="color:red;">DONE</p>
+                         <div class="allright">
+                           <div class="blue1"><p class="motiv1">DONE</p></div>
+                           <div class="blue2"><p class="motiv2"><%=lesson.point%>px</p></div>
+                         </div>
                    <%else%>
                        <center class="c2"><%= link_to lesson.name, lesson, class:"lessons-name" %></center>
-                       <p style="color:red;"><%= lesson.point %></p>
+                       <!-- <p style="color:red;"><%= lesson.point %></p> -->
                    <%end%>
-                 
+
                <%end%>
 
              <%end%>

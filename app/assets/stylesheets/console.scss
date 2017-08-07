@@ -1,5 +1,5 @@
 #console_output {
-  width: 99.2%;
+  width: 100%;
   height: 220px;
   background: #19353B;
   color: white;
@@ -8,7 +8,7 @@
 
 #console_output p {
   margin-left: 10px;
-  width:500px;
+  width:100%;
 }
 
 #console_output p.error {
@@ -17,4 +17,18 @@
 
 .button-panel {
   padding:10px;
+}
+
+#console {
+  padding: 10px;
+  width: 100%;
+
+}
+
+.console .panel {
+  border: 1px solid red;
+  background:#19353B;
+}
+.ace-scroller{
+width: 0%!important;
 }
