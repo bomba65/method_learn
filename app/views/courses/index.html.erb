@@ -62,8 +62,7 @@
                 </div>
                 </div>
 
-
-              <input type="hidden" name="" id="progress-value<%=counter%>" value="<%= @processOfLessons.where(user_to_course_id: @userToCourses.find_by_course_id(course.id)).size.to_f/@lessons.where(course_id: course).size*100%>">
+              <input type="hidden" name="" id="progress-value<%=counter%>" value="<%= @processOfLessons.where(user_to_course_id: @userToCourses.where(course_id: course.id, user_id: current_user).first).size.to_f/@lessons.where(course_id: course).size*100%>">
               <%counter+=1%>
               <% end %>
             <% end %>
