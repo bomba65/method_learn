@@ -42,11 +42,13 @@
                           <div class="overlay">
                            
                             <div class="imageee">
+                              <p style="position:relative;top:50px;z-index:12;color:white;"><%="Это вы"%></p>
+                              
                               <%=image_tag key.avatar.url, width:"80px", class: 'lion my',height:"80px" %>
                             </div>
                           </div>
                         <%end%>
-                        <p class="place" style="margin-top:-3px;"><%= count %>-место</p>
+                        <p class="place" style="margin-top:-3px;"><%= count%> </p>
                         
                         <% count += 1 %>
                       <%end%>

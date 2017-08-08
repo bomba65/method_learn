@@ -32,10 +32,18 @@
                          </div>
                    <%else%>
                        <center class="c2"><%= link_to lesson.name, lesson, class:"lessons-name" %></center>
-                       <!-- <p style="color:red;"><%= lesson.point %></p> -->
+                        <div class="allright">
+                           <div class="blue2"><p class="motiv2"><%=lesson.point%>px</p></div>
+                         </div> 
                    <%end%>
 
+               <%else%>
+                         <center class="c2"><%= link_to lesson.name, lesson, class:"lessons-name" %><center>
+                         <div class="allright">
+                           <div class="blue2"><p class="motiv2"><%=lesson.point%>px</p></div>
+                         </div>
                <%end%>
+               
 
              <%end%>
              </li>
